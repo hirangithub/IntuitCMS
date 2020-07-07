@@ -29,3 +29,12 @@
 .cdk-overlay-pane {
     max-width: 90vw;
 }
+
+ul.summary{
+  display: flex;
+  font-size: 1rem;
+
+  li{
+    margin-right: 1.5rem;
+  }
+}

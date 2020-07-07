@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog'; 
-import {MatFormFieldControl} from '@angular/material/form-field';
+import { MatFormFieldControl } from '@angular/material/form-field';
+import { LearningService } from "../services/learning.service";
 
 @Component({
   selector: 'app-learning-material',
@@ -9,9 +10,25 @@ import {MatFormFieldControl} from '@angular/material/form-field';
 })
 export class LearningMaterialComponent implements OnInit {
 
-  constructor(public dialog: MatDialog) { }
+  constructor(
+    public dialog: MatDialog,
+    public learning: LearningService
+  ) { }
+ 
+  selected_LO: any;
+  learningContent: any;
+  questions: any; 
+  learningOutComes: any[] = this.learning.getLearningOutcomes();
+  
+  ngOnInit(): void { 
+    this.viewLearningOutcomes(0);
+  }
 
-  typesOfShoes: string[] = ['LO 1', 'LO 2', 'LO 3', 'LO 4', 'LO 5'];
+  viewLearningOutcomes(i): void { 
+    this.selected_LO = this.learningOutComes[i];  
+    this.learningContent =  this.selected_LO.learning_content.data;
+    this.questions =  this.selected_LO.questions.data;
+  }
 
 
   openDialog() {
@@ -30,11 +47,7 @@ export class LearningMaterialComponent implements OnInit {
       console.log('');
     });
   }
-
-  ngOnInit(): void { 
-  }
-
-
+ 
   openEditPopup(){
     this.openEditTemplateDialog();
   }
