@@ -1,6 +1,6 @@
 <div fxLayout="row" fxFlexFill fxLayoutAlign="start stretch">
     <div fxLayout="column" fxFlex="25" class="left-container">
-        <h2>Bundles (20)</h2>
+        <h2>Bundles ({{bundleList.length}})</h2>
          
         <mat-form-field class="example-full-width">
             <mat-label>Search</mat-label>
@@ -8,19 +8,20 @@
         </mat-form-field>
 
         <mat-selection-list [multiple]="false">            
-            <mat-list-option>Bundle link 1</mat-list-option>
-            <mat-list-option>Bundle link 2</mat-list-option>
-            <mat-list-option>Bundle link 3</mat-list-option>
-            <mat-list-option>Bundle link 4</mat-list-option>
-            <mat-list-option>Bundle link 5</mat-list-option>            
+            <mat-list-option *ngFor="let bl of bundleList; let i = index" (click)="viewLearningOutcomes(i)" >{{bl.title}}</mat-list-option>         
         </mat-selection-list>
 
     </div>
     <div fxFlex="75" class="right-container"> 
 
         <div fxLayout="row" fxLayoutAlign="fxFlexFill" class="action-panel border-active">
-            <div fxFlex="75" fxLayoutAlign="start center">
-                <h1 class="space-0">QuickBooks Solutions for Clients</h1>
+            <div fxFlex="75" >
+                <h1 class="space-0">{{selectedBundle.title}}</h1>
+                <ul>
+                    <li>Total lessons ({{selectedBundle.total_lessons}})</li>
+                    <li>{{selectedBundle.duration}}</li>
+                    <li>{{selectedBundle.cpe_credits}} CPE credits</li>
+                </ul>
             </div>
             <div fxFlex="25" fxLayoutAlign="end center" fxFlexOffset="20px">  
                 <button mat-raised-button color="primary">Add lesson</button> 
@@ -53,47 +54,32 @@
         <div fxLayout="column" fxLayoutAlign="fxFlexFill" class="body-content">                     
                     
             <mat-accordion class="example-headers-align" multi>                   
-                <mat-expansion-panel expanded>
+                <mat-expansion-panel *ngFor="let sl of selectedLessonsList; let i = index" expanded>
                     <mat-expansion-panel-header>
                         <mat-panel-title>
-                            <h2 class="space-0">Business performance</h2>
+                            <h2 class="space-0">{{sl.title}}</h2>
                         </mat-panel-title>
                         <mat-panel-description>
-                            <mat-icon>account_circle</mat-icon>
+                            <!-- <mat-icon>account_circle</mat-icon> -->
                         </mat-panel-description>
                     </mat-expansion-panel-header>
                     
-                    <mat-selection-list #shoes [multiple]="false">
-                        <mat-list-option>                            
+                    <mat-selection-list [multiple]="false">
+                        <mat-list-option *ngFor="let lo of sl.learning_outcome; let i = index">                            
                             <ul>
                                 <li>
-                                    <h2 class="space-0">Intrducing workflows</h2>
-                                    <label>Introduction template</label>
+                                    <h2 class="space-0">{{ lo.title }}</h2>
+                                    <label>{{ lo.template }}</label>
                                 </li>                                
                                 <li>                                    
                                     <ul>      
-                                        <li>Lesson content specific</li>                                  
-                                        <li>20 min</li>
-                                        <li>&nbsp;</li>
+                                        <li>{{ lo.type }}</li>                                  
+                                        <li>{{ lo.duration }}</li> 
+                                        <li>{{lo.additional_description}}</li>
                                     </ul>
                                 </li>
                             </ul>
-                        </mat-list-option>
-                        <mat-list-option>
-                            <ul>
-                                <li>
-                                    <h2 class="space-0">Establish a potential client's QuickBooks Online and QuickBooks Self-Employed needs</h2>
-                                    <label>Introduction template</label>
-                                </li>                                
-                                <li>                                    
-                                    <ul>             
-                                        <li>Learning Outcome</li>                           
-                                        <li>30 min</li>
-                                        <li>Exam (3) KC (1) CPE (2)</li>
-                                    </ul>
-                                </li>                                
-                            </ul>
-                        </mat-list-option>
+                        </mat-list-option> 
                     </mat-selection-list>
 
                 </mat-expansion-panel>

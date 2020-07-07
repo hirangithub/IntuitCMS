@@ -1,6 +1,6 @@
 <div fxLayout="row" fxFlexFill fxLayoutAlign="start stretch">
     <div fxLayout="column" fxFlex="25" class="left-container">
-        <h2>Learning outcomes</h2>
+        <h2>Learning outcomes ({{learningOutComes.length}})</h2>
          
         <mat-form-field class="example-full-width">
             <mat-label>Search</mat-label>
@@ -62,7 +62,7 @@
 
                 <mat-card>
                     <mat-selection-list  [multiple]="false">
-                        <mat-list-option *ngFor="let lc of learningContent">
+                        <mat-list-option *ngFor="let lc of learningContent" (click)="openEditPopup()">
                             <div class="title">{{lc.title}}</div>
                             <div class="description">{{lc.description}}</div>
                         </mat-list-option> 

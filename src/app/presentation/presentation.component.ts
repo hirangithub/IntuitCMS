@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PresentationService } from "../services/presentation.service";
 
 @Component({
   selector: 'app-presentation',
@@ -7,12 +8,28 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PresentationComponent implements OnInit {
 
+  bundleList: any = this.presentation.getBundles();
+  selectedBundle: any;
+  selectedLessonsList: any
+  panelOpenState = false;
 
+  constructor( 
+    public presentation: PresentationService
+  ) { }
 
   ngOnInit(): void {
+    console.log(this.bundleList)
+    this.viewLearningOutcomes(0);
+    
   }
 
-  panelOpenState = false;
+
+  viewLearningOutcomes(i): void { 
+    this.selectedBundle = this.bundleList[i];   
+    this.selectedLessonsList = this.selectedBundle.lessons;
+  }
+
+  
 
 }
 

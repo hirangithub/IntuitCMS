@@ -21,7 +21,7 @@ export class LearningMaterialComponent implements OnInit {
   learningOutComes: any[] = this.learning.getLearningOutcomes();
   
   ngOnInit(): void { 
-    this.viewLearningOutcomes(0);
+    this.viewLearningOutcomes(0);  
   }
 
   viewLearningOutcomes(i): void { 
