@@ -62,7 +62,7 @@
 
                 <mat-card>
                     <mat-selection-list #shoes [multiple]="false">
-                        <mat-list-option>Learning Content 1</mat-list-option>
+                        <mat-list-option (click)="openEditPopup()">Learning Content 1</mat-list-option>
                         <mat-list-option>Learning Content 2</mat-list-option>
                         <mat-list-option>Learning Content 3</mat-list-option>
                         <mat-list-option>Learning Content 4</mat-list-option>
