@@ -1,1 +1,105 @@
-<p>presentation works!</p>
+<div fxLayout="row" fxFlexFill fxLayoutAlign="start stretch">
+    <div fxLayout="column" fxFlex="25" class="left-container">
+        <h2>Bundles (20)</h2>
+         
+        <mat-form-field class="example-full-width">
+            <mat-label>Search</mat-label>
+            <input matInput placeholder="Bundles">
+        </mat-form-field>
+
+        <mat-selection-list [multiple]="false">            
+            <mat-list-option>Bundle link 1</mat-list-option>
+            <mat-list-option>Bundle link 2</mat-list-option>
+            <mat-list-option>Bundle link 3</mat-list-option>
+            <mat-list-option>Bundle link 4</mat-list-option>
+            <mat-list-option>Bundle link 5</mat-list-option>            
+        </mat-selection-list>
+
+    </div>
+    <div fxFlex="75" class="right-container"> 
+
+        <div fxLayout="row" fxLayoutAlign="fxFlexFill" class="action-panel border-active">
+            <div fxFlex="75" fxLayoutAlign="start center">
+                <h1 class="space-0">QuickBooks Solutions for Clients</h1>
+            </div>
+            <div fxFlex="25" fxLayoutAlign="end center" fxFlexOffset="20px">  
+                <button mat-raised-button color="primary">Add lesson</button> 
+
+                <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+                    <mat-icon>more_vert</mat-icon>
+                </button>
+                <mat-menu #menu="matMenu">
+                    <button mat-menu-item>
+                      <mat-icon>reorder</mat-icon>
+                      <span>Re-order lessons</span>
+                    </button>
+                    <button mat-menu-item>
+                        <mat-icon>settings_brightness</mat-icon>
+                        <span>Configure CPE</span>
+                    </button>
+                    <button mat-menu-item>
+                      <mat-icon>edit</mat-icon>
+                      <span>Edit Bundle</span>
+                    </button>
+                    <button mat-menu-item>
+                        <mat-icon>delete</mat-icon>
+                        <span>Delete Bundle</span>
+                    </button>                    
+                </mat-menu>
+            </div>
+        </div>
+
+
+        <div fxLayout="column" fxLayoutAlign="fxFlexFill" class="body-content">                     
+                    
+            <mat-accordion class="example-headers-align" multi>                   
+                <mat-expansion-panel expanded>
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>
+                            <h2 class="space-0">Business performance</h2>
+                        </mat-panel-title>
+                        <mat-panel-description>
+                            <mat-icon>account_circle</mat-icon>
+                        </mat-panel-description>
+                    </mat-expansion-panel-header>
+                    
+                    <mat-selection-list #shoes [multiple]="false">
+                        <mat-list-option>                            
+                            <ul>
+                                <li>
+                                    <h2 class="space-0">Intrducing workflows</h2>
+                                    <label>Introduction template</label>
+                                </li>                                
+                                <li>                                    
+                                    <ul>      
+                                        <li>Lesson content specific</li>                                  
+                                        <li>20 min</li>
+                                        <li>&nbsp;</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </mat-list-option>
+                        <mat-list-option>
+                            <ul>
+                                <li>
+                                    <h2 class="space-0">Establish a potential client's QuickBooks Online and QuickBooks Self-Employed needs</h2>
+                                    <label>Introduction template</label>
+                                </li>                                
+                                <li>                                    
+                                    <ul>             
+                                        <li>Learning Outcome</li>                           
+                                        <li>30 min</li>
+                                        <li>Exam (3) KC (1) CPE (2)</li>
+                                    </ul>
+                                </li>                                
+                            </ul>
+                        </mat-list-option>
+                    </mat-selection-list>
+
+                </mat-expansion-panel>
+            </mat-accordion>               
+            
+        </div>
+    </div>
+</div>
+

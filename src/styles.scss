@@ -2,3 +2,106 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+ul li { list-style-type: none; }
+
+.left-container {
+    height: calc(100vh - 6.4rem);
+    padding: 1rem;
+    background-color: yellow;
+}
+.right-container {
+    background-color: pink;
+    padding: 1rem 2rem;
+}
+
+.space-0 {
+    margin: 0 !important;
+}
+
+.action-panel {
+    padding-bottom: 1rem;
+    &.border-active {
+        border-bottom: 1px solid gray;
+    }    
+}
+
+.body-content {
+    padding: 2rem 0;
+}
+
+.example-spacer {
+    flex: 1 1 auto;
+}
+
+.mat-expansion-panel-header-title, 
+.mat-expansion-panel-header-description {
+    flex-direction: column;
+}
+
+.example-headers-align .mat-expansion-panel-header-title,
+.example-headers-align .mat-expansion-panel-header-description {
+  flex-basis: 0;
+}
+
+.example-headers-align .mat-expansion-panel-header-description {
+  justify-content: space-between;
+  align-items: flex-end; 
+}
+
+.example-headers-align .mat-form-field + .mat-form-field {
+  margin-left: 8px;
+}
+
+.mat-content {
+    align-items: center;
+}
+
+.mat-list-base .mat-list-item, 
+.mat-list-base .mat-list-option {
+    height: auto !important;
+    display: flex !important;    
+    min-height: 48px;
+
+    .mat-list-item-content {
+        width: 100%;
+        .mat-list-text {
+            padding-right: 0 !important;
+        }
+        ul {
+            display: flex;
+            align-items: center;
+            li {
+                //width: 50%;
+                flex: 1;
+                &:first-child {
+                    //padding-right: 2rem;
+                    flex: 2;
+                }
+                ul {
+                    padding: 0;
+                    li {
+                        //width: auto;
+                        padding-right: 2rem;
+                        flex: 1;
+                        &:first-child {
+                            flex: 1;
+                        }
+                    }
+                }
+                // flex: 1 1 0;               
+                // &:first-child {
+                //     flex: 2 1 0;
+                // }
+                // ul {
+                //     padding: 0;
+                //     li {
+                //         &:first-child {
+                //             flex: 1 1 0;
+                //         }
+                //     }
+                // }
+            }
+        }
+        
+    }
+}
