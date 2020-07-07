@@ -1,9 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { MatDialog } from '@angular/material/dialog';
-// interface Food {
-//   value: string;
-//   viewValue: string;
-// }
+import { MatDialog } from '@angular/material/dialog'; 
+import {MatFormFieldControl} from '@angular/material/form-field';
 
 @Component({
   selector: 'app-learning-material',
@@ -16,11 +13,6 @@ export class LearningMaterialComponent implements OnInit {
 
   typesOfShoes: string[] = ['LO 1', 'LO 2', 'LO 3', 'LO 4', 'LO 5'];
 
-  // foods: Food[] = [
-  //   {value: 'steak-0', viewValue: 'Steak'},
-  //   {value: 'pizza-1', viewValue: 'Pizza'},
-  //   {value: 'tacos-2', viewValue: 'Tacos'}
-  // ];
 
   openDialog() {
     const dialogRef = this.dialog.open(DialogContent);
@@ -30,14 +22,38 @@ export class LearningMaterialComponent implements OnInit {
     });
   }
 
+
+  openEditTemplateDialog() {
+    const dialogRef = this.dialog.open(EditTempContent);
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('');
+    });
+  }
+
   ngOnInit(): void { 
   }
 
+
+  openEditPopup(){
+    this.openEditTemplateDialog();
+  }
 }
 
 @Component({
   selector: 'select-template',
   templateUrl: 'select-template.html',
+  styleUrls: ['./select-template.scss']
 })
+ 
 
 export class DialogContent {}
+
+
+@Component({
+  selector: 'edit-template',
+  templateUrl: 'edit-template.html',
+  styleUrls: ['./select-template.scss']
+})
+
+export class EditTempContent {} 

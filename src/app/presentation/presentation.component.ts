@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PresentationComponent implements OnInit {
 
-  constructor() { }
+
 
   ngOnInit(): void {
   }
@@ -15,3 +15,4 @@ export class PresentationComponent implements OnInit {
   panelOpenState = false;
 
 }
+

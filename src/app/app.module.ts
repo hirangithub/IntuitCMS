@@ -7,7 +7,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TopBarComponent } from './top-bar/top-bar.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 
-import { LearningMaterialComponent, DialogContent } from './learning-material/learning-material.component';
+import { LearningMaterialComponent, DialogContent, EditTempContent } from './learning-material/learning-material.component';
 import { PresentationComponent } from './presentation/presentation.component';
 import { CertificationExamComponent } from './certification-exam/certification-exam.component';
 
@@ -21,9 +21,10 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatIconModule } from '@angular/material/icon';
 import { MatToolbarModule } from '@angular/material/toolbar';
-import { MatExpansionModule } from '@angular/material/expansion';
-
+import { MatExpansionModule } from '@angular/material/expansion'; 
 import { FlexLayoutModule } from '@angular/flex-layout';
+import {MatFormFieldModule} from '@angular/material/form-field';
+
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     LearningMaterialComponent,
     PresentationComponent,
     CertificationExamComponent,
-    DialogContent
+    DialogContent,
+    EditTempContent
   ],
   imports: [
     BrowserModule,
@@ -50,7 +52,8 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     MatIconModule,
     MatToolbarModule,
     MatExpansionModule,
-    FlexLayoutModule
+    FlexLayoutModule, 
+    MatFormFieldModule
   ],
   exports: [],
   providers: [],
