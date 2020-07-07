@@ -38,6 +38,7 @@ export class LearningMaterialComponent implements OnInit {
 @Component({
   selector: 'select-template',
   templateUrl: 'select-template.html',
+  styleUrls: ['./select-template.scss']
 })
 
 export class DialogContent {}
