@@ -1,15 +1,26 @@
 <div fxLayout="row" fxFlexFill fxLayoutAlign="start stretch">
     <div fxLayout="column" fxFlex="25" class="left-container">
-        <h2>Learning outcomes ({{learningOutComes.length}})</h2>
+        <div class="title">
+            <h2>Learning outcomes ({{learningOutComes.length}})</h2>
+            <button mat-raised-button color="primary" (click)="openAddLODialog()">Add </button>               
+        </div>
+        
          
         <mat-form-field class="example-full-width">
             <mat-label>Search Learning outcomes</mat-label>
             <input matInput placeholder="">
         </mat-form-field>
 
-        <mat-selection-list #shoes [multiple]="false">
+        <mat-selection-list #shoes [multiple]="false" *ngIf="!isAddLODialog">
             <mat-list-option *ngFor="let lo of learningOutComes; let i = index" (click)="viewLearningOutcomes(i)">
                 {{lo.lo_title}}
+            </mat-list-option>
+        </mat-selection-list>
+
+        <mat-selection-list #shoes [multiple]="false" *ngIf="isAddLODialog"> 
+            <mat-list-option >{{LO_title}}</mat-list-option>
+            <mat-list-option *ngFor="let lo_title of learningOutComesTitles; let i = index">
+                {{lo_title}}
             </mat-list-option>
         </mat-selection-list>
         <!-- <p>
@@ -18,7 +29,20 @@
 
     </div>
     <div fxFlex="75" class="right-container"> 
-
+        <div class="lo-dialog-box" *ngIf="isAddLODialog">
+            <div class="title">
+                <h2>Learning outcome title</h2>
+                <a href="javascript:void(0)" (click)="closeAddLODialog()">Close</a>
+            </div>
+            <div class="add-item">
+                <mat-form-field class="example-full-width"> 
+                    <mat-label>Search Learning outcomes</mat-label>
+                    <input matInput placeholder="" [(ngModel)]="LO_title"> 
+                </mat-form-field>
+                <button mat-raised-button color="primary" (click)="createNewLO()">Create</button>                   
+            </div>
+            
+        </div>
         <div fxLayout="row" fxLayoutAlign="fxFlexFill" class="action-panel border-active">
             <div fxFlex="75" fxLayoutAlign="start center">
                 <h1 class="space-0">{{selected_LO.lo_title}}</h1>
@@ -59,7 +83,7 @@
                         </mat-menu>
                     </mat-toolbar-row>
                 </mat-toolbar>               
- 
+
                 <mat-card>
                     <mat-selection-list  [multiple]="false">
                         <mat-list-option *ngFor="let lc of learningContent" (click)="openEditPopup()">
@@ -95,7 +119,7 @@
                 <mat-card>
                     <mat-selection-list>
                         <mat-selection-list #shoes [multiple]="false">
-                            <mat-list-option *ngFor="let q of questions" (click)="openQuestionPopup()">
+                            <mat-list-option *ngFor="let q of questions">
                                 <div class="title">{{q.title}}</div>
                                 <div class="description">{{q.description}}</div>
                             </mat-list-option> 
@@ -110,3 +134,4 @@
     </div>
 </div>
 
+ 
