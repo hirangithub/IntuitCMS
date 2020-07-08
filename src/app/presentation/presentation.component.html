@@ -14,7 +14,7 @@
         </mat-form-field>
 
         <mat-selection-list [multiple]="false" *ngIf="!isAddBundlesDialog">            
-            <mat-list-option *ngFor="let bl of bundleList; let i = index" (click)="viewLearningOutcomes(i)" >{{bl.title}}</mat-list-option>         
+            <mat-list-option *ngFor="let bl of bundleList; let i = index" [ngClass]="{'active': i =='0'}" (click)="viewLearningOutcomes(i)" >{{bl.title}}</mat-list-option>         
         </mat-selection-list>
 
         <mat-selection-list [multiple]="false" *ngIf="isAddBundlesDialog">      
@@ -179,8 +179,7 @@
                                     <label>{{ lo.template }}</label>
                                 </li>                                
                                 <li>                                    
-                                    <ul>      
-                                        <li>{{ lo.type }}</li>                                  
+                                    <ul>                                       
                                         <li>{{ lo.duration }}</li> 
                                         <li>{{lo.additional_description}}</li>
                                     </ul>

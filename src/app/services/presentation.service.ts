@@ -22,7 +22,7 @@ export class PresentationService {
                 title: "Establish a potential client's QuickBooks Online and QuickBooks Self-Employed needs",
                 type: "Learning Outcome",
                 duration: "20 min",
-                template: "Introduction template",
+                template: "Introduction template - Lesson specific content",
                 additional_description: ""
               },
               {
