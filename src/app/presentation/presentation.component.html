@@ -1,9 +1,11 @@
 <div fxLayout="row" fxFlexFill fxLayoutAlign="start stretch">
+
     <div fxLayout="column" fxFlex="25" class="left-container"> 
         <div class="title">
             <h2>Bundles ({{bundleList.length}})</h2>
             <button mat-raised-button color="primary" (click)="openAddBundlesDialog()">Add </button>               
         </div>
+
          
         <mat-form-field class="example-full-width">
             <mat-label>Search Bundles</mat-label>
@@ -20,6 +22,7 @@
         </mat-selection-list>
 
     </div>
+
     <div fxFlex="75" class="right-container"> 
         <div class="bundle-dialog-box" *ngIf="isAddBundlesDialog">
             <div class="title">
@@ -45,6 +48,7 @@
                 
             </div> 
         </div>   
+
         <div fxLayout="row" fxLayoutAlign="fxFlexFill" class="action-panel border-active">
             <div fxFlex="75" >
                 <h1 class="space-0">{{selectedBundle.title}}</h1>
@@ -116,6 +120,8 @@
                     <br />                   
                     
                     <button mat-raised-button color="accent" (click)=toggleDisplay()><mat-icon>note_add</mat-icon> Include Learning outcome</button>
+                    &nbsp;&nbsp;
+                    <button mat-raised-button><mat-icon>note_add</mat-icon> Include Lesson specific content</button>
 
                 </mat-expansion-panel>
             </mat-accordion>               

@@ -22,87 +22,91 @@
     </header>
 
 
-    <div class="container template-grid" fxLayout="row" fxLayoutWrap fxLayoutGap="2%" fxLayoutAlign="left">
-        <div fxFlex="100%">
-            <mat-form-field appearance="fill" fxFlex="100%">
-                <mat-label>Title</mat-label>
-                <input matInput placeholder="Placeholder">
-            </mat-form-field>
-        </div>
-
-        <div fxFlex="100%">
-            <mat-form-field appearance="fill" fxFlex="100%">
-                <mat-label>Learning Outcomes</mat-label>
-                <input matInput placeholder="Placeholder">
-            </mat-form-field>
-        </div>
-    </div> 
-
-
-    <div class="container template-grid" fxLayout="row" fxLayoutWrap="" fxLayoutGap="2%" fxLayoutAlign="left">
-        <div fxFlex="100%">
-            <mat-form-field appearance="fill" fxFlex="100%">
-                <mat-label>Lesson background</mat-label>
-                <input matInput placeholder="Placeholder">
-            </mat-form-field>
-        </div>
-
-        <div fxFlex="100%">
-            <mat-form-field appearance="fill" fxFlex="100%">
-                <mat-label>Learning Outcomes</mat-label>
-                <input matInput placeholder="Placeholder">
-            </mat-form-field>
-        </div>
-    </div> 
-        
-
-    <div class="container template-grid" fxLayout="row" fxLayoutWrap="" fxLayoutGap="2%" fxLayoutAlign="left">
-        <div fxFlex="100%">
-            <mat-form-field appearance="fill" fxFlex="100%">
-                <mat-label>Background content</mat-label>
-                <textarea rows="7" matInput placeholder=""></textarea>
-            </mat-form-field>
-        </div>
-    </div> 
-
-
-    <div class="container template-grid" fxLayout="row" fxLayoutWrap="" fxLayoutGap="2%" fxLayoutAlign="left">
-        <div fxFlex="100%">
-            <mat-form-field appearance="fill" fxFlex="100%">
-                <mat-label>Background content</mat-label>
-                <textarea rows="5" matInput placeholder=""></textarea>
-            </mat-form-field>
-        </div>
-
-        <div fxFlex="100%">
-            <mat-label>Scene setting image</mat-label>
-            <br><br>
-            <button mat-stroked-button>Browse</button>
-        </div>
-    </div> 
-
-    <div class="container template-grid" fxLayout="row" fxLayoutWrap="" fxLayoutGap="2%" fxLayoutAlign="left">
-        <div fxFlex="100%">
-            <mat-form-field appearance="fill" fxFlex="100%">
-                <mat-label>Vimeo video URL</mat-label>
-                <input matInput placeholder="https://vimeo.com/76978564">
-            </mat-form-field>
-        </div>
-
-        <div fxFlex="100%" fxLayoutGap="2%">
-            <mat-form-field appearance="fill" fxFlex="130px">
-                <mat-label>Content duration</mat-label>
-                <input matInput placeholder="Placeholder">
-            </mat-form-field>
- 
-            <mat-chip-list aria-label="" class="badge">
-                <mat-chip><mat-icon>info</mat-icon> <p>Based on the content updated <strong>03:30 min</strong> durations is suggested.</p></mat-chip>
-            </mat-chip-list>
-        </div>
-    </div> 
+    <mat-dialog-content class="mat-typography">
+        <div class="container template-grid" fxLayout="row" fxLayoutWrap fxLayoutGap="2%" fxLayoutAlign="left">
+            <div fxFlex="100%">
+                <mat-form-field appearance="fill" fxFlex="100%">
+                    <mat-label>Title</mat-label>
+                    <input matInput placeholder="Placeholder">
+                </mat-form-field>
+            </div>
     
+            <div fxFlex="100%">
+                <mat-form-field appearance="fill" fxFlex="100%">
+                    <mat-label>Learning Outcomes</mat-label>
+                    <input matInput placeholder="Placeholder">
+                </mat-form-field>
+            </div>
+        </div> 
+    
+    
+        <div class="container template-grid" fxLayout="row" fxLayoutWrap="" fxLayoutGap="2%" fxLayoutAlign="left">
+            <div fxFlex="100%">
+                <mat-form-field appearance="fill" fxFlex="100%">
+                    <mat-label>Lesson background</mat-label>
+                    <input matInput placeholder="Placeholder">
+                </mat-form-field>
+            </div>
+    
+            <div fxFlex="100%">
+                <mat-form-field appearance="fill" fxFlex="100%">
+                    <mat-label>Learning Outcomes</mat-label>
+                    <input matInput placeholder="Placeholder">
+                </mat-form-field>
+            </div>
+        </div> 
+            
+    
+        <div class="container template-grid" fxLayout="row" fxLayoutWrap="" fxLayoutGap="2%" fxLayoutAlign="left">
+            <div fxFlex="100%">
+                <mat-form-field appearance="fill" fxFlex="100%">
+                    <mat-label>Background content</mat-label>
+                    <textarea rows="7" matInput placeholder=""></textarea>
+                </mat-form-field>
+            </div>
+        </div> 
+    
+    
+        <div class="container template-grid" fxLayout="row" fxLayoutWrap="" fxLayoutGap="2%" fxLayoutAlign="left">
+            <div fxFlex="100%">
+                <mat-form-field appearance="fill" fxFlex="100%">
+                    <mat-label>Background content</mat-label>
+                    <textarea rows="5" matInput placeholder=""></textarea>
+                </mat-form-field>
+            </div>
+    
+            <div fxFlex="100%">
+                <mat-label>Scene setting image</mat-label>
+                <br><br>
+                <button mat-stroked-button>Browse</button>
+            </div>
+        </div> 
+    
+        <div class="container template-grid" fxLayout="row" fxLayoutWrap="" fxLayoutGap="2%" fxLayoutAlign="left">
+            <div fxFlex="100%">
+                <mat-form-field appearance="fill" fxFlex="100%">
+                    <mat-label>Vimeo video URL</mat-label>
+                    <input matInput placeholder="https://vimeo.com/76978564">
+                </mat-form-field>
+            </div>
+    
+            <div fxFlex="100%" fxLayoutGap="2%">
+                <mat-form-field appearance="fill" fxFlex="130px">
+                    <mat-label>Content duration</mat-label>
+                    <input matInput placeholder="Placeholder">
+                </mat-form-field>
+     
+                <mat-chip-list aria-label="" class="badge">
+                    <mat-chip><mat-icon>info</mat-icon> <p>Based on the content updated <strong>03:30 min</strong> durations is suggested.</p></mat-chip>
+                </mat-chip-list>
+            </div>
+        </div> 
+        
+    
+        <br><br>
+    </mat-dialog-content>
 
-    <br><br>
+    
 
 
     

@@ -1,14 +1,19 @@
 <div fxLayout="row" fxFlexFill fxLayoutAlign="start stretch">
+<<<<<<< HEAD
     <div fxLayout="column" fxFlex="25" class="left-container">
         <div class="title">
             <h2>Learning outcomes ({{learningOutComes.length}})</h2>
             <button mat-raised-button color="primary" (click)="openAddLODialog()">Add </button>               
         </div>
         
+=======
+    <div fxLayout="column" fxFlex="" class="left-container">
+        <h2>Learning outcomes ({{learningOutComes.length}})</h2>
+>>>>>>> 39a977f6ea9d6e93b4c3d0d25f4cf620edcb0612
          
         <mat-form-field class="example-full-width">
             <mat-label>Search Learning outcomes</mat-label>
-            <input matInput placeholder="">
+            <input matInput placeholder=""> 
         </mat-form-field>
 
         <mat-selection-list #shoes [multiple]="false" *ngIf="!isAddLODialog">
@@ -28,6 +33,7 @@
         </p> -->
 
     </div>
+<<<<<<< HEAD
     <div fxFlex="75" class="right-container"> 
         <div class="lo-dialog-box" *ngIf="isAddLODialog">
             <div class="title">
@@ -43,6 +49,10 @@
             </div>
             
         </div>
+=======
+    <div fxFlex="" class="right-container"> 
+
+>>>>>>> 39a977f6ea9d6e93b4c3d0d25f4cf620edcb0612
         <div fxLayout="row" fxLayoutAlign="fxFlexFill" class="action-panel border-active">
             <div fxFlex="75" fxLayoutAlign="start center">
                 <h1 class="space-0">{{selected_LO.lo_title}}</h1>
@@ -66,9 +76,10 @@
 
                 <mat-toolbar color="primary"> 
                     <mat-toolbar-row >
-                        <span><h3>Learning Content - {{selected_LO.learning_content.learning_content_duration}}</h3></span> 
+                        <span><h3>Learning Content</h3></span> 
                         <span class="example-spacer"></span>
-                        <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+                        <span class="inn">{{selected_LO.learning_content.learning_content_duration}}</span>
+                        <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="">
                             <mat-icon>more_vert</mat-icon>
                         </button>
                         <mat-menu #menu="matMenu">
@@ -85,7 +96,7 @@
                 </mat-toolbar>               
 
                 <mat-card>
-                    <mat-selection-list  [multiple]="false">
+                    <mat-selection-list [multiple]="false">
                         <mat-list-option *ngFor="let lc of learningContent" (click)="openEditPopup()">
                             <div class="title">{{lc.title}}</div>
                             <div class="description">{{lc.description}}</div>
@@ -97,18 +108,18 @@
 
                 <mat-toolbar color="primary"> 
                     <mat-toolbar-row>
-                        <span><h3>Questions</h3></span>
-                        <ul class="summary">
+                        <span><h3>Questions</h3></span>                        
+                        <span class="example-spacer"></span>
+                        <ul class="summary" class="inn">
                             <li>All ({{selected_LO.questions.total_questions}})</li>
                             <li>Exams ({{selected_LO.questions.total_exams}})</li>
                             <li>KC ({{selected_LO.questions.total_kc}})</li>
                             <li>CPE ({{selected_LO.questions.total_cpe}})</li>
                         </ul>
-                        <span class="example-spacer"></span>
-                        <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+                        <button mat-icon-button [matMenuTriggerFor]="menu2" aria-label="">
                             <mat-icon>more_vert</mat-icon>
                         </button>
-                        <mat-menu #menu="matMenu">
+                        <mat-menu #menu2="matMenu">
                             <button mat-menu-item>
                               <mat-icon>reorder</mat-icon>
                               <span>Re-order</span> 

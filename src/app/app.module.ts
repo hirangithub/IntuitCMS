@@ -23,9 +23,19 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatExpansionModule } from '@angular/material/expansion'; 
 import { FlexLayoutModule } from '@angular/flex-layout';
+<<<<<<< HEAD
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatChipsModule} from '@angular/material/chips';
 import { FormsModule } from '@angular/forms';
+=======
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatChipsModule } from '@angular/material/chips';
+import { MatRippleModule } from '@angular/material/core';
+import {MatCheckboxModule} from '@angular/material/checkbox';
+import {MatRadioModule} from '@angular/material/radio';
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+
+>>>>>>> 39a977f6ea9d6e93b4c3d0d25f4cf620edcb0612
 
 @NgModule({
   declarations: [
@@ -36,7 +46,8 @@ import { FormsModule } from '@angular/forms';
     PresentationComponent,
     CertificationExamComponent,
     DialogContent,
-    EditTempContent
+    EditTempContent, 
+    EditQuestionTemp
   ],
   imports: [
     BrowserModule,
@@ -56,8 +67,15 @@ import { FormsModule } from '@angular/forms';
     FlexLayoutModule, 
     MatFormFieldModule,
     MatChipsModule,
+<<<<<<< HEAD
     FormsModule
     
+=======
+    MatRippleModule,
+    MatCheckboxModule,
+    MatRadioModule,
+    MatSlideToggleModule    
+>>>>>>> 39a977f6ea9d6e93b4c3d0d25f4cf620edcb0612
   ],
   exports: [],
   providers: [],
