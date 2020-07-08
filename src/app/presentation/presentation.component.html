@@ -16,17 +16,22 @@
 
         <div fxLayout="row" fxLayoutAlign="fxFlexFill" class="action-panel border-active">
             <div fxFlex="75" >
-                <h1 class="space-0">{{selectedBundle.title}}</h1>
                 <ul>
-                    <li>Total lessons ({{selectedBundle.total_lessons}})</li>
-                    <li>{{selectedBundle.duration}}</li>
-                    <li>{{selectedBundle.cpe_credits}} CPE credits</li>
+                    <li><img src="https://live.intuittrainingplatform.com/filestore/ModuleFiles/539/thumb_icon.png?1592894348" title="" /></li>
+                    <li>
+                        <h1 class="space-0">{{selectedBundle.title}}</h1>
+                        <ul>
+                            <li>Total lessons ({{selectedBundle.total_lessons}})</li>
+                            <li>{{selectedBundle.duration}}</li>
+                            <li>{{selectedBundle.cpe_credits}} CPE credits</li>
+                        </ul>
+                    </li>
                 </ul>
             </div>
             <div fxFlex="25" fxLayoutAlign="end center" fxFlexOffset="20px">  
                 <button mat-raised-button color="primary">Add lesson</button> 
 
-                <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+                <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="">
                     <mat-icon>more_vert</mat-icon>
                 </button>
                 <mat-menu #menu="matMenu">
@@ -57,7 +62,7 @@
                 <mat-expansion-panel *ngFor="let sl of selectedLessonsList; let i = index" expanded>
                     <mat-expansion-panel-header>
                         <mat-panel-title>
-                            <h2 class="space-0">{{sl.title}}</h2>
+                            <h3 class="space-0">{{sl.title}}</h3>
                         </mat-panel-title>
                         <mat-panel-description>
                             <!-- <mat-icon>account_circle</mat-icon> -->
@@ -101,75 +106,47 @@
 <!-- Side drawer -->
 <div class="mat-drawer-transition">
     <div [hidden]="!isShow" class="mat-drawer" [ngClass]="isShow ? 'on' : ''">        
+        <div class="inner">
+            <div fxLayout="row" fxFlexFill>
+                <div fxLayout="column">
+                    <h1>Include Learning Outcomes</h1>
+                    <h3>Business Performance</h3> 
 
-        <div fxLayout="row" fxFlexFill>
-            <div fxLayout="column">
-                <h1>Include Learning Outcomes</h1>
-                <h3>Business Performance</h3>
-
-                <button mat-raised-button color="primary">Include Learning Outcomes (5)</button>
-
-                <mat-selection-list>
+                    <button mat-raised-button color="primary" (click)=toggleDisplay()>Include selected Learning Outcomes (5)</button>
+ 
                     <mat-selection-list>
-                        <mat-list-option>
-                            <div class="title">
-                                <h3>Establish a potential client's QucikBooks Online and QuickBookd Self-Employed</h3>                                
-                            </div>
-                            <div class="description">
-                                <ul>
-                                    <li>45 min</li>
-                                    <li>Exam (3)</li>
-                                    <li>CPE (2)</li>
-                                </ul>
-                            </div>
-                        </mat-list-option>
-                        <mat-list-option>
-                            <div class="title">
-                                <h3>State the options to migrate clients from other accountancy...</h3>                                
-                            </div>
-                            <div class="description">
-                                <ul>
-                                    <li>20 min</li>
-                                    <li>Exam (2)</li>
-                                    <li>CPE (1)</li>
-                                </ul>
-                            </div>
-                        </mat-list-option>
-                        <mat-list-option>
-                            <div class="title">
-                                <h3>Recognize how to create bank feeds to QuickBooks Online</h3>                                
-                            </div>
-                            <div class="description">
-                                <ul>
-                                    <li>80 min</li>
-                                    <li>Exam (4)</li>
-                                    <li>KC (1)</li>
-                                    <li>CPE (1)</li>
-                                </ul>
-                            </div>
-                        </mat-list-option> 
-                        <mat-list-option>
-                            <div class="title">
-                                <h3>Know the importance of applying principle to QuickBooks Accounts</h3>                                
-                            </div>
-                            <div class="description">
-                                <ul>
-                                    <li>25 min</li>
-                                    <li>Exam (4)</li>
-                                    <li>KC (1)</li>
-                                    <li>CPE (2)</li>
-                                </ul>
-                            </div>
-                        </mat-list-option> 
+                        <mat-selection-list>
+                            <mat-list-option>
+                                <div class="title">
+                                    <h2>Establish a potential client's QucikBooks Online and QuickBookd Self-Employed</h2>                                
+                                </div>
+                                <div class="description">
+                                    <ul>
+                                        <li>45 min</li>
+                                        <li>Exam (3)</li>
+                                        <li>CPE (2)</li>
+                                    </ul>
+                                </div>
+                            </mat-list-option>
+                            <mat-divider></mat-divider>
+                            <mat-list-option>
+                                <div class="title">
+                                    <h2>State the options to migrate clients from other accountancy...</h2>                                
+                                </div>
+                                <div class="description">
+                                    <ul>
+                                        <li>20 min</li>
+                                        <li>Exam (2)</li>
+                                        <li>CPE (1)</li>
+                                    </ul>
+                                </div>
+                            </mat-list-option>
+                        </mat-selection-list>
                     </mat-selection-list>
-                </mat-selection-list>
 
+                </div>
             </div>
         </div>
-
-        
-
-
     </div>
     <div [hidden]="!isShow" class="mat-drawer-backdrop" [ngClass]="isShow ? 'mat-drawer-shown' : ''" (click)=toggleDisplay()></div>
 </div>
