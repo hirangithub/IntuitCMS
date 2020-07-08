@@ -14,7 +14,7 @@
         </mat-form-field>
 
         <mat-selection-list #shoes [multiple]="false" *ngIf="!isAddLODialog">
-            <mat-list-option *ngFor="let lo of learningOutComes; let i = index" (click)="viewLearningOutcomes(i)">
+            <mat-list-option *ngFor="let lo of learningOutComes; let i = index"  [ngClass]="{'active': i =='0'}"  (click)="viewLearningOutcomes(i)">
                 {{lo.lo_title}}
             </mat-list-option>
         </mat-selection-list>

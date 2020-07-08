@@ -94,6 +94,8 @@ export class LearningMaterialComponent implements OnInit {
   }
 
 
+  
+
 }
 
 @Component({
@@ -103,7 +105,22 @@ export class LearningMaterialComponent implements OnInit {
 })
  
 
-export class DialogContent {}
+export class DialogContent implements OnInit{
+
+  constructor(
+    public dialog: MatDialog, 
+  ) { }
+
+  ngOnInit(): void {  
+
+  }
+
+  openTemplate(){ 
+    this.dialog.closeAll();
+    const openEditTemp = this.dialog.open(EditTempContent); 
+     
+  }
+}
 
 
 
