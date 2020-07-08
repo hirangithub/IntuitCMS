@@ -1,15 +1,15 @@
 <div fxLayout="row" fxFlexFill fxLayoutAlign="start stretch">
     <div fxLayout="column" fxFlex="25" class="left-container">
-        <h2>Learning outcomes</h2>
+        <h2>Learning outcomes ({{learningOutComes.length}})</h2>
          
         <mat-form-field class="example-full-width">
-            <mat-label>Search</mat-label>
-            <input matInput placeholder="Learning outcomes">
+            <mat-label>Search Learning outcomes</mat-label>
+            <input matInput placeholder="">
         </mat-form-field>
 
         <mat-selection-list #shoes [multiple]="false">
-            <mat-list-option *ngFor="let shoe of typesOfShoes" [value]="shoe">
-                {{shoe}}
+            <mat-list-option *ngFor="let lo of learningOutComes; let i = index" (click)="viewLearningOutcomes(i)">
+                {{lo.lo_title}}
             </mat-list-option>
         </mat-selection-list>
         <!-- <p>
@@ -21,7 +21,7 @@
 
         <div fxLayout="row" fxLayoutAlign="fxFlexFill" class="action-panel border-active">
             <div fxFlex="75" fxLayoutAlign="start center">
-                <h1 class="space-0">Establish a potential client's QuickBooks Online and QuickBooks Self-Employed needs</h1>
+                <h1 class="space-0">{{selected_LO.lo_title}}</h1>
             </div>
             <div fxFlex="25" fxLayoutAlign="end center" fxFlexOffset="20px">  
                 <button mat-raised-button color="primary" (click)="openDialog()">Add learning content</button>               
@@ -41,8 +41,8 @@
             <div fxLayout="column" fxFlex="50" fxLayoutAlign="start top">               
 
                 <mat-toolbar color="primary"> 
-                    <mat-toolbar-row>
-                        <span><h3>Learning Content</h3></span>
+                    <mat-toolbar-row >
+                        <span><h3>Learning Content - {{selected_LO.learning_content.learning_content_duration}}</h3></span> 
                         <span class="example-spacer"></span>
                         <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
                             <mat-icon>more_vert</mat-icon>
@@ -61,20 +61,25 @@
                 </mat-toolbar>               
  
                 <mat-card>
-                    <mat-selection-list #shoes [multiple]="false">
-                        <mat-list-option (click)="openEditPopup()">Learning Content 1</mat-list-option>
-                        <mat-list-option>Learning Content 2</mat-list-option>
-                        <mat-list-option>Learning Content 3</mat-list-option>
-                        <mat-list-option>Learning Content 4</mat-list-option>
-                        <mat-list-option>Learning Content 5</mat-list-option>
+                    <mat-selection-list  [multiple]="false">
+                        <mat-list-option *ngFor="let lc of learningContent" (click)="openEditPopup()">
+                            <div class="title">{{lc.title}}</div>
+                            <div class="description">{{lc.description}}</div>
+                        </mat-list-option> 
                     </mat-selection-list>
                 </mat-card>
             </div>
-            <div fxLayout="column" fxFlex="50" fxLayoutAlign="end top" fxFlexOffset="30px">  
+            <div fxLayout="column" fxFlex="50" fxLayoutAlign="top" fxFlexOffset="30px">  
 
                 <mat-toolbar color="primary"> 
                     <mat-toolbar-row>
                         <span><h3>Questions</h3></span>
+                        <ul class="summary">
+                            <li>All ({{selected_LO.questions.total_questions}})</li>
+                            <li>Exams ({{selected_LO.questions.total_exams}})</li>
+                            <li>KC ({{selected_LO.questions.total_kc}})</li>
+                            <li>CPE ({{selected_LO.questions.total_cpe}})</li>
+                        </ul>
                         <span class="example-spacer"></span>
                         <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
                             <mat-icon>more_vert</mat-icon>
@@ -90,11 +95,10 @@
                 <mat-card>
                     <mat-selection-list>
                         <mat-selection-list #shoes [multiple]="false">
-                            <mat-list-option (click)="openQuestionPopup()">Question 1</mat-list-option>
-                            <mat-list-option>Question 2</mat-list-option>
-                            <mat-list-option>Question 3</mat-list-option>
-                            <mat-list-option>Question 4</mat-list-option>
-                            <mat-list-option>Question 5</mat-list-option>
+                            <mat-list-option *ngFor="let q of questions" (click)="openQuestionPopup()">
+                                <div class="title">{{q.title}}</div>
+                                <div class="description">{{q.description}}</div>
+                            </mat-list-option> 
                         </mat-selection-list>
                     </mat-selection-list>
                 </mat-card>               
