@@ -39,12 +39,12 @@ export class LearningService {
           total_cpe: 1,
           data: [ 
             {
-              title: "What color is the key?",
-              description: "Exam question", 
+              title: "When you log into QuickBooks Online Accountant, whose books can you directly access and manage?",
+              description: "Knowledge Check", 
             },
             {
-              title: "Describe the color of the sky?",
-              description: "Exam question", 
+              title: "In QuickBooks Online Accountant, what can you access through the + New button?",
+              description: "Knowledge Check", 
             }
           ]  
         } 

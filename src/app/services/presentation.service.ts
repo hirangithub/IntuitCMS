@@ -137,6 +137,59 @@ export class PresentationService {
             ]
           }
         ] 
+      },
+      {
+        title: "Sales and Customers",
+        total_lessons: 6,
+        duration: "12 min",
+        cpe_credits: "1.5", 
+        lessons : [
+          {
+            title: "The customer workflow",
+            learning_outcome:[
+              {
+                title: "Identify how to earn points in the new ProAdvisor benefits program and move through the tiers",
+                type: "Learning Outcome",
+                duration: "30 min",
+                template: "", 
+                additional_description: "Exam (3) KC (1) CPE (2)"
+              },
+              {
+                title: "Recognize where QuickBooks Online sits in Intuit’s product suite",
+                type: "Learning Outcome",
+                duration: "30 min",
+                template: "", 
+                additional_description: "Exam (3) KC (1) CPE (2)"
+              }
+            ]
+          },
+          {
+            title: "The sales center",
+            learning_outcome:[
+              {
+                title: "Introducing workflows",
+                type: "Lesson content specific",
+                duration: "10 min",
+                template: "",
+                additional_description: "Exam (3) KC (1) CPE (2)"
+              },
+              {
+                title: "Module Two Review - Your client's QuickBooks Online",
+                type: "Learning Outcome",
+                duration: "15 min",
+                template: "",
+                additional_description: "KC (1) CPE (2)" 
+              },
+              {
+                title: "Sales and receipts",
+                type: "Lesson content specific",
+                duration: "15 min",
+                template: "",
+                additional_description: "KC (1) CPE (2)" 
+              }
+            ]
+          }
+        ] 
       }
     ]
   }
