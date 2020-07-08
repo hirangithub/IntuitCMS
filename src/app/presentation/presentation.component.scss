@@ -37,3 +37,30 @@
           padding-bottom: 1rem;
       }
   }
+
+  .mat-drawer {
+    ul.unique {
+      li {
+        flex: none !important;
+        padding-right: 1rem;
+        &:first-child {
+          padding-right: 2rem;
+        }
+      }
+    }
+    .title {
+      h2.unique {
+        margin-right: 2rem;
+      }
+    }
+  }
+  
+
+  .unique-position {
+    position: absolute;
+    right: 3rem;
+    top: .6rem;
+    .mat-icon {
+      color: white;
+    }
+  }

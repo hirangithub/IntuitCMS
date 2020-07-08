@@ -162,6 +162,29 @@
             
             <mat-accordion class="example-headers-align" multi>                   
                 <mat-expansion-panel *ngFor="let sl of selectedLessonsList; let i = index" expanded>
+
+                    <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="" class="unique-position">
+                        <mat-icon>more_vert</mat-icon>
+                    </button>
+                    <mat-menu #menu="matMenu">
+                        <button mat-menu-item>
+                          <mat-icon>visibility</mat-icon>
+                          <span>Preview Lesson</span>
+                        </button>
+                        <button mat-menu-item>
+                            <mat-icon>rate_review</mat-icon>
+                            <span>Module Review</span>
+                        </button>
+                        <button mat-menu-item>
+                          <mat-icon>file_copy</mat-icon>
+                          <span>Copy Lesson URL</span>
+                        </button>
+                        <button mat-menu-item>
+                            <mat-icon>delete</mat-icon>
+                            <span>Delete Lesson</span>
+                        </button>                    
+                    </mat-menu>
+
                     <mat-expansion-panel-header>
                         <mat-panel-title>
                             <h3 class="space-0">{{sl.title}}</h3>
@@ -222,10 +245,10 @@
                         <mat-selection-list>
                             <mat-list-option>
                                 <div class="title">
-                                    <h2>Establish a potential client's QucikBooks Online and QuickBookd Self-Employed</h2>                                
+                                    <h2 class="unique">Establish a potential client's QucikBooks Online and QuickBookd Self-Employed</h2>                                
                                 </div>
                                 <div class="description">
-                                    <ul>
+                                    <ul class="unique">
                                         <li>45 min</li>
                                         <li>Exam (3)</li>
                                         <li>CPE (2)</li>
@@ -235,10 +258,10 @@
                             <mat-divider></mat-divider>
                             <mat-list-option>
                                 <div class="title">
-                                    <h2>State the options to migrate clients from other accountancy...</h2>                                
+                                    <h2 class="unique">State the options to migrate clients from other accountancy...</h2>                                
                                 </div>
                                 <div class="description">
-                                    <ul>
+                                    <ul class="unique">
                                         <li>20 min</li>
                                         <li>Exam (2)</li>
                                         <li>CPE (1)</li>

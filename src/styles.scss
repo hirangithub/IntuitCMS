@@ -96,7 +96,15 @@ p strong { font-weight: 500; }
     }
     .mat-input-element {
         caret-color: #ffffff;
-    }    
+    }  
+    
+    // .mat-list-base .mat-list-option {
+    //     &:first-child {
+    //         &.active {
+    //             background-color: red;
+    //         }
+    //     }
+    // }
 }
 .right-container {
     background-color: #f7f7f7;
