@@ -26,6 +26,9 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatChipsModule } from '@angular/material/chips';
 import { MatRippleModule } from '@angular/material/core';
+import {MatCheckboxModule} from '@angular/material/checkbox';
+import {MatRadioModule} from '@angular/material/radio';
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 
 
 @NgModule({
@@ -37,7 +40,8 @@ import { MatRippleModule } from '@angular/material/core';
     PresentationComponent,
     CertificationExamComponent,
     DialogContent,
-    EditTempContent
+    EditTempContent, 
+    EditQuestionTemp
   ],
   imports: [
     BrowserModule,
@@ -57,7 +61,10 @@ import { MatRippleModule } from '@angular/material/core';
     FlexLayoutModule, 
     MatFormFieldModule,
     MatChipsModule,
-    MatRippleModule    
+    MatRippleModule,
+    MatCheckboxModule,
+    MatRadioModule,
+    MatSlideToggleModule    
   ],
   exports: [],
   providers: [],
