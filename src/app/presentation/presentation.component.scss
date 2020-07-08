@@ -1,0 +1,39 @@
+.title {
+    display: flex;
+
+    h2 {
+        margin-bottom: 0;
+    }
+
+    button {
+        margin-left: auto;
+    }
+}
+
+.mat-accordion>.mat-expansion-panel-spacing:first-child, 
+.mat-accordion>*:first-child:not(.mat-expansion-panel) .mat-expansion-panel-spacing {
+    margin-top: 0 !important;
+}
+
+.right-container {
+    .title {
+      h1 {
+        padding-bottom: 1rem; 
+      }    
+    }
+    .add-item {
+      .mat-form-field {
+        font-size: 18px !important;
+      }
+      .mat-form-field {
+          display: block;
+      }
+    }
+  }
+
+  .bundle-dialog-box.v2 {
+      padding: 2rem 0;
+      h2 {
+          padding-bottom: 1rem;
+      }
+  }

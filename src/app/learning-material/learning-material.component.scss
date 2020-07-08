@@ -1,12 +1,25 @@
-.title{
+.title {
   display: flex;
 
-  h2{
+  h2 {
     margin-bottom: 0;
   }
 
-  button{
+  button {
     margin-left: auto;
+  }
+}
+
+.right-container {
+  .title {
+    h1 {
+      padding-bottom: 1rem; 
+    }    
+  }
+  .add-item {
+    .mat-form-field {
+      font-size: 18px !important;
+    }
   }
 }
 

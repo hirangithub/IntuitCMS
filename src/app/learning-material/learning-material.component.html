@@ -3,9 +3,10 @@
     <div fxLayout="column" fxFlex="25" class="left-container">
         <div class="title">
             <h2>Learning outcomes ({{learningOutComes.length}})</h2>
-            <button mat-raised-button color="primary" (click)="openAddLODialog()">Add </button>               
-        </div>
-        
+            <button mat-mini-fab color="primary" (click)="openAddLODialog()">
+                <mat-icon>add</mat-icon>
+            </button>               
+        </div>       
 
          
         <mat-form-field class="example-full-width">
@@ -33,17 +34,20 @@
 
     <div fxFlex="75" class="right-container"> 
         <div class="lo-dialog-box" *ngIf="isAddLODialog">
-            <div class="title">
-                <h2>Learning outcome title</h2>
-                <a href="javascript:void(0)" (click)="closeAddLODialog()">Close</a>
-            </div>
-            <div class="add-item">
-                <mat-form-field class="example-full-width"> 
-                    <mat-label>Search Learning outcomes</mat-label>
-                    <input matInput placeholder="" [(ngModel)]="LO_title"> 
-                </mat-form-field>
-                <button mat-raised-button color="primary" (click)="createNewLO()">Create</button>                   
-            </div>
+
+            <mat-card>
+                <div class="title">
+                    <h1>Create New Learning outcome</h1>                                        
+                </div>
+                <div class="add-item">
+                    <mat-form-field class="example-full-width"> 
+                        <mat-label>Learning outcome title</mat-label>
+                        <input matInput placeholder="" [(ngModel)]="LO_title"> 
+                    </mat-form-field>
+                    <button mat-raised-button color="primary" (click)="createNewLO()">Create</button> &nbsp;&nbsp;
+                    <button mat-raised-button (click)="closeAddLODialog()">Close</button>   
+                </div>
+            </mat-card>            
             
         </div>
 
@@ -69,7 +73,7 @@
             <div fxLayout="column" fxFlex="50" fxLayoutAlign="start top">               
 
                 <mat-toolbar color="primary"> 
-                    <mat-toolbar-row >
+                    <mat-toolbar-row class="pad-zero">
                         <span><h3>Learning Content</h3></span> 
                         <span class="example-spacer"></span>
                         <span class="inn">{{selected_LO.learning_content.learning_content_duration}}</span>
@@ -109,16 +113,7 @@
                             <li>Exams ({{selected_LO.questions.total_exams}})</li>
                             <li>KC ({{selected_LO.questions.total_kc}})</li>
                             <li>CPE ({{selected_LO.questions.total_cpe}})</li>
-                        </ul>
-                        <button mat-icon-button [matMenuTriggerFor]="menu2" aria-label="">
-                            <mat-icon>more_vert</mat-icon>
-                        </button>
-                        <mat-menu #menu2="matMenu">
-                            <button mat-menu-item>
-                              <mat-icon>reorder</mat-icon>
-                              <span>Re-order</span> 
-                            </button>
-                        </mat-menu>
+                        </ul>                        
                     </mat-toolbar-row>
                 </mat-toolbar>           
                 <mat-card>

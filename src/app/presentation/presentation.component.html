@@ -3,9 +3,10 @@
     <div fxLayout="column" fxFlex="25" class="left-container"> 
         <div class="title">
             <h2>Bundles ({{bundleList.length}})</h2>
-            <button mat-raised-button color="primary" (click)="openAddBundlesDialog()">Add </button>               
+            <button mat-mini-fab color="primary" (click)="openAddBundlesDialog()">
+                <mat-icon>add</mat-icon>
+            </button>               
         </div>
-
          
         <mat-form-field class="example-full-width">
             <mat-label>Search Bundles</mat-label>
@@ -25,28 +26,33 @@
 
     <div fxFlex="75" class="right-container"> 
         <div class="bundle-dialog-box" *ngIf="isAddBundlesDialog">
-            <div class="title">
-                <h2>Create new bundle</h2>
-                <a href="javascript:void(0)" (click)="closeAddBundlesDialog()">Close</a>
-                <button mat-raised-button color="primary" (click)="createNewBundle()">Create</button>                   
-            </div>
-            <div class="add-item">
-                <mat-form-field class="example-full-width"> 
-                    <mat-label>Bundle title</mat-label>
-                    <input matInput placeholder="" [(ngModel)]="Bundle_title"> 
-                </mat-form-field>
 
-                <mat-form-field class="example-full-width"> 
-                    <mat-label>Bundle thumbnail</mat-label>
-                    <input matInput placeholder=""> 
-                </mat-form-field>
+            <mat-card>
+                <div class="title">
+                    <h1>Create new bundle</h1>                                       
+                </div>
+                <div class="add-item">
+                    <mat-form-field class="example-full-width"> 
+                        <mat-label>Bundle title</mat-label>
+                        <input matInput placeholder="" [(ngModel)]="Bundle_title"> 
+                    </mat-form-field>    
+                    
+                    <mat-form-field appearance="fill">
+                        <mat-label>Bundle description</mat-label>
+                        <textarea matInput></textarea>
+                    </mat-form-field>
 
-                <mat-form-field appearance="fill">
-                    <mat-label>Bundle description</mat-label>
-                    <textarea matInput></textarea>
-                  </mat-form-field>
-                
-            </div> 
+                    <mat-form-field class="example-full-width">  
+                        <mat-label>Bundle thumbnail</mat-label>
+                        <input matInput placeholder=""> 
+                    </mat-form-field>    
+                     
+                    <button mat-raised-button color="primary" (click)="createNewBundle()">Create</button> &nbsp;&nbsp;
+                    <button mat-raised-button (click)="closeAddBundlesDialog()">Close</button>
+                    
+                </div> 
+            </mat-card>
+
         </div>   
 
         <div class="add-lessons-page" *ngIf="isAddLessonsDialog" >
@@ -90,19 +96,25 @@
                     </mat-menu>
                 </div>  
             </div>
-            <div class="bundle-dialog-box" >
-                <div class="title">
-                    <h2>Add a lesson for this bundle</h2> 
-                </div>
-                <div class="add-item">
-                    <mat-form-field class="example-full-width"> 
-                        <mat-label>Lesson title</mat-label>
-                        <input matInput placeholder=""> 
-                    </mat-form-field> 
-                    <button mat-raised-button color="primary" >Create</button>    
-                    
-                </div> 
+
+            <div class="bundle-dialog-box v2">
+                <mat-card>
+                    <div class="title">
+                        <h2>Add a lesson for this bundle</h2> 
+                    </div>
+                    <div class="add-item">
+                        <mat-form-field class="example-full-width"> 
+                            <mat-label>Lesson title</mat-label>
+                            <input matInput placeholder=""> 
+                        </mat-form-field> 
+                        
+                        <button mat-raised-button color="primary">Create</button>&nbsp;&nbsp;
+                        <button mat-raised-button>Close</button>   
+                    </div> 
+                </mat-card>                
             </div> 
+
+
         </div>
 
         <div fxLayout="row" fxLayoutAlign="fxFlexFill" class="action-panel border-active" *ngIf="!isAddBundlesDialog && !isAddLessonsDialog">
