@@ -23,8 +23,9 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatExpansionModule } from '@angular/material/expansion'; 
 import { FlexLayoutModule } from '@angular/flex-layout';
-import {MatFormFieldModule} from '@angular/material/form-field';
-import {MatChipsModule} from '@angular/material/chips';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatChipsModule } from '@angular/material/chips';
+import { MatRippleModule } from '@angular/material/core';
 
 
 @NgModule({
@@ -55,8 +56,8 @@ import {MatChipsModule} from '@angular/material/chips';
     MatExpansionModule,
     FlexLayoutModule, 
     MatFormFieldModule,
-    MatChipsModule
-    
+    MatChipsModule,
+    MatRippleModule    
   ],
   exports: [],
   providers: [],

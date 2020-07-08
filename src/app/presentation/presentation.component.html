@@ -1,5 +1,5 @@
 <div fxLayout="row" fxFlexFill fxLayoutAlign="start stretch">
-    <div fxLayout="column" fxFlex="25" class="left-container">
+    <div fxLayout="column" fxFlex="" class="left-container">
         <h2>Bundles ({{bundleList.length}})</h2>
          
         <mat-form-field class="example-full-width">
@@ -12,7 +12,7 @@
         </mat-selection-list>
 
     </div>
-    <div fxFlex="75" class="right-container"> 
+    <div fxFlex="" class="right-container"> 
 
         <div fxLayout="row" fxLayoutAlign="fxFlexFill" class="action-panel border-active">
             <div fxFlex="75" >
@@ -87,6 +87,8 @@
                     <br />                   
                     
                     <button mat-raised-button color="accent" (click)=toggleDisplay()><mat-icon>note_add</mat-icon> Include Learning outcome</button>
+                    &nbsp;&nbsp;
+                    <button mat-raised-button><mat-icon>note_add</mat-icon> Include Lesson specific content</button>
 
                 </mat-expansion-panel>
             </mat-accordion>               

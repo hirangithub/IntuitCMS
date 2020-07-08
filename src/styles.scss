@@ -3,9 +3,64 @@
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 ul li { list-style-type: none; }
+p strong { font-weight: 500; }
+
+.mat-h2, 
+.mat-title, 
+.mat-typography h2 {
+    font-size: 18px;
+    line-height: 24px;
+}
+.mat-toolbar, 
+.mat-toolbar h1, 
+.mat-toolbar h2, 
+.mat-toolbar h3, 
+.mat-toolbar h4, 
+.mat-toolbar h5, 
+.mat-toolbar h6 {
+    font-size: 16px;
+    line-height: 20px;    
+}
+.mat-toolbar-row, 
+.mat-toolbar-single-row {
+    padding-right: 0 !important;
+}
+.mat-list-base {
+    padding-top: 0 !important;
+}
+.mat-toolbar-multiple-rows {
+    border-radius: 4px 4px 0 0;
+}
+.mat-card {
+    border-radius: 0 0 4px 4px;
+    min-height: calc(100% - 50px);
+}
+.mat-card-title {
+    font-size: 1rem !important;
+}
+.inn {
+    font-size: 12px;
+    line-height: 18px;
+    font-weight: normal;
+    display: flex;
+    li {
+        padding-left: .6rem;
+    }
+}
+.mat-list-base .mat-list-item .mat-list-text .title {
+    font-size: 18px;
+    font-weight: 500;
+}
+.mat-list-base .mat-list-item .mat-list-text .description {
+    font-size: 14px;
+}
 
 .left-container {
-    height: calc(100vh - 6.4rem);
+    max-width: 25%;
+    @media only screen and (max-width: 1440px) { 
+        max-width: 320px;
+    }
+    min-height: calc(100vh - 6.4rem);
     padding: 1rem;
     background-color: #404040;
     color: #ffffff;
