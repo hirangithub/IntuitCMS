@@ -13,9 +13,11 @@ export class PresentationComponent implements OnInit {
   selectedLessonsList: any
   panelOpenState = false;
   isAddBundlesDialog: boolean = false;
+  isAddLessonsDialog: boolean = false;
   bundleListTitles : any[] = [];
   Bundle_title: string = ""; 
-
+  newLessonsBundleTitle: string = ""; 
+  
   constructor( 
     public presentation: PresentationService
   ) { }
@@ -41,7 +43,8 @@ export class PresentationComponent implements OnInit {
     this.isShow = !this.isShow;
   }
 
-  openAddBundlesDialog(){
+  openAddBundlesDialog(){ 
+    this.isAddLessonsDialog  = false
     this.isAddBundlesDialog = true;
   }
 
@@ -51,7 +54,10 @@ export class PresentationComponent implements OnInit {
 
   createNewBundle(): void{
     this.bundleListTitles.unshift(this.Bundle_title);
-    this.Bundle_title = "";
+    this.newLessonsBundleTitle = this.Bundle_title;
+    this.Bundle_title = ""; 
+    this.closeAddBundlesDialog();
+    this.isAddLessonsDialog = true;
   }
   
 

@@ -49,7 +49,63 @@
             </div> 
         </div>   
 
-        <div fxLayout="row" fxLayoutAlign="fxFlexFill" class="action-panel border-active">
+        <div class="add-lessons-page" *ngIf="isAddLessonsDialog" >
+            <div fxLayout="row" fxLayoutAlign="fxFlexFill" class="action-panel border-active">
+                <div fxFlex="75" >
+                    <ul>
+                        <li><img src="https://live.intuittrainingplatform.com/filestore/ModuleFiles/539/thumb_icon.png?1592894348" title="" /></li>
+                        <li>
+                            <h1 class="space-0">{{newLessonsBundleTitle}}</h1>
+                            <ul>
+                                <li>Total lessons ({{selectedBundle.total_lessons}})</li>
+                                <li>{{selectedBundle.duration}}</li>
+                                <li>{{selectedBundle.cpe_credits}} CPE credits</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <div fxFlex="25" fxLayoutAlign="end center" fxFlexOffset="20px">  
+                    <button mat-raised-button color="primary">Add lesson</button> 
+        
+                    <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="">
+                        <mat-icon>more_vert</mat-icon>
+                    </button>
+                    <mat-menu #menu="matMenu">
+                        <button mat-menu-item>
+                          <mat-icon>reorder</mat-icon>
+                          <span>Re-order lessons</span>
+                        </button>
+                        <button mat-menu-item>
+                            <mat-icon>settings_brightness</mat-icon>
+                            <span>Configure CPE</span>
+                        </button>
+                        <button mat-menu-item>
+                          <mat-icon>edit</mat-icon>
+                          <span>Edit Bundle</span>
+                        </button>
+                        <button mat-menu-item>
+                            <mat-icon>delete</mat-icon>
+                            <span>Delete Bundle</span>
+                        </button>                    
+                    </mat-menu>
+                </div>  
+            </div>
+            <div class="bundle-dialog-box" >
+                <div class="title">
+                    <h2>Add a lesson for this bundle</h2> 
+                </div>
+                <div class="add-item">
+                    <mat-form-field class="example-full-width"> 
+                        <mat-label>Lesson title</mat-label>
+                        <input matInput placeholder=""> 
+                    </mat-form-field> 
+                    <button mat-raised-button color="primary" >Create</button>    
+                    
+                </div> 
+            </div> 
+        </div>
+
+        <div fxLayout="row" fxLayoutAlign="fxFlexFill" class="action-panel border-active" *ngIf="!isAddBundlesDialog && !isAddLessonsDialog">
             <div fxFlex="75" >
                 <ul>
                     <li><img src="https://live.intuittrainingplatform.com/filestore/ModuleFiles/539/thumb_icon.png?1592894348" title="" /></li>
@@ -89,7 +145,8 @@
                 </mat-menu>
             </div>
         </div> 
-        <div fxLayout="column" fxLayoutAlign="fxFlexFill" class="body-content">  
+        
+        <div fxLayout="column" fxLayoutAlign="fxFlexFill" class="body-content" *ngIf="!isAddBundlesDialog && !isAddLessonsDialog">  
             
             <mat-accordion class="example-headers-align" multi>                   
                 <mat-expansion-panel *ngFor="let sl of selectedLessonsList; let i = index" expanded>
@@ -134,6 +191,9 @@
         </div>
     </div>
 </div>
+
+
+
 
 
 <!-- Side drawer -->
