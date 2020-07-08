@@ -24,10 +24,7 @@ export class PresentationComponent implements OnInit {
     public dialog: MatDialog
   ) { }
 
-  openDialog() {
-    this.dialog.open(DialogElementsExampleDialog);
-    console.log('aaa');
-  }
+
 
   ngOnInit(): void {
    
@@ -71,6 +68,11 @@ export class PresentationComponent implements OnInit {
     this.isAddLessonsDialog  = false
     this.isAddBundlesDialog = false;
   }
+
+  openDialog() {
+   this.dialog.open(DialogElementsExampleDialog);
+    
+  }
   
 
 }
@@ -79,4 +81,7 @@ export class PresentationComponent implements OnInit {
   selector: 'dialog-confirm',
   templateUrl: 'dialog-confirm.html',
 })
-export class DialogElementsExampleDialog {}
+export class DialogElementsExampleDialog {
+
+
+}
