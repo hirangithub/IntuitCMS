@@ -72,7 +72,7 @@ export class LearningMaterialComponent implements OnInit {
     this.openQuestionTemplate();
   }
 
-  ngOnInit(): void { }
+  // ngOnInit(): void { }
 
 
 }
