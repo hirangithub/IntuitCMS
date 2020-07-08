@@ -39,7 +39,7 @@ export class LearningService {
           total_cpe: 1,
           data: [ 
             {
-              title: "When you log into QuickBooks Online Accountant, whose books can you directly access and manage?",
+              title: "When you log into QuickBooks Online Accountant, whose books can you direct...",
               description: "Knowledge Check", 
             },
             {
@@ -202,7 +202,7 @@ export class LearningService {
               description: "Knowledge Check", 
             },
             {
-              title: "When you log into QuickBooks Online Accountant, whose books can you directly access and manage?",
+              title: "When you log into QuickBooks Online Accountant, whose books can you direct...", 
               description: "Knowledge Check", 
             },
             {

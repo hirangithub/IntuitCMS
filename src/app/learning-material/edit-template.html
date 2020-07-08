@@ -2,18 +2,28 @@
     
     <header class="popup-header">
         <div class="titles">
-            <h2>Introduction Template</h2>
+            <h1>Introduction Template</h1>
             <p>You are adding Introduction template for <strong>Establish a potential client's QuickBooks Online and QuickBooks Self-Employed needs</strong> learning outcome.</p>
         </div>
 
         <div class="buttons">
-                <button mat-stroked-button>Preview</button>
+                <button mat-raised-button>Preview</button> 
+               
+                <button mat-raised-button color="primary">Save & close</button> 
 
-                <button mat-stroked-button>Save & close</button>
-
-                <button mat-icon-button aria-label="Example icon button with a vertical three dot icon">
-                        <mat-icon>more_vert</mat-icon>
-                      </button>
+                <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="">
+                    <mat-icon>more_vert</mat-icon>
+                </button>
+                <mat-menu #menu="matMenu">
+                    <button mat-menu-item>
+                      <mat-icon>visibility</mat-icon>
+                      <span>Preview Template</span>
+                    </button>                   
+                    <button mat-menu-item (click)="openDialog()">
+                        <mat-icon>delete</mat-icon>
+                        <span>Delete Template</span>
+                    </button>                    
+                </mat-menu>
 
                       <mat-dialog-actions class="close-btn" align="end">
                             <button mat-button mat-dialog-close><mat-icon>close</mat-icon></button>

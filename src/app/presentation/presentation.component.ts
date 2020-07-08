@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PresentationService } from "../services/presentation.service";
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-presentation',
@@ -19,8 +20,14 @@ export class PresentationComponent implements OnInit {
   newLessonsBundleTitle: string = ""; 
   
   constructor( 
-    public presentation: PresentationService
+    public presentation: PresentationService,
+    public dialog: MatDialog
   ) { }
+
+  openDialog() {
+    this.dialog.open(DialogElementsExampleDialog);
+    console.log('aaa');
+  }
 
   ngOnInit(): void {
    
@@ -68,3 +75,8 @@ export class PresentationComponent implements OnInit {
 
 }
 
+@Component({
+  selector: 'dialog-confirm',
+  templateUrl: 'dialog-confirm.html',
+})
+export class DialogElementsExampleDialog {}

@@ -54,25 +54,25 @@
     display: flex;
     justify-content: space-between;
     margin-bottom: 2rem;
-    padding-bottom: 2rem;
+    padding-bottom: .5rem;
     border-bottom: 1px solid #ccc;
 
     .titles {
-        width: 70%;
+        width: 60%;
     }
 
     .buttons {
         position: relative;
-        padding-top: 4rem;
+        padding-top: 3rem;
         
         button {
-            margin-left: 1rem;
+            margin-left: .8rem;
         }
 
         .close-btn {
             position: absolute;
-            right: -1rem;
-            top: 0;
+            right: -1.5rem;
+            top: -1.5rem; 
         }
     }
 }

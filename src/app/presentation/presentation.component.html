@@ -72,7 +72,7 @@
                 </div>
                 <div fxFlex="25" fxLayoutAlign="end center" fxFlexOffset="20px">  
                     <button mat-raised-button color="primary">Add lesson</button> 
-        
+                    
                     <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="">
                         <mat-icon>more_vert</mat-icon>
                     </button>
@@ -88,8 +88,8 @@
                         <button mat-menu-item>
                           <mat-icon>edit</mat-icon>
                           <span>Edit Bundle</span>
-                        </button>
-                        <button mat-menu-item>
+                        </button>                        
+                        <button mat-menu-item (click)="openDialog()">
                             <mat-icon>delete</mat-icon>
                             <span>Delete Bundle</span>
                         </button>                    
