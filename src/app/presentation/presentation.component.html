@@ -3,8 +3,8 @@
         <h2>Bundles (20)</h2>
          
         <mat-form-field class="example-full-width">
-            <mat-label>Search</mat-label>
-            <input matInput placeholder="Bundles">
+            <mat-label>Search Bundles</mat-label>
+            <input matInput placeholder="">
         </mat-form-field>
 
         <mat-selection-list [multiple]="false">            
@@ -96,6 +96,12 @@
                         </mat-list-option>
                     </mat-selection-list>
 
+                    <mat-divider></mat-divider>
+
+                    <br />                   
+                    
+                    <button mat-raised-button (click)=toggleDisplay()><mat-icon>note_add</mat-icon> Include Learning outcome</button>
+
                 </mat-expansion-panel>
             </mat-accordion>               
             
@@ -103,3 +109,11 @@
     </div>
 </div>
 
+
+<!-- Side drawer -->
+<div class="mat-drawer-transition">
+    <div [hidden]="!isShow" class="mat-drawer" [ngClass]="isShow ? 'on' : ''"> 
+        as das dsa dasdas dasd
+    </div>
+    <div [hidden]="!isShow" class="mat-drawer-backdrop" [ngClass]="isShow ? 'mat-drawer-shown' : ''" (click)=toggleDisplay()></div>
+</div>

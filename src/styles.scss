@@ -7,10 +7,27 @@ ul li { list-style-type: none; }
 .left-container {
     height: calc(100vh - 6.4rem);
     padding: 1rem;
-    background-color: yellow;
+    background-color: #404040;
+    color: #ffffff;
+    a,
+    .mat-list-base .mat-list-option {
+        color: #ffffff;
+    }
+    .mat-form-field-appearance-legacy .mat-form-field-underline {
+        background-color: rgba(255,255,255,.42);
+    }
+    .mat-form-field-ripple {
+        background-color: rgba(255,255,255,.87);
+    }
+    .mat-form-field-appearance-legacy .mat-form-field-label {
+        color: rgba(255,255,255,.54);
+    }
+    .mat-input-element {
+        caret-color: #ffffff;
+    }    
 }
 .right-container {
-    background-color: pink;
+    background-color: #f7f7f7;
     padding: 1rem 2rem;
 }
 
@@ -21,7 +38,7 @@ ul li { list-style-type: none; }
 .action-panel {
     padding-bottom: 1rem;
     &.border-active {
-        border-bottom: 1px solid gray;
+        border-bottom: 1px solid #ccc;
     }    
 }
 
@@ -104,4 +121,64 @@ ul li { list-style-type: none; }
         }
         
     }
+}
+
+
+.mat-list-base .mat-list-item .mat-list-item-content-reverse, 
+.mat-list-base .mat-list-option .mat-list-item-content-reverse {
+    padding: 10px 16px !important;
+}
+
+.example-container {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #eee;
+  }
+
+
+.mat-drawer-backdrop {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    position: fixed;
+    display: block;
+    z-index: 3;
+    visibility: hidden;
+}
+
+.mat-drawer-transition .mat-drawer-backdrop {
+    transition-duration: 400ms;
+    transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+    transition-property: background-color, visibility;
+}
+.mat-drawer-backdrop.mat-drawer-shown {
+    visibility: visible;
+    background-color: rgba(0,0,0,.6);
+}
+
+.mat-drawer {
+    position: fixed;
+    z-index: 4;
+    display: block;
+    top: 0;
+    bottom: 0; 
+    outline: 0;
+    overflow-y: auto;
+    background-color: #ffffff;
+    visibility: hidden;
+    box-shadow: none;
+    width: 20rem;
+    left: 100%;    
+    transform: translate(0,0);
+} 
+
+.mat-drawer.on {
+    box-shadow: 0 8px 10px -5px rgba(0,0,0,.2), 0 16px 24px 2px rgba(0,0,0,.14), 0 6px 30px 5px rgba(0,0,0,.12);
+    
+    visibility: visible;
+    transform: translate(-100%,0);
 }
