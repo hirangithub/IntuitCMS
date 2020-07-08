@@ -31,6 +31,7 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatRadioModule} from '@angular/material/radio';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import { FormsModule } from '@angular/forms';
+import {DragDropModule} from '@angular/cdk/drag-drop';
 
 
 @NgModule({
@@ -67,7 +68,8 @@ import { FormsModule } from '@angular/forms';
     MatCheckboxModule,
     MatRadioModule,
     MatSlideToggleModule, 
-    FormsModule
+    FormsModule,
+    DragDropModule
   ],
   exports: [],
   providers: [],
