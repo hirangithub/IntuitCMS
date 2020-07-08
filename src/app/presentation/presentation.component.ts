@@ -59,6 +59,11 @@ export class PresentationComponent implements OnInit {
     this.closeAddBundlesDialog();
     this.isAddLessonsDialog = true;
   }
+
+  closeAddLessonsBundlesDialog(){
+    this.isAddLessonsDialog  = false
+    this.isAddBundlesDialog = false;
+  }
   
 
 }
