@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog'; 
 import { MatFormFieldControl } from '@angular/material/form-field';
 import { LearningService } from "../services/learning.service";
+import {CdkDragDrop, moveItemInArray, transferArrayItem} from '@angular/cdk/drag-drop';
 
 
 @Component({
@@ -94,6 +95,8 @@ export class LearningMaterialComponent implements OnInit {
   }
 
 
+
+
 }
 
 @Component({
@@ -129,3 +132,9 @@ export class EditTempContent {}
 })
 
 export class EditQuestionTemp {} 
+
+
+
+
+
+
