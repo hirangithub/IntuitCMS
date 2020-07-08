@@ -18,11 +18,18 @@ export class LearningMaterialComponent implements OnInit {
  
   selected_LO: any;
   learningContent: any;
+  LO_title: string = ""; 
   questions: any; 
+  isAddLODialog: boolean = false;
   learningOutComes: any[] = this.learning.getLearningOutcomes();
-  
+  learningOutComesTitles : any[] = []
+
   ngOnInit(): void { 
     this.viewLearningOutcomes(0);  
+
+      this.learningOutComes.forEach(element => {
+        this.learningOutComesTitles.push(element.lo_title)
+      });
   }
 
   viewLearningOutcomes(i): void { 
@@ -72,7 +79,19 @@ export class LearningMaterialComponent implements OnInit {
     this.openQuestionTemplate();
   }
 
-  // ngOnInit(): void { }
+  openAddLODialog(){
+    this.isAddLODialog = true;
+  }
+
+  closeAddLODialog(){
+    this.isAddLODialog = false;
+  }
+
+
+  createNewLO(): void{
+    this.learningOutComesTitles.unshift(this.LO_title);
+    this.LO_title = "";
+  }
 
 
 }

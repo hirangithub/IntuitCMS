@@ -1,0 +1,33 @@
+.title{
+  display: flex;
+
+  h2{
+    margin-bottom: 0;
+  }
+
+  button{
+    margin-left: auto;
+  }
+}
+
+.lo-dialog-box{
+  h2{
+    margin-bottom: 0;
+  }
+
+  .add-item{
+    
+
+    mat-form-field{
+      width: 100%; 
+  
+      input{
+        width: 100%;
+      } 
+ 
+    } 
+  } 
+}
+
+ 
+ 

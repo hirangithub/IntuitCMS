@@ -23,12 +23,14 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatExpansionModule } from '@angular/material/expansion'; 
 import { FlexLayoutModule } from '@angular/flex-layout';
+
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatChipsModule } from '@angular/material/chips';
 import { MatRippleModule } from '@angular/material/core';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatRadioModule} from '@angular/material/radio';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -64,7 +66,8 @@ import {MatSlideToggleModule} from '@angular/material/slide-toggle';
     MatRippleModule,
     MatCheckboxModule,
     MatRadioModule,
-    MatSlideToggleModule    
+    MatSlideToggleModule, 
+    FormsModule
   ],
   exports: [],
   providers: [],
