@@ -13,12 +13,12 @@
             <input matInput placeholder="">
         </mat-form-field>
 
-        <mat-selection-list [multiple]="false" *ngIf="!isAddBundlesDialog">            
+        <mat-selection-list [multiple]="false" *ngIf="!isAddBundlesDialog && !isAddLessonsDialog">            
             <mat-list-option *ngFor="let bl of bundleList; let i = index" [ngClass]="{'active': i =='0'}" (click)="viewLearningOutcomes(i)" >{{bl.title}}</mat-list-option>         
         </mat-selection-list>
 
-        <mat-selection-list [multiple]="false" *ngIf="isAddBundlesDialog">      
-            <mat-list-option >{{Bundle_title}}</mat-list-option>      
+        <mat-selection-list [multiple]="false" *ngIf="isAddBundlesDialog || isAddLessonsDialog">      
+            <mat-list-option *ngIf="!isAddLessonsDialog">{{Bundle_title}}</mat-list-option>      
             <mat-list-option *ngFor="let bl_title of bundleListTitles; let i = index" >{{bl_title}}</mat-list-option>         
         </mat-selection-list>
 
@@ -109,7 +109,7 @@
                         </mat-form-field> 
                         
                         <button mat-raised-button color="primary">Create</button>&nbsp;&nbsp;
-                        <button mat-raised-button>Close</button>   
+                        <button mat-raised-button (click)="closeAddLessonsBundlesDialog()">Close</button>   
                     </div> 
                 </mat-card>                
             </div> 
