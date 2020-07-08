@@ -59,7 +59,7 @@
                         </mat-menu>
                     </mat-toolbar-row>
                 </mat-toolbar>               
-
+ 
                 <mat-card>
                     <mat-selection-list #shoes [multiple]="false">
                         <mat-list-option (click)="openEditPopup()">Learning Content 1</mat-list-option>
@@ -90,7 +90,7 @@
                 <mat-card>
                     <mat-selection-list>
                         <mat-selection-list #shoes [multiple]="false">
-                            <mat-list-option>Question 1</mat-list-option>
+                            <mat-list-option (click)="openQuestionPopup()">Question 1</mat-list-option>
                             <mat-list-option>Question 2</mat-list-option>
                             <mat-list-option>Question 3</mat-list-option>
                             <mat-list-option>Question 4</mat-list-option>

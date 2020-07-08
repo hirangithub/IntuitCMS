@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog'; 
-import {MatFormFieldControl} from '@angular/material/form-field';
 
 @Component({
   selector: 'app-learning-material',
@@ -14,6 +13,7 @@ export class LearningMaterialComponent implements OnInit {
   typesOfShoes: string[] = ['LO 1', 'LO 2', 'LO 3', 'LO 4', 'LO 5'];
 
 
+  //Lesson Template select
   openDialog() {
     const dialogRef = this.dialog.open(DialogContent);
 
@@ -23,6 +23,7 @@ export class LearningMaterialComponent implements OnInit {
   }
 
 
+  //Lesson Edit
   openEditTemplateDialog() {
     const dialogRef = this.dialog.open(EditTempContent);
 
@@ -31,13 +32,31 @@ export class LearningMaterialComponent implements OnInit {
     });
   }
 
-  ngOnInit(): void { 
+
+  //Edit Question
+  openQuestionTemplate() {
+    const dialogRef = this.dialog.open(EditQuestionTemp);
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('');
+    });
   }
 
-
+  
+  //Lesson Edit
   openEditPopup(){
     this.openEditTemplateDialog();
   }
+
+
+  //Edit Question
+  openQuestionPopup(){
+    this.openQuestionTemplate();
+  }
+
+  ngOnInit(): void { }
+
+
 }
 
 @Component({
@@ -50,6 +69,9 @@ export class LearningMaterialComponent implements OnInit {
 export class DialogContent {}
 
 
+
+
+
 @Component({
   selector: 'edit-template',
   templateUrl: 'edit-template.html',
@@ -57,3 +79,16 @@ export class DialogContent {}
 })
 
 export class EditTempContent {} 
+
+
+
+
+
+
+@Component({
+  selector: 'edit-question',
+  templateUrl: 'edit-question.html',
+  styleUrls: ['./select-template.scss']
+})
+
+export class EditQuestionTemp {} 

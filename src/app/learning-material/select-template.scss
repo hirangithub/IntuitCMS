@@ -30,3 +30,58 @@
     }
 }
 
+.popup-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid #ccc;
+
+    .titles {
+        width: 70%;
+    }
+
+    .buttons {
+        position: relative;
+        padding-top: 4rem;
+        
+        button {
+            margin-left: 1rem;
+        }
+
+        .close-btn {
+            position: absolute;
+            right: 0;
+            top: 0;
+        }
+    }
+}
+
+
+.badge {
+    .mat-standard-chip {
+        height: auto;
+
+        p {
+            margin: 0 0 0 5px;
+            line-height: 1.3;
+        }
+    }
+    
+}
+
+
+
+
+
+
+
+.example-viewport {
+    height: 200px;
+    width: 200px;
+    border: 1px solid black;
+  }
+  
+  .example-item {
+    height: 50px;
+  }
