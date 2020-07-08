@@ -5,19 +5,55 @@
     </div>
 
     <div class="buttons">
-
-        <!-- <button mat-stroked-button>Save & close</button>
+        <mat-slide-toggle class="example-margin" [color]="color" [checked]="checked" [disabled]="disabled"></mat-slide-toggle>
+        <button mat-stroked-button>Save & close</button>
 
         <button mat-icon-button aria-label="Example icon button with a vertical three dot icon">
             <mat-icon>more_vert</mat-icon>
-            </button> -->
+            </button>
 
-            <!-- <mat-dialog-actions class="close-btn" align="end">
+            <mat-dialog-actions class="close-btn" align="end">
             <button mat-button mat-dialog-close><mat-icon>close</mat-icon></button>
-        </mat-dialog-actions> -->
+        </mat-dialog-actions>
     </div>
 </header>
 
+
+<mat-dialog-content class="mat-typography">
+    <div class="container template-grid" fxLayout="row" fxLayoutWrap="" fxLayoutGap="2%" fxLayoutAlign="left">
+        <div fxFlex="100%">
+            <mat-label>Exam type*</mat-label>
+            <br><br>
+            <mat-radio-group [(ngModel)]="labelPosition">
+                <mat-radio-button class="example-margin" value="after">Certification Exam</mat-radio-button>
+                <br><br>
+                <mat-radio-button class="example-margin" value="before">Knowledge Check</mat-radio-button>
+                <br><br>
+                <mat-radio-button class="example-margin" value="before">CPE Assessment</mat-radio-button>
+              </mat-radio-group>
+        </div> 
+        
+    </div> 
+    <br><br>
+    <div class="container template-grid" fxLayout="row" fxLayoutWrap="" fxLayoutGap="2%" fxLayoutAlign="left">
+        <div fxFlex="100%">
+            <mat-form-field appearance="fill" fxFlex="100%">
+                <mat-label>Question introduction</mat-label>
+                <textarea rows="7" matInput placeholder=""></textarea>
+            </mat-form-field>
+        </div>
+    </div>
+
+    <div class="container template-grid" fxLayout="row" fxLayoutWrap="" fxLayoutGap="2%" fxLayoutAlign="left">
+        <div fxFlex="100%">
+            <mat-form-field appearance="fill" fxFlex="100%">
+                <mat-label>Question title</mat-label>
+                <input matInput placeholder="Placeholder">
+            </mat-form-field>
+        </div>
+    </div>
+    
+</mat-dialog-content>
 
 
 <br><br>

@@ -12,14 +12,21 @@ export class PresentationComponent implements OnInit {
   selectedBundle: any;
   selectedLessonsList: any
   panelOpenState = false;
+  isAddBundlesDialog: boolean = false;
+  bundleListTitles : any[] = [];
+  Bundle_title: string = ""; 
 
   constructor( 
     public presentation: PresentationService
   ) { }
 
   ngOnInit(): void {
-    console.log(this.bundleList)
+   
     this.viewLearningOutcomes(0);
+
+    this.bundleList.forEach(element => {
+      this.bundleListTitles.push(element.title); 
+    });
     
   }  
 
@@ -32,6 +39,19 @@ export class PresentationComponent implements OnInit {
   isShow= false; 
   toggleDisplay() {
     this.isShow = !this.isShow;
+  }
+
+  openAddBundlesDialog(){
+    this.isAddBundlesDialog = true;
+  }
+
+  closeAddBundlesDialog(){
+    this.isAddBundlesDialog = !this.isAddBundlesDialog;
+  }
+
+  createNewBundle(): void{
+    this.bundleListTitles.unshift(this.Bundle_title);
+    this.Bundle_title = "";
   }
   
 
