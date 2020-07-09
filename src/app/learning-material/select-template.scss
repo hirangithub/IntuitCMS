@@ -60,6 +60,9 @@
 
     .titles {
         width: 60%;
+        &.spec {
+            width: 50%;
+        }
     }
 
     .buttons {
@@ -78,6 +81,15 @@
     }
 }
 
+.popup-ul {
+    display: flex;
+    align-items: center;
+    li {
+        &:first-child {
+            padding-right: 1rem;
+        }
+    }
+}
 
 .badge {
     .mat-standard-chip {
