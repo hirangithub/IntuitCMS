@@ -52,20 +52,13 @@
         </div>
 
         <div fxLayout="row" fxLayoutAlign="fxFlexFill" class="action-panel border-active" *ngIf="!isAddLODialog">
-            <div fxFlex="75" fxLayoutAlign="start center">
+            <div fxFlex="80" fxLayoutAlign="start center">
                 <h1 class="space-0">{{selected_LO.lo_title}}</h1>
             </div>
-            <div fxFlex="25" fxLayoutAlign="end center" fxFlexOffset="20px">  
+            <!-- <div fxFlex="25" fxLayoutAlign="end center" fxFlexOffset="20px">  
                 <button mat-raised-button color="primary" (click)="openDialog()">Add learning content</button>               
-                <!-- <mat-form-field appearance="fill">
-                    <mat-label>Favorite food</mat-label>
-                    <mat-select>
-                      <mat-option *ngFor="let food of foods" [value]="food.value">
-                        {{food.viewValue}}
-                      </mat-option>
-                    </mat-select>
-                </mat-form-field> -->
-            </div>
+                
+            </div> -->
         </div>
 
 
@@ -94,12 +87,16 @@
                 </mat-toolbar>               
 
                 <mat-card>
-                    <mat-selection-list [multiple]="false">
+                    <mat-selection-list [multiple]="false" class="lo-spec">
                         <mat-list-option *ngFor="let lc of learningContent" (click)="openEditPopup()">
                             <div class="title">{{lc.title}}</div>
                             <div class="description">{{lc.description}}</div>
                         </mat-list-option> 
-                    </mat-selection-list>
+                    </mat-selection-list>                    
+
+                    <div class="action-panel-2">
+                        <button mat-raised-button color="primary" (click)="openDialog()"><mat-icon>queue</mat-icon> Add learning content</button> 
+                    </div>                    
                 </mat-card>
                 
             </div>
@@ -119,12 +116,16 @@
                 </mat-toolbar>           
                 <mat-card>
                     <mat-selection-list (click)="openQuestionPopup()">
-                        <mat-selection-list #shoes [multiple]="false">
+                        <mat-selection-list #shoes [multiple]="false" class="lo-spec">
                             <mat-list-option *ngFor="let q of questions">
                                 <div class="title">{{q.title}}</div>
                                 <div class="description">{{q.description}}</div>
                             </mat-list-option> 
                         </mat-selection-list>
+
+                        <div class="action-panel-2">
+                            <button mat-raised-button color="primary" (click)="openQuestionPopup()"><mat-icon>note_add</mat-icon> Add question</button> 
+                        </div>  
                     </mat-selection-list>
                 </mat-card>               
             </div>
