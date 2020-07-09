@@ -41,6 +41,32 @@
   } 
 }
 
+.mat-list-base.lo-spec {
+  padding-bottom: 1.5rem;
+}
+
+.action-panel-2 {
+  margin-top: 1rem;
+  padding: 1rem 0;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  border-top: 1px solid rgba(0,0,0,.12);
+
+  .mat-divider-horizontal {
+    position: static; 
+  }
+  button {
+    margin: 0 1.8rem;
+    .mat-icon {
+      color: white;
+      padding-right: .2rem;
+    }
+  }
+}
+
+
  
  
 
