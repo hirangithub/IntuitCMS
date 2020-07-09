@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PresentationService } from "../services/presentation.service";
 import { MatDialog, MatDialogRef } from '@angular/material/dialog';
+import { DialogContent } from "../learning-material/learning-material.component";
 
 @Component({
   selector: 'app-presentation',
@@ -69,10 +70,9 @@ export class PresentationComponent implements OnInit {
     this.isAddBundlesDialog = false;
   }
 
-  // openDialog() {
-  //  this.dialog.open(DialogElementsExampleDialog);
-    
-  // }
+  openContentTemplate(){
+    this.dialog.open(DialogContent);
+  }
 
 
   openDialog(): void {
@@ -99,3 +99,5 @@ export class DialogElementsExampleDialog {
     this.dialogRef.close();
   }
 }
+
+

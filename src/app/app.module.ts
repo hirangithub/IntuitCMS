@@ -42,7 +42,7 @@ import {DragDropModule} from '@angular/cdk/drag-drop';
     LearningMaterialComponent,
     PresentationComponent,
     CertificationExamComponent,
-    DialogContent,
+    DialogContent, 
     EditTempContent, 
     EditQuestionTemp
   ],
@@ -69,7 +69,7 @@ import {DragDropModule} from '@angular/cdk/drag-drop';
     MatRadioModule,
     MatSlideToggleModule, 
     FormsModule,
-    DragDropModule
+    DragDropModule, 
   ],
   exports: [],
   providers: [],
