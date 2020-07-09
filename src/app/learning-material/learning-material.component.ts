@@ -3,6 +3,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { MatFormFieldControl } from '@angular/material/form-field';
 import { LearningService } from "../services/learning.service";
 import {CdkDragDrop, moveItemInArray, transferArrayItem} from '@angular/cdk/drag-drop';
+import { DialogElementsExampleDialog } from "../presentation/presentation.component";
 
 
 @Component({
@@ -131,7 +132,20 @@ export class DialogContent implements OnInit{
   styleUrls: ['./select-template.scss']
 })
 
-export class EditTempContent {} 
+export class EditTempContent  implements OnInit{ 
+
+  constructor(
+    public dialog: MatDialog, 
+  ) { }
+
+  ngOnInit(): void {  
+
+  }
+
+  deleteDialog(){
+    const openEditTemp = this.dialog.open(DialogElementsExampleDialog); 
+  }
+} 
 
 
 
