@@ -158,7 +158,21 @@ export class EditTempContent  implements OnInit{
   styleUrls: ['./select-template.scss']
 })
 
-export class EditQuestionTemp {} 
+export class EditQuestionTemp  implements OnInit{
+
+
+  constructor(
+    public dialog: MatDialog, 
+  ) { }
+
+  ngOnInit(): void {  
+
+  }
+
+  deleteDialog(){
+    const openEditTemp = this.dialog.open(DialogElementsExampleDialog); 
+  }
+} 
 
 
 
