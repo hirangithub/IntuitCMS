@@ -134,8 +134,8 @@
                     </mat-toolbar-row>
                 </mat-toolbar>           
                 <mat-card>
-                    <mat-selection-list (click)="openQuestionPopup()">
-                        <mat-selection-list #shoes [multiple]="false" class="lo-spec">
+                    <mat-selection-list>
+                        <mat-selection-list #shoes [multiple]="false" class="lo-spec"  (click)="openQuestionPopup()">
                             <mat-list-option *ngFor="let q of questions">
                                 <div class="title">{{q.title}}</div>
                                 <div class="description">{{q.description}}</div>
