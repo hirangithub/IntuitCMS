@@ -86,6 +86,11 @@ export class PresentationComponent implements OnInit {
     this.dialog.open(CPEDialog);
   }
 
+  openCopyUrl(){ 
+    this.dialog.open(CopyurlDialog);
+  }
+ 
+  
 }
 
 
@@ -111,6 +116,22 @@ export class DialogElementsExampleDialog {
   styleUrls: ['../learning-material/select-template.scss']
 })
 export class CPEDialog {
+     
+  constructor(
+    public dialogRef: MatDialogRef<DialogElementsExampleDialog>,
+  ) { }
+
+  onNoClick(): void {
+    this.dialogRef.close();
+  }
+}
+
+
+@Component({
+  selector: 'app-copy-url',
+  templateUrl: 'copy-url.html',
+})
+export class CopyurlDialog {
      
   constructor(
     public dialogRef: MatDialogRef<DialogElementsExampleDialog>,
