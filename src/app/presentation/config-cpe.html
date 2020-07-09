@@ -9,19 +9,7 @@
                
                 <button mat-raised-button color="primary">Save & close</button> 
 
-                <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="">
-                    <mat-icon>more_vert</mat-icon>
-                </button>
-                <mat-menu #menu="matMenu">
-                    <button mat-menu-item>
-                      <mat-icon>visibility</mat-icon>
-                      <span>Preview Template</span>
-                    </button>                   
-                    <button mat-menu-item (click)="deleteDialog()">
-                        <mat-icon>delete</mat-icon>
-                        <span>Delete Template</span>
-                    </button>                    
-                </mat-menu>
+                 
 
                 <mat-dialog-actions class="close-btn">
                     <button mat-button mat-dialog-close><mat-icon>close</mat-icon></button>
