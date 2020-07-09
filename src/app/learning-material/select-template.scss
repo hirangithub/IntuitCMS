@@ -18,7 +18,10 @@
         border: 1px solid #ccc;
         margin-top: 2rem;
         cursor: pointer;
-        height: 10rem;
+        height: 14rem;
+        @media only screen and (max-width: 1440px) {
+            height: 10rem;
+        }
         //transition: background-color .5s, transform .5s ease;
         .card-wrap {
             text-align: center;
