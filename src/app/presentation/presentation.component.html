@@ -85,6 +85,10 @@
                             <mat-icon>settings_brightness</mat-icon>
                             <span>Configure CPE</span>
                         </button>
+                        <button mat-menu-item (click)="openCopyUrl()">
+                            <mat-icon>file_copy</mat-icon>
+                            <span>Copy Bundle URL</span>
+                        </button>
                         <button mat-menu-item >
                           <mat-icon>edit</mat-icon>
                           <span>Edit Bundle</span>
@@ -145,6 +149,10 @@
                     <button mat-menu-item (click)="openCPE()">
                         <mat-icon>settings_brightness</mat-icon>
                         <span>Configure CPE</span>
+                    </button>
+                    <button mat-menu-item (click)="openCopyUrl()">
+                        <mat-icon>file_copy</mat-icon>
+                        <span>Copy Bundle URL</span>
                     </button>
                     <button mat-menu-item>
                       <mat-icon>edit</mat-icon>

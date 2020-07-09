@@ -1,1 +1,17 @@
-<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque ipsum impedit nisi deleniti cum provident, fugit minima minus quibusdam expedita. Commodi animi assumenda nihil voluptas, facilis repellendus quos in beatae!</p>
+<div class="unique-modal" style="width: 20rem;">
+    <h1 class="mat-dialog-title">Copy to clipboard</h1>
+    <div class="mat-dialog-content">
+        <mat-form-field appearance="fill" fxFlex="100%">
+            <mat-label>Item URL</mat-label>
+            <input matInput type="text" value="https://e2e.qbo.intuit.com/qbo23/login?pagereq=%2Fapp%2Faccountant%2Ftraining%3FcourseID%3Dqbointro%26scope%3DFull">            
+        </mat-form-field>
+    </div>
+
+    <div class="mat-dialog-actions">
+        <button class="mat-focus-indicator mat-raised-button mat-button-base mat-accent"><span>Copy URL</span></button> &nbsp;&nbsp;
+
+        <button (click)="onNoClick()" class="mat-focus-indicator mat-button mat-button-base">Close</button>
+    </div>
+
+</div>
+

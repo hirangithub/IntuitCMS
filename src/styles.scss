@@ -248,9 +248,7 @@ p strong { font-weight: 500; }
         border-radius: 4px 4px 0 0 !important;
     }    
 }
-.mat-expansion-panel-header-title {
-    //color: #ffffff;
-}
+
 .mat-expansion-panel .mat-expansion-panel-header.cdk-keyboard-focused:not([aria-disabled=true]), 
 .mat-expansion-panel .mat-expansion-panel-header.cdk-program-focused:not([aria-disabled=true]), 
 .mat-expansion-panel:not(.mat-expanded) .mat-expansion-panel-header:hover:not([aria-disabled=true]),
@@ -258,10 +256,6 @@ p strong { font-weight: 500; }
 .mat-expansion-panel-header.mat-expanded:hover {
     //background-color: #3f51b5 !important;
     background-color: rgba(0,0,0,.04) !important;
-}
-.mat-expansion-panel-header-description, 
-.mat-expansion-indicator::after {
-    //color: #ffffff;
 }
 .mat-list-base .mat-list-item .mat-list-item-content-reverse, 
 .mat-list-base .mat-list-option .mat-list-item-content-reverse {
