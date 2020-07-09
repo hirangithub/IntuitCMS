@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PresentationService } from "../services/presentation.service";
-import { MatDialog } from '@angular/material/dialog';
+import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-presentation',
@@ -69,19 +69,33 @@ export class PresentationComponent implements OnInit {
     this.isAddBundlesDialog = false;
   }
 
-  openDialog() {
-   this.dialog.open(DialogElementsExampleDialog);
+  // openDialog() {
+  //  this.dialog.open(DialogElementsExampleDialog);
     
-  }
-  
+  // }
+
+
+  openDialog(): void {
+    this.dialog.open(DialogElementsExampleDialog);
+    // const dialogRef = this.dialog.open(DialogElementsExampleDialog, {
+      
+    // });    
+  }  
 
 }
+
 
 @Component({
   selector: 'dialog-confirm',
   templateUrl: 'dialog-confirm.html',
 })
 export class DialogElementsExampleDialog {
+     
+  constructor(
+    public dialogRef: MatDialogRef<DialogElementsExampleDialog>,
+  ) { }
 
-
+  onNoClick(): void {
+    this.dialogRef.close();
+  }
 }

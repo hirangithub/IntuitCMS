@@ -89,7 +89,7 @@
                           <mat-icon>edit</mat-icon>
                           <span>Edit Bundle</span>
                         </button>                        
-                        <button mat-menu-item>
+                        <button mat-menu-item (click)="openDialog()">
                             <mat-icon>delete</mat-icon>
                             <span>Delete Bundle</span>
                         </button>                    
@@ -150,7 +150,7 @@
                       <mat-icon>edit</mat-icon>
                       <span>Edit Bundle</span>
                     </button>
-                    <button mat-menu-item  (click)="openDialog()">
+                    <button mat-menu-item (click)="openDialog()">
                         <mat-icon>delete</mat-icon>
                         <span>Delete Bundle</span>
                     </button>                    
@@ -179,7 +179,7 @@
                           <mat-icon>file_copy</mat-icon>
                           <span>Copy Lesson URL</span>
                         </button>
-                        <button mat-menu-item>
+                        <button mat-menu-item (click)="openDialog()">
                             <mat-icon>delete</mat-icon>
                             <span>Delete Lesson</span>
                         </button>                    

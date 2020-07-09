@@ -327,3 +327,13 @@ p strong { font-weight: 500; }
     visibility: visible;
     transform: translate(-100%,0);
 }
+
+.unique-modal {
+    h1 {
+        border-bottom: 1px solid #ccc;
+        padding-bottom: .5rem;
+    }
+    .mat-dialog-actions {
+        min-height: 75px;
+    }
+}
