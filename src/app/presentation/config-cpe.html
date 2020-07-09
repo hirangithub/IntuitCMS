@@ -1,105 +1,75 @@
-    <header class="popup-header">
+    <header class="popup-header cpe-content">
         <div class="titles">
-            <h1>Introduction Template</h1>
-            <p>You are adding Introduction template for <strong>Establish a potential client's QuickBooks Online and QuickBooks Self-Employed needs</strong> learning outcome.</p>
+            <h1>Configure CPE</h1>
+            <p>CPE for <strong>Getting started in QuickBooks Online Accountant</strong> and 1.5CPE can be awarded.</p>
         </div>
 
-        <div class="buttons">
-                <button mat-raised-button>Preview</button> 
-               
-                <button mat-raised-button color="primary">Save & close</button> 
+        <div class="buttons">               
+            <button mat-raised-button color="primary">Save & close</button>                 
 
-                 
-
-                <mat-dialog-actions class="close-btn">
-                    <button mat-button mat-dialog-close><mat-icon>close</mat-icon></button>
-                </mat-dialog-actions>
+            <mat-dialog-actions class="close-btn">
+                <button mat-button mat-dialog-close><mat-icon>close</mat-icon></button>
+            </mat-dialog-actions>
         </div>
     </header>
 
-
-    <mat-dialog-content class="mat-typography">
+    <mat-dialog-content class="mat-typography cpe-content">
         <div class="container template-grid" fxLayout="row" fxLayoutWrap fxLayoutGap="2%" fxLayoutAlign="left">
-            <div fxFlex="100%">
-                <mat-form-field appearance="fill" fxFlex="100%">
-                    <mat-label>Title</mat-label>
-                    <input matInput placeholder="Placeholder">
-                </mat-form-field>
+            <div fxFlex="100%" style="padding-right: 1.5rem;">
+                <ul>
+                    <li>Enable CPE</li>
+                    <li><mat-slide-toggle></mat-slide-toggle></li>
+                </ul>                
             </div>
     
             <div fxFlex="100%">
                 <mat-form-field appearance="fill" fxFlex="100%">
-                    <mat-label>Learning Outcomes</mat-label>
-                    <input matInput placeholder="Placeholder">
+                    <mat-label>CPE exam questions</mat-label>
+                    <input matInput placeholder="">
                 </mat-form-field>
             </div>
         </div> 
     
     
         <div class="container template-grid" fxLayout="row" fxLayoutWrap="" fxLayoutGap="2%" fxLayoutAlign="left">
-            <div fxFlex="100%">
+            <div fxFlex="100%" style="padding-right: 1.5rem;">
                 <mat-form-field appearance="fill" fxFlex="100%">
-                    <mat-label>Lesson background</mat-label>
-                    <input matInput placeholder="Placeholder">
+                    <mat-label>Set CPE survey URL</mat-label>
+                    <input matInput placeholder="">
                 </mat-form-field>
             </div>
     
             <div fxFlex="100%">
-                <mat-form-field appearance="fill" fxFlex="100%">
-                    <mat-label>Learning Outcomes</mat-label>
-                    <input matInput placeholder="Placeholder">
-                </mat-form-field>
+                <ul>
+                    <li>Learning outcomes tested</li>
+                    <li style="padding-top: .5rem; display: block;"><img src="http://testing.volume.co.uk/Intuit-CMS/cpe.PNG" title="" style="width: 45%;" /></li>
+                </ul>  
             </div>
         </div> 
-            
-    
+
         <div class="container template-grid" fxLayout="row" fxLayoutWrap="" fxLayoutGap="2%" fxLayoutAlign="left">
-            <div fxFlex="100%">
+            <div fxFlex="100%" style="padding-right: 1.5rem;">
                 <mat-form-field appearance="fill" fxFlex="100%">
-                    <mat-label>Background content</mat-label>
-                    <textarea rows="7" matInput placeholder=""></textarea>
-                </mat-form-field>
-            </div>
-        </div> 
-    
-    
-        <div class="container template-grid" fxLayout="row" fxLayoutWrap="" fxLayoutGap="2%" fxLayoutAlign="left">
-            <div fxFlex="100%">
-                <mat-form-field appearance="fill" fxFlex="100%">
-                    <mat-label>Background content</mat-label>
-                    <textarea rows="5" matInput placeholder=""></textarea>
+                    <mat-label>Set CPE level</mat-label>
+                    <input matInput placeholder="">
                 </mat-form-field>
             </div>
     
             <div fxFlex="100%">
-                <mat-label>Scene setting image</mat-label>
-                <br><br>
-                <button mat-stroked-button>Browse</button>
-            </div>
-        </div> 
-    
-        <div class="container template-grid" fxLayout="row" fxLayoutWrap="" fxLayoutGap="2%" fxLayoutAlign="left">
-            <div fxFlex="100%">
-                <mat-form-field appearance="fill" fxFlex="100%">
-                    <mat-label>Vimeo video URL</mat-label>
-                    <input matInput placeholder="https://vimeo.com/76978564">
-                </mat-form-field>
-            </div>
-    
-            <div fxFlex="100%" fxLayoutGap="2%">
-                <mat-form-field appearance="fill" fxFlex="130px">
-                    <mat-label>Content duration</mat-label>
-                    <input matInput placeholder="MM : SS">
-                </mat-form-field>
-     
-                <mat-chip-list aria-label="" class="badge">
-                    <mat-chip><mat-icon>info</mat-icon> <p>Based on the content updated <strong>03:30 min</strong> durations is suggested.</p></mat-chip>
-                </mat-chip-list>
+                <ul>
+                    <li>Module review lessons</li>
+                    <li><strong style="font-weight: 500; padding-top: .5rem; display: block;">What's new with deposits</strong></li>
+                </ul> 
             </div>
         </div> 
         
+        <br />
+        <mat-divider></mat-divider>
+        <br />
+
+        <img src="http://testing.volume.co.uk/Intuit-CMS/chart.PNG" title="" style="width: 100%;" />
     
-        <br><br>
+        
     </mat-dialog-content>
 
     

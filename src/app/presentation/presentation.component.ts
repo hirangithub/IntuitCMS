@@ -108,6 +108,7 @@ export class DialogElementsExampleDialog {
 @Component({
   selector: 'app-cpe',
   templateUrl: 'config-cpe.html',
+  styleUrls: ['../learning-material/select-template.scss']
 })
 export class CPEDialog {
      
