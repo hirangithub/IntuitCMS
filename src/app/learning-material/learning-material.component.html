@@ -63,6 +63,20 @@
                     <button mat-menu-item (click)="openDialog()">Add learning content</button>
                     <button mat-menu-item (click)="openQuestionPopup()">Add question</button> 
                 </mat-menu>
+                
+                <button mat-icon-button [matMenuTriggerFor]="menu34" aria-label="">
+                    <mat-icon>more_vert</mat-icon>
+                </button>
+                <mat-menu #menu34="matMenu">
+                    <button mat-menu-item>
+                      <mat-icon>edit</mat-icon>
+                      <span>Edit Learning Outcome</span>
+                    </button>
+                    <button mat-menu-item (click)="openDialog()">
+                        <mat-icon>delete</mat-icon>
+                        <span>Delete Learning Outcome</span>
+                    </button>                    
+                </mat-menu>
             </div>
         </div>
 
