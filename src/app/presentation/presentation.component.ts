@@ -82,6 +82,10 @@ export class PresentationComponent implements OnInit {
     // });    
   }  
 
+  openCPE(){ 
+    this.dialog.open(CPEDialog);
+  }
+
 }
 
 
@@ -99,5 +103,22 @@ export class DialogElementsExampleDialog {
     this.dialogRef.close();
   }
 }
+
+
+@Component({
+  selector: 'app-cpe',
+  templateUrl: 'config-cpe.html',
+})
+export class CPEDialog {
+     
+  constructor(
+    public dialogRef: MatDialogRef<DialogElementsExampleDialog>,
+  ) { }
+
+  onNoClick(): void {
+    this.dialogRef.close();
+  }
+}
+
 
 
