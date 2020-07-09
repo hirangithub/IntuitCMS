@@ -52,13 +52,18 @@
         </div>
 
         <div fxLayout="row" fxLayoutAlign="fxFlexFill" class="action-panel border-active" *ngIf="!isAddLODialog">
-            <div fxFlex="80" fxLayoutAlign="start center">
+            <div fxFlex="75" fxLayoutAlign="start center">
                 <h1 class="space-0">{{selected_LO.lo_title}}</h1>
             </div>
-            <!-- <div fxFlex="25" fxLayoutAlign="end center" fxFlexOffset="20px">  
-                <button mat-raised-button color="primary" (click)="openDialog()">Add learning content</button>               
+            <div fxFlex="25" fxLayoutAlign="end center" fxFlexOffset="20px">  
+                <!-- <button mat-raised-button color="primary" (click)="openDialog()">Add learning content</button>                -->
                 
-            </div> -->
+                <button mat-raised-button [matMenuTriggerFor]="menu"><mat-icon>add_circle_outline</mat-icon> Add content and questions </button>
+                <mat-menu #menu="matMenu">
+                    <button mat-menu-item (click)="openDialog()">Add learning content</button>
+                    <button mat-menu-item (click)="openQuestionPopup()">Add question</button> 
+                </mat-menu>
+            </div>
         </div>
 
 
@@ -95,7 +100,7 @@
                     </mat-selection-list>                    
 
                     <div class="action-panel-2">
-                        <button mat-raised-button color="primary" (click)="openDialog()"><mat-icon>queue</mat-icon> Add learning content</button> 
+                        <button mat-raised-button color="primary" (click)="openDialog()"><mat-icon>add_circle_outline</mat-icon> Add learning content</button> 
                     </div>                    
                 </mat-card>
                 
@@ -124,7 +129,7 @@
                         </mat-selection-list>
 
                         <div class="action-panel-2">
-                            <button mat-raised-button color="primary" (click)="openQuestionPopup()"><mat-icon>note_add</mat-icon> Add question</button> 
+                            <button mat-raised-button color="primary" (click)="openQuestionPopup()"><mat-icon>add_circle_outline</mat-icon> Add question</button> 
                         </div>  
                     </mat-selection-list>
                 </mat-card>               
