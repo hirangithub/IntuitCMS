@@ -57,12 +57,9 @@
   
 
   .unique-position {
-    position: absolute;
-    right: 3rem;
-    top: .6rem;
-    .mat-icon {
-      //color: white;
-    }
+    position: absolute !important;
+    right: 3rem !important;
+    top: .6rem !important;
   }
 
   .mat-accordion {
