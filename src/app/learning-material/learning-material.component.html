@@ -58,7 +58,9 @@
             <div fxFlex="35" fxLayoutAlign="end center" fxFlexOffset="20px">  
                 <!-- <button mat-raised-button color="primary" (click)="openDialog()">Add learning content</button>                -->
                 
-                <button mat-raised-button [matMenuTriggerFor]="menu"><mat-icon>add_circle_outline</mat-icon> Add content and questions </button>
+                <button mat-raised-button class="add-content" [matMenuTriggerFor]="menu"><mat-icon>add_circle_outline</mat-icon> Add content and questions </button>
+                <button mat-raised-button class="close-btn"><mat-icon>add_circle_outline</mat-icon> Save & Close </button>
+                <span class="material-icons close-icon close-btn" >close </span>
                 <mat-menu #menu="matMenu">
                     <button mat-menu-item (click)="openDialog()">Add learning content</button>
                     <button mat-menu-item (click)="openQuestionPopup()">Add question</button> 

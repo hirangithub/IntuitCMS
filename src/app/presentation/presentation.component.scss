@@ -124,5 +124,20 @@
         background-color: white !important;
       }
     }
+
+    .close-btn{
+      display: block; 
+
+      &.close-icon{
+        position: absolute;
+        margin-top: -27px;
+        margin-left: -8px;
+      }
+    }
+    
+    .add-content{
+      display: none;
+    }
+     
     
   }
