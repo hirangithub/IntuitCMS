@@ -59,14 +59,14 @@
                 <!-- <button mat-raised-button color="primary" (click)="openDialog()">Add learning content</button>                -->
                 
                 <button mat-raised-button class="add-content" [matMenuTriggerFor]="menu"><mat-icon>add_circle_outline</mat-icon> Add content and questions </button>
-                <button mat-raised-button class="close-btn"><mat-icon>add_circle_outline</mat-icon> Save & Close </button>
+                <button mat-raised-button class="close-btn" style="margin-top: 25px;"  color="primary" ><mat-icon>add_circle_outline</mat-icon> Save & Close </button>
                 <span class="material-icons close-icon close-btn" >close </span>
                 <mat-menu #menu="matMenu">
                     <button mat-menu-item (click)="openDialog()">Add learning content</button>
                     <button mat-menu-item (click)="openQuestionPopup()">Add question</button> 
                 </mat-menu>
                 
-                <button mat-icon-button [matMenuTriggerFor]="menu34" aria-label="">
+                <button mat-icon-button class="add-content" [matMenuTriggerFor]="menu34" aria-label="">
                     <mat-icon>more_vert</mat-icon>
                 </button>
                 <mat-menu #menu34="matMenu">
