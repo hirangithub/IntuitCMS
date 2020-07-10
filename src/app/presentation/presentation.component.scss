@@ -110,3 +110,19 @@
       }
     }
   }
+
+
+  .presentation-lo-adjust {
+    .left-container {
+      display: none !important;
+    }
+    .right-container {
+      max-width: 100% !important;
+      background-color: white !important;
+      padding: 0 !important;
+      .mat-toolbar {
+        background-color: white !important;
+      }
+    }
+    
+  }
