@@ -8,7 +8,7 @@ import { TopBarComponent } from './top-bar/top-bar.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 
 import { LearningMaterialComponent, DialogContent, EditTempContent, EditQuestionTemp } from './learning-material/learning-material.component';
-import { PresentationComponent, CPEDialog, CopyurlDialog } from './presentation/presentation.component';
+import { PresentationComponent, CPEDialog, CopyurlDialog, viewLODialog, DialogElementsExampleDialog } from './presentation/presentation.component';
 import { CertificationExamComponent } from './certification-exam/certification-exam.component';
 
 import { MatTabsModule } from '@angular/material/tabs';
@@ -46,7 +46,9 @@ import {DragDropModule} from '@angular/cdk/drag-drop';
     EditTempContent, 
     EditQuestionTemp,
     CPEDialog,
-    CopyurlDialog 
+    CopyurlDialog,
+    viewLODialog,
+    DialogElementsExampleDialog 
   ],
   imports: [
     BrowserModule,
@@ -73,7 +75,7 @@ import {DragDropModule} from '@angular/cdk/drag-drop';
     FormsModule,
     DragDropModule, 
   ],
-  exports: [],
+  exports: [DialogContent],
   providers: [],
   bootstrap: [AppComponent]
 })

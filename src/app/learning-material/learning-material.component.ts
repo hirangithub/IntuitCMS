@@ -17,6 +17,8 @@ export class LearningMaterialComponent implements OnInit {
     public dialog: MatDialog,
     public learning: LearningService
   ) { }
+
+  myCompOneObj: any =  DialogElementsExampleDialog;
  
   selected_LO: any;
   learningContent: any;
@@ -170,7 +172,7 @@ export class EditQuestionTemp  implements OnInit{
   }
 
   deleteDialog(){
-    const openEditTemp = this.dialog.open(DialogElementsExampleDialog); 
+   const openEditTemp = this.dialog.open(DialogElementsExampleDialog); 
   }
 } 
 

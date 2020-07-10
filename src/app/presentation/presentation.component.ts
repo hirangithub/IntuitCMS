@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ElementRef, ViewChild, ViewEncapsulation } from '@angular/core';
 import { PresentationService } from "../services/presentation.service";
 import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { DialogContent } from "../learning-material/learning-material.component";
@@ -6,16 +6,19 @@ import { DialogContent } from "../learning-material/learning-material.component"
 @Component({
   selector: 'app-presentation',
   templateUrl: './presentation.component.html',
-  styleUrls: ['./presentation.component.scss']
+  styleUrls: ['./presentation.component.scss'],
+  encapsulation: ViewEncapsulation.None
 })
 export class PresentationComponent implements OnInit {
 
+  @ViewChild('add') addElement: ElementRef;
   bundleList: any = this.presentation.getBundles();
   selectedBundle: any;
   selectedLessonsList: any
   panelOpenState = false;
   isAddBundlesDialog: boolean = false;
   isAddLessonsDialog: boolean = false;
+  isAddLessonsBox: boolean = false;
   bundleListTitles : any[] = [];
   Bundle_title: string = ""; 
   newLessonsBundleTitle: string = ""; 
@@ -89,7 +92,25 @@ export class PresentationComponent implements OnInit {
   openCopyUrl(){ 
     this.dialog.open(CopyurlDialog);
   }
- 
+  
+
+  openAddLessonsBox(){
+    
+    this.isAddLessonsBox = true;
+
+    setTimeout(()=>{  
+      this.addElement.nativeElement.focus();
+    },0);
+  }
+
+  closeAddLessonsBox(){
+    this.isAddLessonsBox = false;
+  }
+
+  ViewLO(){
+    this.dialog.open(viewLODialog);
+
+  }
   
 }
 
@@ -141,6 +162,26 @@ export class CopyurlDialog {
     this.dialogRef.close();
   }
 }
+
+
+@Component({
+  selector: 'view-lo',
+  templateUrl: 'view-lo.html',
+  styleUrls: ['./presentation.component.scss']
+
+})
+export class viewLODialog {
+     
+  constructor(
+    public dialogRef: MatDialogRef<DialogElementsExampleDialog>,
+  ) { }
+
+  onNoClick(): void {
+    this.dialogRef.close();
+  }
+}
+
+
 
 
 

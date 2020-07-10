@@ -71,7 +71,7 @@
                     </ul>
                 </div>
                 <div fxFlex="25" fxLayoutAlign="end center" fxFlexOffset="20px">  
-                    <button mat-raised-button><mat-icon>add_circle_outline</mat-icon> Add lesson</button> 
+                    <button mat-raised-button  ><mat-icon>add_circle_outline</mat-icon> Add lesson</button> 
                     
                     <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="">
                         <mat-icon>more_vert</mat-icon>
@@ -136,7 +136,7 @@
                 </ul>
             </div>
             <div fxFlex="25" fxLayoutAlign="end center" fxFlexOffset="20px">  
-                <button mat-raised-button><mat-icon>add_circle_outline</mat-icon> Add lesson</button> 
+                <button mat-raised-button  (click)="openAddLessonsBox()"><mat-icon>add_circle_outline</mat-icon> Add lesson</button> 
 
                 <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="">
                     <mat-icon>more_vert</mat-icon>
@@ -164,8 +164,26 @@
                     </button>                    
                 </mat-menu>
             </div>
+            
         </div> 
         
+        <div class="bundle-dialog-box add-lesson v2" *ngIf="isAddLessonsBox">
+            <mat-card>
+                <div class="title">
+                    <h2>Add a lesson for this bundle</h2> 
+                </div>
+                <div class="add-item">
+                    <mat-form-field class="example-full-width"> 
+                        <mat-label>Lesson title</mat-label>
+                        <input #add matInput placeholder=""> 
+                    </mat-form-field> 
+                    
+                    <button mat-raised-button color="primary">Create</button>&nbsp;&nbsp;
+                    <button mat-raised-button (click)="closeAddLessonsBox()">Close</button>   
+                </div> 
+            </mat-card>                
+        </div> 
+
         <div fxLayout="column" fxLayoutAlign="fxFlexFill" class="body-content" *ngIf="!isAddBundlesDialog && !isAddLessonsDialog">  
             
             <mat-accordion class="example-headers-align" multi>                   
@@ -208,7 +226,7 @@
                     </mat-expansion-panel-header>
                     
                     <mat-selection-list [multiple]="false">
-                        <mat-list-option *ngFor="let lo of sl.learning_outcome; let i = index">                            
+                        <mat-list-option *ngFor="let lo of sl.learning_outcome; let i = index" (click)="ViewLO()">                            
                             <ul>
                                 <li>
                                     <h3 class="space-0">{{ lo.title }}</h3>
