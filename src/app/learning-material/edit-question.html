@@ -1,6 +1,9 @@
 <header class="popup-header">
     <div class="titles spec"> 
-        <h1>Edit Question</h1>
+        <h1>Edit Question</h1> 
+        <mat-chip-list aria-label="" class="badge special">
+            <mat-chip color="primary" selected><mat-icon>info</mat-icon> <p style="font-weight: normal;">This question is disabled</p></mat-chip>
+        </mat-chip-list>
         <p>You are adding questions for <strong>Establish a potential client's QuickBooks Online and QuickBooks Self-Employed needs</strong> learning outcome.</p>
     </div>
 
@@ -48,7 +51,7 @@
             <mat-label>Exam type*</mat-label>
             <br><br>
             <mat-radio-group> 
-                <mat-radio-button class="example-margin" value="after">Certification Exam</mat-radio-button>
+                <mat-radio-button [checked]="true" class="example-margin" value="after">Certification Exam</mat-radio-button>
                 <br><br>
                 <mat-radio-button class="example-margin" value="before">Knowledge Check</mat-radio-button>
                 <br><br>

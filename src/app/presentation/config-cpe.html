@@ -14,7 +14,7 @@
     </header>
 
     <mat-dialog-content class="mat-typography cpe-content">
-        <div class="container template-grid" fxLayout="row" fxLayoutWrap fxLayoutGap="2%" fxLayoutAlign="left">
+        <div class="container template-grid" fxLayout="row" fxLayoutWrap fxLayoutGap="2%" fxLayoutAlign="left"> 
             <div fxFlex="100%" style="padding-right: 1.5rem;">
                 <ul>
                     <li>Enable CPE</li>
@@ -25,13 +25,27 @@
             <div fxFlex="100%">
                 <mat-form-field appearance="fill" fxFlex="100%">
                     <mat-label>CPE exam questions</mat-label>
-                    <input matInput placeholder="">
+                    
+                    <mat-select>
+                        <mat-option>5</mat-option>
+                        <mat-option>6</mat-option>
+                        <mat-option>7</mat-option>
+                        <mat-option>8</mat-option>
+                        <mat-option>9</mat-option>
+                        <mat-option>10</mat-option>
+                        <mat-option>11</mat-option>
+                        <mat-option>12</mat-option>
+                        <mat-option>13</mat-option>
+                        <mat-option>14</mat-option>
+                        <mat-option>15</mat-option>
+                    </mat-select>
+
                 </mat-form-field>
             </div>
         </div> 
     
     
-        <div class="container template-grid" fxLayout="row" fxLayoutWrap="" fxLayoutGap="2%" fxLayoutAlign="left">
+        <div class="container template-grid" fxLayout="row" fxLayoutWrap="" fxLayoutGap="2%" fxLayoutAlign="left" style="padding-top: .5rem;">
             <div fxFlex="100%" style="padding-right: 1.5rem;">
                 <mat-form-field appearance="fill" fxFlex="100%">
                     <mat-label>Set CPE survey URL</mat-label>
@@ -47,18 +61,18 @@
             </div>
         </div> 
 
-        <div class="container template-grid" fxLayout="row" fxLayoutWrap="" fxLayoutGap="2%" fxLayoutAlign="left">
-            <div fxFlex="100%" style="padding-right: 1.5rem;">
+        <div class="container template-grid" fxLayout="row" fxLayoutWrap="" fxLayoutGap="2%" fxLayoutAlign="left" style="padding-top: .5rem;">
+            <!-- <div fxFlex="100%" style="padding-right: 1.5rem;">
                 <mat-form-field appearance="fill" fxFlex="100%">
                     <mat-label>Set CPE level</mat-label>
                     <input matInput placeholder="">
                 </mat-form-field>
-            </div>
+            </div> -->
     
             <div fxFlex="100%">
                 <ul>
-                    <li>Module review lessons</li>
-                    <li><strong style="font-weight: 500; padding-top: .5rem; display: block;">What's new with deposits</strong></li>
+                    <li>Lessons excluded from CPE calculation</li>
+                    <li><strong style="font-weight: 500; padding-top: .5rem; display: block;">Your client's QuickBooks Online</strong></li>
                 </ul> 
             </div>
         </div> 

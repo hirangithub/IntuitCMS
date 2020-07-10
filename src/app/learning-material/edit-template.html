@@ -15,10 +15,10 @@
                     <mat-icon>more_vert</mat-icon>
                 </button>
                 <mat-menu #menu="matMenu">
-                    <button mat-menu-item>
+                    <!-- <button mat-menu-item>
                       <mat-icon>visibility</mat-icon>
                       <span>Preview Content</span>
-                    </button>                   
+                    </button>                    -->
                     <button mat-menu-item (click)="deleteDialog()">
                         <mat-icon>delete</mat-icon>
                         <span>Delete Content</span>
@@ -107,7 +107,7 @@
                 </mat-form-field>
      
                 <mat-chip-list aria-label="" class="badge">
-                    <mat-chip><mat-icon>info</mat-icon> <p>Based on the content updated <strong>03:30 min</strong> durations is suggested.</p></mat-chip>
+                    <mat-chip color="primary" style="height: auto;" selected><mat-icon>info</mat-icon> <p style="font-weight: normal;">Based on the content updated <strong>03:30 min</strong> durations is suggested.</p></mat-chip>
                 </mat-chip-list>
             </div>
         </div> 
