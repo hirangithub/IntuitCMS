@@ -211,14 +211,22 @@
                           <span>Copy Lesson URL</span>
                         </button>
                         <button mat-menu-item (click)="openDialog()">
+                            <mat-icon>edit</mat-icon>
+                            <span>Edit Lesson</span>
+                        </button>
+                        <button mat-menu-item (click)="openDialog()">
                             <mat-icon>delete</mat-icon>
                             <span>Delete Lesson</span>
                         </button>                    
                     </mat-menu>
 
-                    <mat-expansion-panel-header>
-                        <mat-panel-title>
+                    <mat-expansion-panel-header class="special-head">
+                        <mat-panel-title class="hover-add">
                             <h2 class="space-0">{{sl.title}}</h2>
+
+                            <button mat-icon-button aria-label="Edit lesson">
+                                <mat-icon>edit</mat-icon>
+                            </button>
                         </mat-panel-title>
                         <mat-panel-description>
                             <!-- <mat-icon>account_circle</mat-icon> -->
@@ -239,6 +247,7 @@
                                     </ul>
                                 </li>
                             </ul>
+                            <mat-icon class="remove-lo">remove_circle_outline</mat-icon>
                         </mat-list-option> 
                     </mat-selection-list>
 
@@ -276,7 +285,7 @@
                         <mat-selection-list>
                             <mat-list-option>
                                 <div class="title">
-                                    <h2 class="unique">Establish a potential client's QucikBooks Online and QuickBookd Self-Employed</h2>                                
+                                    <h2 class="unique">Establish a potential client's QucikBooks Online and QuickBooks Self-Employed</h2>                                
                                 </div>
                                 <div class="description">
                                     <ul class="unique">

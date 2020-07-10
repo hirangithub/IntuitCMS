@@ -21,7 +21,7 @@ export class LearningService {
               duration: "4 mins"
             },
             {
-              title: "Quickbooks Online Certification",
+              title: "QuickBooks Online Certification",
               description: "Conceptual Information",
               duration: "3 mins"
             },
