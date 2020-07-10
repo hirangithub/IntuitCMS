@@ -26,8 +26,8 @@ export class LearningService {
               duration: "3 mins"
             },
             {
-              title: "How to user this course",
-              description: "Summery",
+              title: "How to use this course",
+              description: "Summary",
               duration: "3 mins"
             }
           ],  

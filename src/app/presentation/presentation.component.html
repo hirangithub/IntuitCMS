@@ -184,6 +184,10 @@
                             <span>Module Review</span>
                             <!-- <mat-slide-toggle></mat-slide-toggle>  -->
                         </button>
+                        <button mat-menu-item>
+                            <mat-icon>reorder</mat-icon>
+                            <span>Re-order learning outcomes</span>
+                        </button>                        
                         <button mat-menu-item (click)="openCopyUrl()">
                           <mat-icon>file_copy</mat-icon>
                           <span>Copy Lesson URL</span>
@@ -226,7 +230,7 @@
                     
                     <button mat-raised-button color="accent" (click)=toggleDisplay()><mat-icon>note_add</mat-icon> Include Learning outcome</button>
                     &nbsp;&nbsp;
-                    <button mat-raised-button (click)=openContentTemplate()><mat-icon>note_add</mat-icon> Include Lesson specific content</button>
+                    <button mat-raised-button (click)=openContentTemplate()><mat-icon>note_add</mat-icon> Add Lesson specific content</button>
 
                 </mat-expansion-panel>
             </mat-accordion>               
