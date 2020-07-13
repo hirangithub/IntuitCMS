@@ -357,3 +357,20 @@ p strong { font-weight: 500; }
     }
 }
 
+.default-text .mat-card {
+    display: flex;
+    align-items: center;
+    img {
+        width: 14rem;
+        margin-right: 3rem;
+    }
+    h1 {
+        font-size: 1.8rem;
+        font-weight: 500;
+    }
+    p {
+        line-height: 3rem;
+        line-height: 1.6rem;
+        font-size: .9rem;
+    }
+}

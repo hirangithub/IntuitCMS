@@ -138,6 +138,56 @@
     .add-content{
       display: none;
     }
-     
-    
+  }
+
+  .chart-holder {
+    position: relative;
+    .tooltip {
+        position: absolute;
+        top: -95%;
+        right: 5%;
+        background-color: #333333;
+        padding: .5rem 1rem;
+        color: #ffffff;
+        border-radius: 5px;
+        width: 12rem;
+        font-size: .7rem;
+        visibility: hidden;
+        opacity: 0;
+        transition: all ease 0.5s;
+        dl {
+           display: flex;
+           align-items: center;
+           padding-bottom: .5rem;
+           margin: 0;
+           &:last-child {
+             padding-bottom: 0;
+           }
+           dt,
+           dd {
+             flex: 1 0;
+           }
+           dd {
+             margin: 0;
+             text-align: right;
+           }
+        }
+        .mat-icon {
+          position: absolute;
+          bottom: -1px;
+          color: #333333;
+          left: 0;
+          right: 0;
+          margin: 0 auto;
+          font-size: 3rem;
+          width: 3rem;
+        }
+    }
+    &:hover {
+      .tooltip {
+        visibility: visible;
+        opacity: 1;
+        top: -85%;
+      }      
+    }
   }
