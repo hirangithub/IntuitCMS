@@ -120,7 +120,7 @@
 
                 <mat-toolbar> 
                     <mat-toolbar-row class="pad-zero">
-                        <span style="display: flex; align-items: center;"><h3>Learning Content</h3> <button mat-icon-button style="color: #2ca01c;" (click)="openDialog()"><mat-icon>add_circle_outline</mat-icon></button> </span> 
+                        <span style="display: flex; align-items: center;"><h3>Learning Content</h3> <button mat-icon-button style="color: #2ca01c;" (click)="openDialog()" matTooltipPosition="right" matTooltip="Add learning content"><mat-icon>add_circle_outline</mat-icon></button> </span> 
                         <span class="example-spacer"></span>
                         <span class="inn">{{selected_LO.learning_content.learning_content_duration}}</span>
                         <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="">
@@ -160,7 +160,7 @@
 
                 <mat-toolbar> 
                     <mat-toolbar-row>
-                        <span style="display: flex; align-items: center;"><h3>Questions</h3> <button mat-icon-button style="color: #2ca01c;" (click)="openSelectQuestionTemplate()"><mat-icon>add_circle_outline</mat-icon></button> </span>                        
+                        <span style="display: flex; align-items: center;"><h3>Questions</h3> <button matTooltipPosition="right" matTooltip="Add question" mat-icon-button style="color: #2ca01c;" (click)="openSelectQuestionTemplate()"><mat-icon>add_circle_outline</mat-icon></button> </span>                        
                         <span class="example-spacer"></span>
                         <ul class="summary" class="inn">
                             <li>All ({{selected_LO.questions.total_questions}})</li>
