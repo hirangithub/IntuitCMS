@@ -2,6 +2,7 @@ import { Component, OnInit, ElementRef, ViewChild, ViewEncapsulation } from '@an
 import { PresentationService } from "../services/presentation.service";
 import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { DialogContent } from "../learning-material/learning-material.component";
+import { LoDataService } from "../services/lo-data.service";
 
 @Component({
   selector: 'app-presentation',
@@ -26,7 +27,8 @@ export class PresentationComponent implements OnInit {
 
   constructor( 
     public presentation: PresentationService,
-    public dialog: MatDialog
+    public dialog: MatDialog,
+    private data: LoDataService
   ) { }
 
 
@@ -38,8 +40,12 @@ export class PresentationComponent implements OnInit {
     this.bundleList.forEach(element => {
       this.bundleListTitles.push(element.title);       
     });
-
+    
     this.showDefaultBundleDialog();
+
+    this.data.defaultLODialogCurrentStatus.subscribe(message =>{
+      console.log(message)
+    })
     
   }  
 
@@ -188,7 +194,11 @@ export class viewLODialog {
      
   constructor(
     public dialogRef: MatDialogRef<DialogElementsExampleDialog>,
-  ) { }
+    private data: LoDataService
+  ) { 
+
+    this.data.changeMessage(true);
+  }
 
   onNoClick(): void {
     this.dialogRef.close();
