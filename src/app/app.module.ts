@@ -23,6 +23,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatExpansionModule } from '@angular/material/expansion'; 
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatChipsModule } from '@angular/material/chips';
@@ -75,6 +76,7 @@ import {DragDropModule} from '@angular/cdk/drag-drop';
     MatSlideToggleModule, 
     FormsModule,
     DragDropModule, 
+    MatTooltipModule
   ],
   exports: [DialogContent],
   providers: [],

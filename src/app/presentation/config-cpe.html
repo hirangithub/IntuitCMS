@@ -14,18 +14,27 @@
     </header>
 
     <mat-dialog-content class="mat-typography cpe-content">
-        <div class="container template-grid" fxLayout="row" fxLayoutWrap fxLayoutGap="2%" fxLayoutAlign="left"> 
-            <div fxFlex="100%" style="padding-right: 1.5rem;">
+        <div class="container template-grid" fxLayout="row" fxLayoutWrap fxLayoutAlign="left"> 
+            <div fxFlex="100%" style="padding-right: 5rem;">
                 <ul>
-                    <li>Enable CPE</li>
-                    <li><mat-slide-toggle></mat-slide-toggle></li>
+                    <li>Enable or Disable CPE for the bundle</li>
+                    <li style="margin-top: .5rem; display: flex; align-items: center;"><mat-slide-toggle></mat-slide-toggle> &nbsp;&nbsp; <strong style="font-weight: 500;">Disabled</strong> </li>
                 </ul>                
             </div>
-    
+
             <div fxFlex="100%">
                 <mat-form-field appearance="fill" fxFlex="100%">
-                    <mat-label>CPE exam questions</mat-label>
-                    
+                    <mat-label>Pick a survey URL to go at the end of the exam</mat-label>
+                    <input matInput placeholder="Survey URL">
+                </mat-form-field>
+            </div>              
+        </div> 
+    
+    
+        <div class="container template-grid" fxLayout="row" fxLayoutWrap="" fxLayoutAlign="left" style="padding-top: .5rem;">
+            <div fxFlex="100%" style="padding-right: 5rem;">
+                <mat-form-field appearance="fill" fxFlex="60%">
+                    <mat-label>CPE exam questions</mat-label>                    
                     <mat-select>
                         <mat-option>5</mat-option>
                         <mat-option>6</mat-option>
@@ -39,36 +48,9 @@
                         <mat-option>14</mat-option>
                         <mat-option>15</mat-option>
                     </mat-select>
+                </mat-form-field>
+            </div>
 
-                </mat-form-field>
-            </div>
-        </div> 
-    
-    
-        <div class="container template-grid" fxLayout="row" fxLayoutWrap="" fxLayoutGap="2%" fxLayoutAlign="left" style="padding-top: .5rem;">
-            <div fxFlex="100%" style="padding-right: 1.5rem;">
-                <mat-form-field appearance="fill" fxFlex="100%">
-                    <mat-label>Set CPE survey URL</mat-label>
-                    <input matInput placeholder="">
-                </mat-form-field>
-            </div>
-    
-            <div fxFlex="100%">
-                <ul>
-                    <li>Learning outcomes tested</li>
-                    <li style="padding-top: .5rem; display: block;"><img src="http://testing.volume.co.uk/Intuit-CMS/cpe.PNG" title="" style="width: 45%;" /></li>
-                </ul>  
-            </div>
-        </div> 
-
-        <div class="container template-grid" fxLayout="row" fxLayoutWrap="" fxLayoutGap="2%" fxLayoutAlign="left" style="padding-top: .5rem;">
-            <!-- <div fxFlex="100%" style="padding-right: 1.5rem;">
-                <mat-form-field appearance="fill" fxFlex="100%">
-                    <mat-label>Set CPE level</mat-label>
-                    <input matInput placeholder="">
-                </mat-form-field>
-            </div> -->
-    
             <div fxFlex="100%">
                 <ul>
                     <li>Lessons excluded from CPE calculation</li>
@@ -81,7 +63,40 @@
         <mat-divider></mat-divider>
         <br />
 
-        <img src="http://testing.volume.co.uk/Intuit-CMS/chart.PNG" title="" style="width: 100%;" />
+        <p style="font-size: .7rem; padding-bottom: .5rem;">Admin could hover over duration bar to get breakdown.</p>
+        
+        <div class="chart-holder">
+            <img src="http://testing.volume.co.uk/Intuit-CMS/chart.PNG" title="" style="width: 100%;" />  
+            <div class="tooltip">
+                <dl>
+                    <dt>Questions</dt>
+                    <dd>05:03</dd>
+                </dl>
+                <dl>
+                    <dt>Content</dt>
+                    <dd>14:05</dd>
+                </dl>
+                <dl>
+                    <dt>Lesson specific</dt>
+                    <dd>00:32</dd>
+                </dl>
+                <dl>
+                    <dt>Video</dt>
+                    <dd>04:00</dd>
+                </dl>
+                <dl>
+                    <dt>Knowledge checks</dt>
+                    <dd>01:51</dd>
+                </dl>
+                <dl>
+                    <dt>Exam</dt>
+                    <dd>11:01</dd>
+                </dl>
+                <mat-icon>arrow_drop_down</mat-icon>
+            </div>     
+        </div>
+        
+        
     
         
     </mat-dialog-content>

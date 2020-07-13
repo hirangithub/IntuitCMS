@@ -26,8 +26,13 @@
 
     <div fxFlex="75" class="right-container"> 
         <div class="default-text" *ngIf="isDefaultBundleDialog">
-            <h1>Content Presentation</h1>
-            <p>Setup your course presentation by creating bundles with related lessons. You can include created learning outcomes to build up the content.</p>
+            <mat-card>
+                <img src="http://testing.volume.co.uk/Intuit-CMS/2.png" style="width: 12rem;" />
+                <div style="width: 60%;">
+                    <h1>Content Presentation</h1>
+                    <p>Setup your course presentation by creating bundles with related lessons. You can include created learning outcomes to build up the content.</p>
+                </div>                
+            </mat-card>        
         </div>
 
         <div class="bundle-dialog-box" *ngIf="isAddBundlesDialog">
