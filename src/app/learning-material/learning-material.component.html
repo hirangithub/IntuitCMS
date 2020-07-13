@@ -3,7 +3,7 @@
     <div fxLayout="column" fxFlex="25" class="left-container">
         <div class="title">
             <h2>Learning outcomes ({{learningOutComes.length}})</h2>
-            <button mat-mini-fab color="primary" (click)="openAddLODialog()">
+            <button style="margin-top: -.4rem;" mat-mini-fab color="primary" (click)="openAddLODialog()">
                 <mat-icon>add</mat-icon>
             </button>               
         </div>       
@@ -72,8 +72,9 @@
 
 
                 <button mat-raised-button class="add-content">
-                    <mat-button-toggle-group>
-                        <mat-button-toggle class="split-button-1" (click)="openDialog()">Add Learning content</mat-button-toggle>
+                    <mat-button-toggle-group style="display: flex; align-items: center;">
+                        <mat-icon style="padding-right: .5rem;">add_circle_outline</mat-icon>
+                        <mat-button-toggle class="split-button-1" (click)="openDialog()" style="padding-right: .2rem;">Add Learning content</mat-button-toggle>
                         <mat-button-toggle class="split-button-1 drop-down-button" [matMenuTriggerFor]="dropdownMenuOne">
                             <mat-icon>arrow_drop_down</mat-icon>
                         </mat-button-toggle>
@@ -119,7 +120,7 @@
 
                 <mat-toolbar> 
                     <mat-toolbar-row class="pad-zero">
-                        <span><h3>Learning Content</h3></span> 
+                        <span style="display: flex; align-items: center;"><h3>Learning Content</h3> <button mat-icon-button style="color: #2ca01c;" (click)="openDialog()"><mat-icon>add_circle_outline</mat-icon></button> </span> 
                         <span class="example-spacer"></span>
                         <span class="inn">{{selected_LO.learning_content.learning_content_duration}}</span>
                         <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="">
@@ -151,11 +152,7 @@
                                 </div>
                             </div> 
                         </mat-list-option> 
-                    </mat-selection-list>                    
-
-                    <div class="action-panel-2">
-                        <button mat-raised-button color="primary" (click)="openDialog()"><mat-icon>add_circle_outline</mat-icon> Add learning content</button> 
-                    </div>                    
+                    </mat-selection-list>   
                 </mat-card>
                 
             </div>
@@ -163,7 +160,7 @@
 
                 <mat-toolbar> 
                     <mat-toolbar-row>
-                        <span><h3>Questions</h3></span>                        
+                        <span style="display: flex; align-items: center;"><h3>Questions</h3> <button mat-icon-button style="color: #2ca01c;" (click)="openSelectQuestionTemplate()"><mat-icon>add_circle_outline</mat-icon></button> </span>                        
                         <span class="example-spacer"></span>
                         <ul class="summary" class="inn">
                             <li>All ({{selected_LO.questions.total_questions}})</li>
@@ -189,9 +186,6 @@
                             </mat-list-option> 
                         </mat-selection-list>
 
-                        <div class="action-panel-2">
-                            <button mat-raised-button color="primary" (click)="openSelectQuestionTemplate()"><mat-icon>add_circle_outline</mat-icon> Add question</button> 
-                        </div>  
                     </mat-selection-list>
                 </mat-card>               
             </div>
