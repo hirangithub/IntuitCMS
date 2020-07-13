@@ -75,6 +75,15 @@ export class LearningMaterialComponent implements OnInit {
     });
   }
 
+   //Select Question
+   opeSelectQuestionTemplate() {
+    const dialogRef = this.dialog.open(SelectQuestionTemp);
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('');
+    });
+
+  }
   
   //Lesson Edit
   openEditPopup(){
@@ -185,6 +194,35 @@ export class EditQuestionTemp  implements OnInit{
   deleteDialog(){
    const openEditTemp = this.dialog.open(DialogElementsExampleDialog); 
   }
+} 
+
+
+
+@Component({
+  selector: 'select-question',
+  templateUrl: 'select-question.html',
+  styleUrls: ['./select-template.scss']
+})
+
+export class SelectQuestionTemp  implements OnInit{
+
+
+  constructor(
+    public dialog: MatDialog, 
+  ) { }
+
+  ngOnInit(): void {  
+
+  }
+
+  openQuestionTemplate() {
+    const dialogRef = this.dialog.open(EditQuestionTemp);
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('');
+    });
+  }
+  
 } 
 
 

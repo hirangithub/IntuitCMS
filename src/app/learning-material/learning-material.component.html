@@ -74,8 +74,10 @@
                 <span class="material-icons close-icon close-btn" >close </span>
                 <mat-menu #menu="matMenu">
                     <button mat-menu-item (click)="openDialog()">Add learning content</button>
-                    <button mat-menu-item (click)="openQuestionPopup()">Add question</button> 
+                    <button mat-menu-item (click)="opeSelectQuestionTemplate()">Add question</button> 
                 </mat-menu>
+
+                <!-- openQuestionPopup -->
                 
                 <button mat-icon-button class="add-content" [matMenuTriggerFor]="menu34" aria-label="">
                     <mat-icon>more_vert</mat-icon>

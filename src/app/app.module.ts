@@ -7,7 +7,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TopBarComponent } from './top-bar/top-bar.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 
-import { LearningMaterialComponent, DialogContent, EditTempContent, EditQuestionTemp } from './learning-material/learning-material.component';
+import { LearningMaterialComponent, DialogContent, EditTempContent, EditQuestionTemp, SelectQuestionTemp } from './learning-material/learning-material.component';
 import { PresentationComponent, CPEDialog, CopyurlDialog, viewLODialog, DialogElementsExampleDialog } from './presentation/presentation.component';
 import { CertificationExamComponent } from './certification-exam/certification-exam.component';
 
@@ -49,7 +49,8 @@ import {DragDropModule} from '@angular/cdk/drag-drop';
     CPEDialog,
     CopyurlDialog,
     viewLODialog,
-    DialogElementsExampleDialog 
+    DialogElementsExampleDialog,
+    SelectQuestionTemp 
   ],
   imports: [
     BrowserModule,
