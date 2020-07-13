@@ -26,7 +26,8 @@ export class LearningMaterialComponent implements OnInit {
   questions: any; 
   isAddLODialog: boolean = false;
   learningOutComes: any[] = this.learning.getLearningOutcomes();
-  learningOutComesTitles : any[] = []
+  learningOutComesTitles : any[] = [];
+  isDefaultLODialog: boolean = false;
 
   ngOnInit(): void { 
     this.viewLearningOutcomes(0);  
@@ -34,12 +35,15 @@ export class LearningMaterialComponent implements OnInit {
       this.learningOutComes.forEach(element => {
         this.learningOutComesTitles.push(element.lo_title)
       });
+
+      this.showDefaultLODialog();
   }
 
   viewLearningOutcomes(i): void { 
     this.selected_LO = this.learningOutComes[i];  
     this.learningContent =  this.selected_LO.learning_content.data;
     this.questions =  this.selected_LO.questions.data;
+    this.isDefaultLODialog = false;
   }
 
 
@@ -85,10 +89,17 @@ export class LearningMaterialComponent implements OnInit {
 
   openAddLODialog(){
     this.isAddLODialog = true;
+    this.isDefaultLODialog = false;
   }
 
   closeAddLODialog(){
     this.isAddLODialog = false;
+    this.isDefaultLODialog = true;
+  }
+
+  showDefaultLODialog() {
+    this.isAddLODialog = false;
+    this.isDefaultLODialog = true;
   }
 
 

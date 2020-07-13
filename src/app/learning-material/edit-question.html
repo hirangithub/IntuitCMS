@@ -1,18 +1,17 @@
 <header class="popup-header">
     <div class="titles spec"> 
         <h1>Edit Question</h1> 
-        <mat-chip-list aria-label="" class="badge special">
+        <!-- <mat-chip-list aria-label="" class="badge special">
             <mat-chip color="primary" selected><mat-icon>info</mat-icon> <p style="font-weight: normal;">This question is disabled</p></mat-chip>
-        </mat-chip-list>
+        </mat-chip-list> -->
         <p>You are adding questions for <strong>Establish a potential client's QuickBooks Online and QuickBooks Self-Employed needs</strong> learning outcome.</p>
     </div>
 
     <div class="buttons">
         <!-- <mat-slide-toggle class="example-margin" [color]="color" [checked]="checked" [disabled]="disabled"></mat-slide-toggle> -->
         <ul class="popup-ul">
-            <li>
-                <label><strong style="font-weight: 500;">Enabled/ Disabled question</strong> &nbsp;</label>
-                <mat-slide-toggle></mat-slide-toggle>
+            <li style="display: flex; align-items: center;">
+                <mat-slide-toggle></mat-slide-toggle> &nbsp;&nbsp; <strong style="font-weight: 500;">Disabled</strong>
             </li>
             <li>
                 <button mat-raised-button color="primary">Save & close</button> 

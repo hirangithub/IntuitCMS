@@ -22,7 +22,8 @@ export class PresentationComponent implements OnInit {
   bundleListTitles : any[] = [];
   Bundle_title: string = ""; 
   newLessonsBundleTitle: string = ""; 
-  
+  isDefaultBundleDialog: boolean = false;
+
   constructor( 
     public presentation: PresentationService,
     public dialog: MatDialog
@@ -35,14 +36,17 @@ export class PresentationComponent implements OnInit {
     this.viewLearningOutcomes(0);
 
     this.bundleList.forEach(element => {
-      this.bundleListTitles.push(element.title); 
+      this.bundleListTitles.push(element.title);       
     });
+
+    this.showDefaultBundleDialog();
     
   }  
 
   viewLearningOutcomes(i): void { 
     this.selectedBundle = this.bundleList[i];   
     this.selectedLessonsList = this.selectedBundle.lessons;
+    this.isDefaultBundleDialog = false;
   }
 
 
@@ -54,10 +58,12 @@ export class PresentationComponent implements OnInit {
   openAddBundlesDialog(){ 
     this.isAddLessonsDialog  = false
     this.isAddBundlesDialog = true;
+    this.isDefaultBundleDialog = false;
   }
 
   closeAddBundlesDialog(){
     this.isAddBundlesDialog = !this.isAddBundlesDialog;
+    this.isDefaultBundleDialog = true;
   }
 
   createNewBundle(): void{
@@ -66,15 +72,23 @@ export class PresentationComponent implements OnInit {
     this.Bundle_title = ""; 
     this.closeAddBundlesDialog();
     this.isAddLessonsDialog = true;
+    this.isDefaultBundleDialog = false;
   }
 
   closeAddLessonsBundlesDialog(){
     this.isAddLessonsDialog  = false
     this.isAddBundlesDialog = false;
+    this.isDefaultBundleDialog = true;
   }
 
   openContentTemplate(){
     this.dialog.open(DialogContent);
+  }
+
+  showDefaultBundleDialog() {
+    this.isAddLessonsDialog  = false
+    this.isAddBundlesDialog = false;
+    this.isDefaultBundleDialog = true;
   }
 
 

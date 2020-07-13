@@ -33,6 +33,12 @@
     </div>
 
     <div fxFlex="75" class="right-container"> 
+
+        <div class="default-text" *ngIf="isDefaultLODialog">
+            <h1>Learning Material</h1>
+            <p>Create learning outcomes with related content and questions. These are used as the building blocks of lessons.</p>
+        </div>
+
         <div class="lo-dialog-box" *ngIf="isAddLODialog">
 
             <mat-card>
@@ -51,7 +57,7 @@
             
         </div>
 
-        <div fxLayout="row" fxLayoutAlign="fxFlexFill" class="action-panel border-active" *ngIf="!isAddLODialog">
+        <div fxLayout="row" fxLayoutAlign="fxFlexFill" class="action-panel border-active" *ngIf="!isAddLODialog && !isDefaultLODialog">
             <div fxFlex="65" fxLayoutAlign="start center">
                 <h1 class="space-0">{{selected_LO.lo_title}}</h1>
             </div>
@@ -83,7 +89,7 @@
         </div>
 
 
-        <div fxLayout="row" fxLayoutAlign="fxFlexFill" class="body-content" *ngIf="!isAddLODialog">
+        <div fxLayout="row" fxLayoutAlign="fxFlexFill" class="body-content" *ngIf="!isAddLODialog && !isDefaultLODialog">
             <div fxLayout="column" fxFlex="50" fxLayoutAlign="start top">               
 
                 <mat-toolbar> 

@@ -25,6 +25,11 @@
     </div>
 
     <div fxFlex="75" class="right-container"> 
+        <div class="default-text" *ngIf="isDefaultBundleDialog">
+            <h1>Content Presentation</h1>
+            <p>Setup your course presentation by creating bundles with related lessons. You can include created learning outcomes to build up the content.</p>
+        </div>
+
         <div class="bundle-dialog-box" *ngIf="isAddBundlesDialog">
 
             <mat-card>
@@ -121,7 +126,7 @@
 
         </div>
 
-        <div fxLayout="row" fxLayoutAlign="fxFlexFill" class="action-panel border-active" *ngIf="!isAddBundlesDialog && !isAddLessonsDialog">
+        <div fxLayout="row" fxLayoutAlign="fxFlexFill" class="action-panel border-active" *ngIf="!isAddBundlesDialog && !isAddLessonsDialog && !isDefaultBundleDialog">
             <div fxFlex="75" >
                 <ul>
                     <li><img src="https://live.intuittrainingplatform.com/filestore/ModuleFiles/539/thumb_icon.png?1592894348" title="" /></li>
@@ -184,7 +189,7 @@
             </mat-card>                
         </div> 
 
-        <div fxLayout="column" fxLayoutAlign="fxFlexFill" class="body-content" *ngIf="!isAddBundlesDialog && !isAddLessonsDialog">  
+        <div fxLayout="column" fxLayoutAlign="fxFlexFill" class="body-content" *ngIf="!isAddBundlesDialog && !isAddLessonsDialog && !isDefaultBundleDialog">  
             
             <mat-accordion class="example-headers-align" multi>                   
                 <mat-expansion-panel *ngFor="let sl of selectedLessonsList; let i = index" expanded>
