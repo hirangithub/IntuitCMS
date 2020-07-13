@@ -69,7 +69,25 @@
             <div fxFlex="35" fxLayoutAlign="end center" fxFlexOffset="20px">  
                 <!-- <button mat-raised-button color="primary" (click)="openDialog()">Add learning content</button>                -->
                 
-                <button mat-raised-button class="add-content" [matMenuTriggerFor]="menu"><mat-icon>add_circle_outline</mat-icon> Add content and questions </button>
+
+
+                <button mat-raised-button class="add-content">
+                    <mat-button-toggle-group>
+                        <mat-button-toggle class="split-button-1" (click)="openDialog()">Add Learning content</mat-button-toggle>
+                        <mat-button-toggle class="split-button-1 drop-down-button" [matMenuTriggerFor]="dropdownMenuOne">
+                            <mat-icon>arrow_drop_down</mat-icon>
+                        </mat-button-toggle>
+                    </mat-button-toggle-group>
+                </button>
+
+                <mat-menu #dropdownMenuOne="matMenu" xPosition="after">
+                    <button mat-menu-item (click)="openQuestionPopup()">Add Question</button>
+                </mat-menu>
+            
+            
+
+
+                <!-- <button mat-raised-button class="add-content" [matMenuTriggerFor]="menu"><mat-icon>add_circle_outline</mat-icon> Add content and questions </button> -->
                 <button mat-raised-button class="close-btn" style="margin-top: 25px;"  color="primary" >Save & Close </button>
                 <span class="material-icons close-icon close-btn" >close </span>
                 <mat-menu #menu="matMenu">

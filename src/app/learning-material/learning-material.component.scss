@@ -72,9 +72,44 @@
 
 .add-content{
   display: block;
+
+  ::ng-deep mat-button-toggle.drop-down-button {
+    border-left: 1px solid #666;
+    margin-left: 10px;
+  }
+
+  .drop-down-button {
+    .mat-icon { 
+      vertical-align: middle;
+      height: 27px;
+    }
+  
+  }
+  
 }
+
+
+
+
+
+
+
  
- 
+.mat-menu-panel {
+    width: 191px;
+    min-height: auto;
+    margin-top: 12px;
+    margin-right: -17px;
+ }
+
+ mat-button-toggle {
+  //color: white; 
+}
+
+.mat-button-toggle-checked {
+  //color: white; 
+}
+
 
 
 
