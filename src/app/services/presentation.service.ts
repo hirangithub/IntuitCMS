@@ -11,8 +11,8 @@ export class PresentationService {
     return [
       {
         title: "Getting started in QuickBooks Online Accountant",
-        total_lessons: 6,
-        duration: "12 min",
+        total_lessons: 2,
+        duration: "2.8HRS", 
         cpe_credits: "1.5", 
         lessons : [
           {
@@ -22,7 +22,7 @@ export class PresentationService {
                 title: "Establish a potential client's QuickBooks Online and QuickBooks Self-Employed needs",
                 type: "Learning Outcome",
                 duration: "20 min",
-                template: "Introduction template",
+                template: "Introduction template - Lesson specific content",
                 additional_description: ""
               },
               {

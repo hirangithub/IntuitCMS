@@ -1,4 +1,4 @@
-<mat-dialog-actions class="close-btn" align="end">
+<mat-dialog-actions class="close-btn">
     <button mat-button mat-dialog-close><mat-icon>close</mat-icon></button>
 </mat-dialog-actions>
 
@@ -14,7 +14,7 @@
 
     
 
-    <mat-card class="example-card" fxFlex="23%" matRipple>
+    <mat-card class="example-card" fxFlex="23%" matRipple (click)="openTemplate()">
         <mat-card-content class="card-wrap">
             <img mat-card-image src="https://preprod.intuittrainingplatform.com/Content/Images/temp-1.png" alt="Photo of a Shiba Inu">
             <mat-card-title class="title">Introduction</mat-card-title>

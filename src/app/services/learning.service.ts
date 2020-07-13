@@ -21,13 +21,13 @@ export class LearningService {
               duration: "4 mins"
             },
             {
-              title: "Quickbooks Online Certification",
+              title: "QuickBooks Online Certification",
               description: "Conceptual Information",
               duration: "3 mins"
             },
             {
-              title: "How to user this course",
-              description: "Summery",
+              title: "How to use this course",
+              description: "Summary",
               duration: "3 mins"
             }
           ],  
@@ -39,7 +39,7 @@ export class LearningService {
           total_cpe: 1,
           data: [ 
             {
-              title: "When you log into QuickBooks Online Accountant, whose books can you directly access and manage?",
+              title: "When you log into QuickBooks Online Accountant, whose books can you direct...",
               description: "Knowledge Check", 
             },
             {
@@ -202,7 +202,7 @@ export class LearningService {
               description: "Knowledge Check", 
             },
             {
-              title: "When you log into QuickBooks Online Accountant, whose books can you directly access and manage?",
+              title: "When you log into QuickBooks Online Accountant, whose books can you direct...", 
               description: "Knowledge Check", 
             },
             {

@@ -3,6 +3,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { MatFormFieldControl } from '@angular/material/form-field';
 import { LearningService } from "../services/learning.service";
 import {CdkDragDrop, moveItemInArray, transferArrayItem} from '@angular/cdk/drag-drop';
+import { DialogElementsExampleDialog } from "../presentation/presentation.component";
 
 
 @Component({
@@ -16,6 +17,8 @@ export class LearningMaterialComponent implements OnInit {
     public dialog: MatDialog,
     public learning: LearningService
   ) { }
+
+  myCompOneObj: any =  DialogElementsExampleDialog;
  
   selected_LO: any;
   learningContent: any;
@@ -23,7 +26,8 @@ export class LearningMaterialComponent implements OnInit {
   questions: any; 
   isAddLODialog: boolean = false;
   learningOutComes: any[] = this.learning.getLearningOutcomes();
-  learningOutComesTitles : any[] = []
+  learningOutComesTitles : any[] = [];
+  isDefaultLODialog: boolean = false;
 
   ngOnInit(): void { 
     this.viewLearningOutcomes(0);  
@@ -31,12 +35,15 @@ export class LearningMaterialComponent implements OnInit {
       this.learningOutComes.forEach(element => {
         this.learningOutComesTitles.push(element.lo_title)
       });
+
+      this.showDefaultLODialog();
   }
 
   viewLearningOutcomes(i): void { 
     this.selected_LO = this.learningOutComes[i];  
     this.learningContent =  this.selected_LO.learning_content.data;
     this.questions =  this.selected_LO.questions.data;
+    this.isDefaultLODialog = false;
   }
 
 
@@ -68,6 +75,15 @@ export class LearningMaterialComponent implements OnInit {
     });
   }
 
+   //Select Question
+   opeSelectQuestionTemplate() {
+    const dialogRef = this.dialog.open(SelectQuestionTemp);
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('');
+    });
+
+  }
   
   //Lesson Edit
   openEditPopup(){
@@ -82,10 +98,17 @@ export class LearningMaterialComponent implements OnInit {
 
   openAddLODialog(){
     this.isAddLODialog = true;
+    this.isDefaultLODialog = false;
   }
 
   closeAddLODialog(){
     this.isAddLODialog = false;
+    this.isDefaultLODialog = true;
+  }
+
+  showDefaultLODialog() {
+    this.isAddLODialog = false;
+    this.isDefaultLODialog = true;
   }
 
 
@@ -94,9 +117,7 @@ export class LearningMaterialComponent implements OnInit {
     this.LO_title = "";
   }
 
-
-
-
+ 
 }
 
 @Component({
@@ -106,7 +127,22 @@ export class LearningMaterialComponent implements OnInit {
 })
  
 
-export class DialogContent {}
+export class DialogContent implements OnInit{
+
+  constructor(
+    public dialog: MatDialog, 
+  ) { }
+
+  ngOnInit(): void {  
+
+  }
+
+  openTemplate(){ 
+    this.dialog.closeAll();
+    const openEditTemp = this.dialog.open(EditTempContent); 
+     
+  }
+}
 
 
 
@@ -118,7 +154,20 @@ export class DialogContent {}
   styleUrls: ['./select-template.scss']
 })
 
-export class EditTempContent {} 
+export class EditTempContent  implements OnInit{ 
+
+  constructor(
+    public dialog: MatDialog, 
+  ) { }
+
+  ngOnInit(): void {  
+
+  }
+
+  deleteDialog(){
+    const openEditTemp = this.dialog.open(DialogElementsExampleDialog); 
+  }
+} 
 
 
 
@@ -131,7 +180,50 @@ export class EditTempContent {}
   styleUrls: ['./select-template.scss']
 })
 
-export class EditQuestionTemp {} 
+export class EditQuestionTemp  implements OnInit{
+
+
+  constructor(
+    public dialog: MatDialog, 
+  ) { }
+
+  ngOnInit(): void {  
+
+  }
+
+  deleteDialog(){
+   const openEditTemp = this.dialog.open(DialogElementsExampleDialog); 
+  }
+} 
+
+
+
+@Component({
+  selector: 'select-question',
+  templateUrl: 'select-question.html',
+  styleUrls: ['./select-template.scss']
+})
+
+export class SelectQuestionTemp  implements OnInit{
+
+
+  constructor(
+    public dialog: MatDialog, 
+  ) { }
+
+  ngOnInit(): void {  
+
+  }
+
+  openQuestionTemplate() {
+    const dialogRef = this.dialog.open(EditQuestionTemp);
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('');
+    });
+  }
+  
+} 
 
 
 

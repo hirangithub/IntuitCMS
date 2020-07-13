@@ -1,0 +1,35 @@
+<mat-dialog-actions class="close-btn">
+  <button mat-button mat-dialog-close><mat-icon>close</mat-icon></button>
+</mat-dialog-actions>
+
+<h1>Select question type</h1>
+<p>Select content template for <strong>Establish a potential client's QuickBooks Online and QuickBooks Self-Employed needs</strong> learning outcome.</p>
+
+<!-- <div class="example-ripple-container mat-elevation-z4" matRipple> 
+  Click me
+</div> -->
+
+
+<div class="container template-grid select-template" fxLayout="row" fxLayoutWrap="" fxLayoutGap="2%" fxLayoutAlign="center">
+
+  
+
+  <mat-card class="example-card" fxFlex="33%" matRipple (click)="openQuestionTemplate()">
+      <mat-card-content class="card-wrap"> 
+          <mat-card-title class="title">Exam</mat-card-title>
+      </mat-card-content>
+  </mat-card>
+
+  <mat-card class="example-card" fxFlex="33%" matRipple  (click)="openQuestionTemplate()">
+      <mat-card-content class="card-wrap">
+          <mat-card-title class="title">CPE</mat-card-title>
+      </mat-card-content>
+  </mat-card>
+
+  <mat-card class="example-card" fxFlex="33%" matRipple  (click)="openQuestionTemplate()">
+      <mat-card-content class="card-wrap">
+          <mat-card-title class="title">Knowledge Check</mat-card-title>
+      </mat-card-content>
+  </mat-card> 
+
+</div> 

@@ -1,18 +1,43 @@
 <header class="popup-header">
-    <div class="titles"> 
-        <h1>Edit Question</h1>
+    <div class="titles spec"> 
+        <h1>Edit Question</h1> 
+        <!-- <mat-chip-list aria-label="" class="badge special">
+            <mat-chip color="primary" selected><mat-icon>info</mat-icon> <p style="font-weight: normal;">This question is disabled</p></mat-chip>
+        </mat-chip-list> -->
         <p>You are adding questions for <strong>Establish a potential client's QuickBooks Online and QuickBooks Self-Employed needs</strong> learning outcome.</p>
     </div>
 
     <div class="buttons">
         <!-- <mat-slide-toggle class="example-margin" [color]="color" [checked]="checked" [disabled]="disabled"></mat-slide-toggle> -->
-        <button mat-stroked-button>Save & close</button> 
+        <ul class="popup-ul">
+            <li style="display: flex; align-items: center;">
+                <mat-slide-toggle></mat-slide-toggle> &nbsp;&nbsp; <strong style="font-weight: 500;">Disabled</strong>
+            </li>
+            <li>
+                <button mat-raised-button color="primary">Save & close</button> 
+            </li>
+            <li>
+                <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="">
+                    <mat-icon>more_vert</mat-icon>
+                </button>
+                <mat-menu #menu="matMenu">
+                    <!-- <button mat-menu-item>
+                      <mat-icon>speaker_notes_off</mat-icon>
+                      <span>Disable Question</span>
+                    </button>                    -->
+                    <button mat-menu-item (click)="deleteDialog()">
+                        <mat-icon>delete</mat-icon>
+                        <span>Delete Question</span>
+                    </button>                    
+                </mat-menu>
+            </li>
+        </ul>
+        
+        
    
-        <button mat-icon-button aria-label="Example icon button with a vertical three dot icon">
-            <mat-icon>more_vert</mat-icon>
-            </button>
+        
 
-            <mat-dialog-actions class="close-btn" align="end">
+        <mat-dialog-actions class="close-btn">
             <button mat-button mat-dialog-close><mat-icon>close</mat-icon></button>
         </mat-dialog-actions>
     </div>
@@ -20,21 +45,7 @@
 
 
 <mat-dialog-content class="mat-typography">
-    <div class="container template-grid" fxLayout="row" fxLayoutWrap="" fxLayoutGap="2%" fxLayoutAlign="left">
-        <div fxFlex="100%">
-            <mat-label>Exam type*</mat-label>
-            <br><br>
-            <mat-radio-group> 
-                <mat-radio-button class="example-margin" value="after">Certification Exam</mat-radio-button>
-                <br><br>
-                <mat-radio-button class="example-margin" value="before">Knowledge Check</mat-radio-button>
-                <br><br>
-                <mat-radio-button class="example-margin" value="next">CPE Assessment</mat-radio-button>
-              </mat-radio-group>
-        </div> 
-        
-    </div> 
-    <br><br>
+     
     <div class="container template-grid" fxLayout="row" fxLayoutWrap="" fxLayoutGap="2%" fxLayoutAlign="left">
         <div fxFlex="100%">
             <mat-form-field appearance="fill" fxFlex="100%">

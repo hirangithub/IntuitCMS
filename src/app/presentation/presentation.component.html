@@ -3,50 +3,66 @@
     <div fxLayout="column" fxFlex="25" class="left-container"> 
         <div class="title">
             <h2>Bundles ({{bundleList.length}})</h2>
-            <button mat-raised-button color="primary" (click)="openAddBundlesDialog()">Add </button>               
+            <button mat-mini-fab color="primary" (click)="openAddBundlesDialog()">
+                <mat-icon>add</mat-icon>
+            </button>               
         </div>
-
          
         <mat-form-field class="example-full-width">
             <mat-label>Search Bundles</mat-label>
             <input matInput placeholder="">
         </mat-form-field>
 
-        <mat-selection-list [multiple]="false" *ngIf="!isAddBundlesDialog">            
-            <mat-list-option *ngFor="let bl of bundleList; let i = index" (click)="viewLearningOutcomes(i)" >{{bl.title}}</mat-list-option>         
+        <mat-selection-list [multiple]="false" *ngIf="!isAddBundlesDialog && !isAddLessonsDialog">            
+            <mat-list-option *ngFor="let bl of bundleList; let i = index" [ngClass]="{'active': i =='0'}" (click)="viewLearningOutcomes(i)" >{{bl.title}}</mat-list-option>         
         </mat-selection-list>
 
-        <mat-selection-list [multiple]="false" *ngIf="isAddBundlesDialog">      
-            <mat-list-option >{{Bundle_title}}</mat-list-option>      
+        <mat-selection-list [multiple]="false" *ngIf="isAddBundlesDialog || isAddLessonsDialog">      
+            <mat-list-option *ngIf="!isAddLessonsDialog">{{Bundle_title}}</mat-list-option>      
             <mat-list-option *ngFor="let bl_title of bundleListTitles; let i = index" >{{bl_title}}</mat-list-option>         
         </mat-selection-list>
 
     </div>
 
     <div fxFlex="75" class="right-container"> 
+        <div class="default-text" *ngIf="isDefaultBundleDialog">
+            <mat-card>
+                <img src="http://testing.volume.co.uk/Intuit-CMS/2.png" style="width: 12rem;" />
+                <div style="width: 60%;">
+                    <h1>Content Presentation</h1>
+                    <p>Setup your course presentation by creating bundles with related lessons. You can include created learning outcomes to build up the content.</p>
+                </div>                
+            </mat-card>        
+        </div>
+
         <div class="bundle-dialog-box" *ngIf="isAddBundlesDialog">
-            <div class="title">
-                <h2>Create new bundle</h2>
-                <a href="javascript:void(0)" (click)="closeAddBundlesDialog()">Close</a>
-                <button mat-raised-button color="primary" (click)="createNewBundle()">Create</button>                   
-            </div>
-            <div class="add-item">
-                <mat-form-field class="example-full-width"> 
-                    <mat-label>Bundle title</mat-label>
-                    <input matInput placeholder="" [(ngModel)]="Bundle_title"> 
-                </mat-form-field>
 
-                <mat-form-field class="example-full-width"> 
-                    <mat-label>Bundle thumbnail</mat-label>
-                    <input matInput placeholder=""> 
-                </mat-form-field>
+            <mat-card>
+                <div class="title">
+                    <h1>Create new bundle</h1>                                       
+                </div>
+                <div class="add-item">
+                    <mat-form-field class="example-full-width"> 
+                        <mat-label>Bundle title</mat-label>
+                        <input matInput placeholder="" [(ngModel)]="Bundle_title"> 
+                    </mat-form-field>    
+                    
+                    <mat-form-field appearance="fill">
+                        <mat-label>Bundle description</mat-label>
+                        <textarea matInput></textarea>
+                    </mat-form-field>
 
-                <mat-form-field appearance="fill">
-                    <mat-label>Bundle description</mat-label>
-                    <textarea matInput></textarea>
-                  </mat-form-field>
-                
-            </div> 
+                    <div class="browse">  
+                        <mat-label class="lbl">Bundle thumbnail</mat-label>
+                        <button mat-stroked-button>Browse</button>
+                    </div>    
+                     
+                    <button mat-raised-button color="primary" (click)="createNewBundle()">Create</button> &nbsp;&nbsp;
+                    <button mat-raised-button (click)="closeAddBundlesDialog()">Close</button>
+                    
+                </div> 
+            </mat-card>
+
         </div>   
 
         <div class="add-lessons-page" *ngIf="isAddLessonsDialog" >
@@ -65,8 +81,8 @@
                     </ul>
                 </div>
                 <div fxFlex="25" fxLayoutAlign="end center" fxFlexOffset="20px">  
-                    <button mat-raised-button color="primary">Add lesson</button> 
-        
+                    <button mat-raised-button  ><mat-icon>add_circle_outline</mat-icon> Add lesson</button> 
+                    
                     <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="">
                         <mat-icon>more_vert</mat-icon>
                     </button>
@@ -75,37 +91,47 @@
                           <mat-icon>reorder</mat-icon>
                           <span>Re-order lessons</span>
                         </button>
-                        <button mat-menu-item>
+                        <button mat-menu-item (click)="openCPE()">
                             <mat-icon>settings_brightness</mat-icon>
                             <span>Configure CPE</span>
                         </button>
-                        <button mat-menu-item>
+                        <button mat-menu-item (click)="openCopyUrl()">
+                            <mat-icon>file_copy</mat-icon>
+                            <span>Copy Bundle URL</span>
+                        </button>
+                        <button mat-menu-item >
                           <mat-icon>edit</mat-icon>
                           <span>Edit Bundle</span>
-                        </button>
-                        <button mat-menu-item>
+                        </button>                        
+                        <button mat-menu-item (click)="openDialog()">
                             <mat-icon>delete</mat-icon>
                             <span>Delete Bundle</span>
                         </button>                    
                     </mat-menu>
                 </div>  
             </div>
-            <div class="bundle-dialog-box" >
-                <div class="title">
-                    <h2>Add a lesson for this bundle</h2> 
-                </div>
-                <div class="add-item">
-                    <mat-form-field class="example-full-width"> 
-                        <mat-label>Lesson title</mat-label>
-                        <input matInput placeholder=""> 
-                    </mat-form-field> 
-                    <button mat-raised-button color="primary" >Create</button>    
-                    
-                </div> 
+
+            <div class="bundle-dialog-box v2">
+                <mat-card>
+                    <div class="title">
+                        <h2>Add a lesson for this bundle</h2> 
+                    </div>
+                    <div class="add-item">
+                        <mat-form-field class="example-full-width"> 
+                            <mat-label>Lesson title</mat-label>
+                            <input matInput placeholder=""> 
+                        </mat-form-field> 
+                        
+                        <button mat-raised-button color="primary">Create</button>&nbsp;&nbsp;
+                        <button mat-raised-button (click)="closeAddLessonsBundlesDialog()">Close</button>   
+                    </div> 
+                </mat-card>                
             </div> 
+
+
         </div>
 
-        <div fxLayout="row" fxLayoutAlign="fxFlexFill" class="action-panel border-active" *ngIf="!isAddBundlesDialog && !isAddLessonsDialog">
+        <div fxLayout="row" fxLayoutAlign="fxFlexFill" class="action-panel border-active" *ngIf="!isAddBundlesDialog && !isAddLessonsDialog && !isDefaultBundleDialog">
             <div fxFlex="75" >
                 <ul>
                     <li><img src="https://live.intuittrainingplatform.com/filestore/ModuleFiles/539/thumb_icon.png?1592894348" title="" /></li>
@@ -120,7 +146,7 @@
                 </ul>
             </div>
             <div fxFlex="25" fxLayoutAlign="end center" fxFlexOffset="20px">  
-                <button mat-raised-button color="primary">Add lesson</button> 
+                <button mat-raised-button  (click)="openAddLessonsBox()"><mat-icon>add_circle_outline</mat-icon> Add lesson</button> 
 
                 <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="">
                     <mat-icon>more_vert</mat-icon>
@@ -130,29 +156,87 @@
                       <mat-icon>reorder</mat-icon>
                       <span>Re-order lessons</span>
                     </button>
-                    <button mat-menu-item>
+                    <button mat-menu-item (click)="openCPE()">
                         <mat-icon>settings_brightness</mat-icon>
                         <span>Configure CPE</span>
+                    </button>
+                    <button mat-menu-item (click)="openCopyUrl()">
+                        <mat-icon>file_copy</mat-icon>
+                        <span>Copy Bundle URL</span>
                     </button>
                     <button mat-menu-item>
                       <mat-icon>edit</mat-icon>
                       <span>Edit Bundle</span>
                     </button>
-                    <button mat-menu-item>
+                    <button mat-menu-item (click)="openDialog()">
                         <mat-icon>delete</mat-icon>
                         <span>Delete Bundle</span>
                     </button>                    
                 </mat-menu>
             </div>
+            
         </div> 
         
-        <div fxLayout="column" fxLayoutAlign="fxFlexFill" class="body-content" *ngIf="!isAddBundlesDialog && !isAddLessonsDialog">  
+        <div class="bundle-dialog-box add-lesson v2" *ngIf="isAddLessonsBox">
+            <mat-card>
+                <div class="title">
+                    <h2>Add a lesson for this bundle</h2> 
+                </div>
+                <div class="add-item">
+                    <mat-form-field class="example-full-width"> 
+                        <mat-label>Lesson title</mat-label>
+                        <input #add matInput placeholder=""> 
+                    </mat-form-field> 
+                    
+                    <button mat-raised-button color="primary">Create</button>&nbsp;&nbsp;
+                    <button mat-raised-button (click)="closeAddLessonsBox()">Close</button>   
+                </div> 
+            </mat-card>                
+        </div> 
+
+        <div fxLayout="column" fxLayoutAlign="fxFlexFill" class="body-content" *ngIf="!isAddBundlesDialog && !isAddLessonsDialog && !isDefaultBundleDialog">  
             
             <mat-accordion class="example-headers-align" multi>                   
                 <mat-expansion-panel *ngFor="let sl of selectedLessonsList; let i = index" expanded>
-                    <mat-expansion-panel-header>
-                        <mat-panel-title>
-                            <h3 class="space-0">{{sl.title}}</h3>
+
+                    <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="" class="unique-position">
+                        <mat-icon>more_vert</mat-icon>
+                    </button>
+                    <mat-menu #menu="matMenu">
+                        <button mat-menu-item>
+                          <mat-icon>visibility</mat-icon>
+                          <span>Preview Lesson</span>
+                        </button>
+                        <button mat-menu-item>
+                            <mat-icon>remove_circle_outline</mat-icon>
+                            <span>Exclude from CPE calculation</span>
+                            <!-- <mat-slide-toggle></mat-slide-toggle>  -->
+                        </button>
+                        <button mat-menu-item>
+                            <mat-icon>reorder</mat-icon>
+                            <span>Re-order learning outcomes</span>
+                        </button>                        
+                        <button mat-menu-item (click)="openCopyUrl()">
+                          <mat-icon>file_copy</mat-icon>
+                          <span>Copy Lesson URL</span>
+                        </button>
+                        <button mat-menu-item (click)="openDialog()">
+                            <mat-icon>edit</mat-icon>
+                            <span>Edit Lesson</span>
+                        </button>
+                        <button mat-menu-item (click)="openDialog()">
+                            <mat-icon>delete</mat-icon>
+                            <span>Delete Lesson</span>
+                        </button>                    
+                    </mat-menu>
+
+                    <mat-expansion-panel-header class="special-head">
+                        <mat-panel-title class="hover-add">
+                            <h2 class="space-0">{{sl.title}}</h2>
+
+                            <button mat-icon-button aria-label="Edit lesson">
+                                <mat-icon>edit</mat-icon>
+                            </button>
                         </mat-panel-title>
                         <mat-panel-description>
                             <!-- <mat-icon>account_circle</mat-icon> -->
@@ -160,20 +244,20 @@
                     </mat-expansion-panel-header>
                     
                     <mat-selection-list [multiple]="false">
-                        <mat-list-option *ngFor="let lo of sl.learning_outcome; let i = index">                            
+                        <mat-list-option *ngFor="let lo of sl.learning_outcome; let i = index" (click)="ViewLO()">                            
                             <ul>
                                 <li>
-                                    <h2 class="space-0">{{ lo.title }}</h2>
+                                    <h3 class="space-0">{{ lo.title }}</h3>
                                     <label>{{ lo.template }}</label>
                                 </li>                                
                                 <li>                                    
-                                    <ul>      
-                                        <li>{{ lo.type }}</li>                                  
+                                    <ul>                                       
                                         <li>{{ lo.duration }}</li> 
                                         <li>{{lo.additional_description}}</li>
                                     </ul>
                                 </li>
                             </ul>
+                            <mat-icon class="remove-lo">remove_circle_outline</mat-icon>
                         </mat-list-option> 
                     </mat-selection-list>
 
@@ -183,7 +267,7 @@
                     
                     <button mat-raised-button color="accent" (click)=toggleDisplay()><mat-icon>note_add</mat-icon> Include Learning outcome</button>
                     &nbsp;&nbsp;
-                    <button mat-raised-button><mat-icon>note_add</mat-icon> Include Lesson specific content</button>
+                    <button mat-raised-button (click)=openContentTemplate()><mat-icon>note_add</mat-icon> Add Lesson specific content</button>
 
                 </mat-expansion-panel>
             </mat-accordion>               
@@ -211,10 +295,10 @@
                         <mat-selection-list>
                             <mat-list-option>
                                 <div class="title">
-                                    <h2>Establish a potential client's QucikBooks Online and QuickBookd Self-Employed</h2>                                
+                                    <h2 class="unique">Establish a potential client's QucikBooks Online and QuickBooks Self-Employed</h2>                                
                                 </div>
                                 <div class="description">
-                                    <ul>
+                                    <ul class="unique">
                                         <li>45 min</li>
                                         <li>Exam (3)</li>
                                         <li>CPE (2)</li>
@@ -224,10 +308,10 @@
                             <mat-divider></mat-divider>
                             <mat-list-option>
                                 <div class="title">
-                                    <h2>State the options to migrate clients from other accountancy...</h2>                                
+                                    <h2 class="unique">State the options to migrate clients from other accountancy...</h2>                                
                                 </div>
                                 <div class="description">
-                                    <ul>
+                                    <ul class="unique">
                                         <li>20 min</li>
                                         <li>Exam (2)</li>
                                         <li>CPE (1)</li>

@@ -7,8 +7,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TopBarComponent } from './top-bar/top-bar.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 
-import { LearningMaterialComponent, DialogContent, EditTempContent, EditQuestionTemp } from './learning-material/learning-material.component';
-import { PresentationComponent } from './presentation/presentation.component';
+import { LearningMaterialComponent, DialogContent, EditTempContent, EditQuestionTemp, SelectQuestionTemp } from './learning-material/learning-material.component';
+import { PresentationComponent, CPEDialog, CopyurlDialog, viewLODialog, DialogElementsExampleDialog } from './presentation/presentation.component';
 import { CertificationExamComponent } from './certification-exam/certification-exam.component';
 
 import { MatTabsModule } from '@angular/material/tabs';
@@ -23,6 +23,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatExpansionModule } from '@angular/material/expansion'; 
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatChipsModule } from '@angular/material/chips';
@@ -42,9 +43,14 @@ import {DragDropModule} from '@angular/cdk/drag-drop';
     LearningMaterialComponent,
     PresentationComponent,
     CertificationExamComponent,
-    DialogContent,
+    DialogContent, 
     EditTempContent, 
-    EditQuestionTemp
+    EditQuestionTemp,
+    CPEDialog,
+    CopyurlDialog,
+    viewLODialog,
+    DialogElementsExampleDialog,
+    SelectQuestionTemp 
   ],
   imports: [
     BrowserModule,
@@ -69,9 +75,10 @@ import {DragDropModule} from '@angular/cdk/drag-drop';
     MatRadioModule,
     MatSlideToggleModule, 
     FormsModule,
-    DragDropModule
+    DragDropModule, 
+    MatTooltipModule
   ],
-  exports: [],
+  exports: [DialogContent],
   providers: [],
   bootstrap: [AppComponent]
 })

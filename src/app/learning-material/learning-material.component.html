@@ -3,9 +3,10 @@
     <div fxLayout="column" fxFlex="25" class="left-container">
         <div class="title">
             <h2>Learning outcomes ({{learningOutComes.length}})</h2>
-            <button mat-raised-button color="primary" (click)="openAddLODialog()">Add </button>               
-        </div>
-        
+            <button mat-mini-fab color="primary" (click)="openAddLODialog()">
+                <mat-icon>add</mat-icon>
+            </button>               
+        </div>       
 
          
         <mat-form-field class="example-full-width">
@@ -14,7 +15,7 @@
         </mat-form-field>
 
         <mat-selection-list #shoes [multiple]="false" *ngIf="!isAddLODialog">
-            <mat-list-option *ngFor="let lo of learningOutComes; let i = index" (click)="viewLearningOutcomes(i)">
+            <mat-list-option *ngFor="let lo of learningOutComes; let i = index"  [ngClass]="{'active': i =='0'}"  (click)="viewLearningOutcomes(i)">
                 {{lo.lo_title}}
             </mat-list-option>
         </mat-selection-list>
@@ -32,44 +33,74 @@
     </div>
 
     <div fxFlex="75" class="right-container"> 
+
+        <div class="default-text" *ngIf="isDefaultLODialog">
+            <mat-card>
+                <img src="http://testing.volume.co.uk/Intuit-CMS/1.png" />
+                <div>
+                    <h1>Learning Material</h1>
+                    <p>Create learning outcomes with related content and questions. These are used as the building blocks of lessons.</p>
+                </div>                
+            </mat-card>
+        </div>
+
         <div class="lo-dialog-box" *ngIf="isAddLODialog">
-            <div class="title">
-                <h2>Learning outcome title</h2>
-                <a href="javascript:void(0)" (click)="closeAddLODialog()">Close</a>
-            </div>
-            <div class="add-item">
-                <mat-form-field class="example-full-width"> 
-                    <mat-label>Search Learning outcomes</mat-label>
-                    <input matInput placeholder="" [(ngModel)]="LO_title"> 
-                </mat-form-field>
-                <button mat-raised-button color="primary" (click)="createNewLO()">Create</button>                   
-            </div>
+
+            <mat-card>
+                <div class="title">
+                    <h1>Create New Learning outcome</h1>                                        
+                </div>
+                <div class="add-item">
+                    <mat-form-field class="example-full-width"> 
+                        <mat-label>Learning outcome title</mat-label>
+                        <input matInput placeholder="" [(ngModel)]="LO_title"> 
+                    </mat-form-field>
+                    <button mat-raised-button color="primary" (click)="createNewLO()">Create</button> &nbsp;&nbsp;
+                    <button mat-raised-button (click)="closeAddLODialog()">Close</button>   
+                </div>
+            </mat-card>            
             
         </div>
 
-        <div fxLayout="row" fxLayoutAlign="fxFlexFill" class="action-panel border-active" *ngIf="!isAddLODialog">
-            <div fxFlex="75" fxLayoutAlign="start center">
+        <div fxLayout="row" fxLayoutAlign="fxFlexFill" class="action-panel border-active" *ngIf="!isAddLODialog && !isDefaultLODialog">
+            <div fxFlex="65" fxLayoutAlign="start center">
                 <h1 class="space-0">{{selected_LO.lo_title}}</h1>
             </div>
-            <div fxFlex="25" fxLayoutAlign="end center" fxFlexOffset="20px">  
-                <button mat-raised-button color="primary" (click)="openDialog()">Add learning content</button>               
-                <!-- <mat-form-field appearance="fill">
-                    <mat-label>Favorite food</mat-label>
-                    <mat-select>
-                      <mat-option *ngFor="let food of foods" [value]="food.value">
-                        {{food.viewValue}}
-                      </mat-option>
-                    </mat-select>
-                </mat-form-field> -->
+            <div fxFlex="35" fxLayoutAlign="end center" fxFlexOffset="20px">  
+                <!-- <button mat-raised-button color="primary" (click)="openDialog()">Add learning content</button>                -->
+                
+                <button mat-raised-button class="add-content" [matMenuTriggerFor]="menu"><mat-icon>add_circle_outline</mat-icon> Add content and questions </button>
+                <button mat-raised-button class="close-btn" style="margin-top: 25px;"  color="primary" >Save & Close </button>
+                <span class="material-icons close-icon close-btn" >close </span>
+                <mat-menu #menu="matMenu">
+                    <button mat-menu-item (click)="openDialog()">Add learning content</button>
+                    <button mat-menu-item (click)="opeSelectQuestionTemplate()">Add question</button> 
+                </mat-menu>
+
+                <!-- openQuestionPopup -->
+                
+                <button mat-icon-button class="add-content" [matMenuTriggerFor]="menu34" aria-label="">
+                    <mat-icon>more_vert</mat-icon>
+                </button>
+                <mat-menu #menu34="matMenu">
+                    <button mat-menu-item>
+                      <mat-icon>edit</mat-icon>
+                      <span>Edit Learning Outcome</span>
+                    </button>
+                    <button mat-menu-item>
+                        <mat-icon>delete</mat-icon>
+                        <span>Delete Learning Outcome</span>
+                    </button>                    
+                </mat-menu>
             </div>
         </div>
 
 
-        <div fxLayout="row" fxLayoutAlign="fxFlexFill" class="body-content" *ngIf="!isAddLODialog">
+        <div fxLayout="row" fxLayoutAlign="fxFlexFill" class="body-content" *ngIf="!isAddLODialog && !isDefaultLODialog">
             <div fxLayout="column" fxFlex="50" fxLayoutAlign="start top">               
 
-                <mat-toolbar color="primary"> 
-                    <mat-toolbar-row >
+                <mat-toolbar> 
+                    <mat-toolbar-row class="pad-zero">
                         <span><h3>Learning Content</h3></span> 
                         <span class="example-spacer"></span>
                         <span class="inn">{{selected_LO.learning_content.learning_content_duration}}</span>
@@ -90,18 +121,29 @@
                 </mat-toolbar>               
 
                 <mat-card>
-                    <mat-selection-list [multiple]="false">
+                    <mat-selection-list [multiple]="false" class="lo-spec">
                         <mat-list-option *ngFor="let lc of learningContent" (click)="openEditPopup()">
-                            <div class="title">{{lc.title}}</div>
-                            <div class="description">{{lc.description}}</div>
+                            <div fxLayout="row" fxLayoutAlign="fxFlexFill">
+                                <div fxLayout="column" fxFlex="50" fxLayoutAlign="start top">    
+                                    <div class="title">{{lc.title}}</div>
+                                    <div class="description">{{lc.description}}</div>
+                                </div>
+                                <div fxLayout="" fxFlex="50" fxLayoutAlign="end top"> 
+                                    <div class="description" style="padding-top: 0;">{{lc.duration}}</div>
+                                </div>
+                            </div> 
                         </mat-list-option> 
-                    </mat-selection-list>
+                    </mat-selection-list>                    
+
+                    <div class="action-panel-2">
+                        <button mat-raised-button color="primary" (click)="openDialog()"><mat-icon>add_circle_outline</mat-icon> Add learning content</button> 
+                    </div>                    
                 </mat-card>
                 
             </div>
             <div fxLayout="column" fxFlex="50" fxLayoutAlign="top" fxFlexOffset="30px">  
 
-                <mat-toolbar color="primary"> 
+                <mat-toolbar> 
                     <mat-toolbar-row>
                         <span><h3>Questions</h3></span>                        
                         <span class="example-spacer"></span>
@@ -110,26 +152,28 @@
                             <li>Exams ({{selected_LO.questions.total_exams}})</li>
                             <li>KC ({{selected_LO.questions.total_kc}})</li>
                             <li>CPE ({{selected_LO.questions.total_cpe}})</li>
-                        </ul>
-                        <button mat-icon-button [matMenuTriggerFor]="menu2" aria-label="">
-                            <mat-icon>more_vert</mat-icon>
-                        </button>
-                        <mat-menu #menu2="matMenu">
-                            <button mat-menu-item>
-                              <mat-icon>reorder</mat-icon>
-                              <span>Re-order</span> 
-                            </button>
-                        </mat-menu>
+                        </ul>                        
                     </mat-toolbar-row>
                 </mat-toolbar>           
                 <mat-card>
-                    <mat-selection-list (click)="openQuestionPopup()">
-                        <mat-selection-list #shoes [multiple]="false">
+                    <mat-selection-list>
+                        <mat-selection-list #shoes [multiple]="false" class="lo-spec">
                             <mat-list-option *ngFor="let q of questions">
-                                <div class="title">{{q.title}}</div>
-                                <div class="description">{{q.description}}</div>
+                                <div fxLayout="row" fxLayoutAlign="fxFlexFill">
+                                    <div fxLayout="column" fxFlex="80" fxLayoutAlign="start top" (click)="openQuestionPopup()">    
+                                        <div class="title">{{q.title}}</div>
+                                        <div class="description">{{q.description}}</div> 
+                                    </div>
+                                    <div fxLayout="" fxFlex="20" fxLayoutAlign="end top"> 
+                                        <mat-slide-toggle></mat-slide-toggle>         
+                                    </div>
+                                </div> 
                             </mat-list-option> 
                         </mat-selection-list>
+
+                        <div class="action-panel-2">
+                            <button mat-raised-button color="primary" (click)="openQuestionPopup()"><mat-icon>add_circle_outline</mat-icon> Add question</button> 
+                        </div>  
                     </mat-selection-list>
                 </mat-card>               
             </div>

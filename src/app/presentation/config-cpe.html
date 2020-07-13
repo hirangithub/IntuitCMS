@@ -1,0 +1,107 @@
+    <header class="popup-header cpe-content">
+        <div class="titles">
+            <h1>Configure CPE</h1>
+            <p>CPE for <strong>Getting started in QuickBooks Online Accountant</strong> and 1.5CPE can be awarded.</p>
+        </div>
+
+        <div class="buttons">               
+            <button mat-raised-button color="primary">Save & close</button>                 
+
+            <mat-dialog-actions class="close-btn">
+                <button mat-button mat-dialog-close><mat-icon>close</mat-icon></button>
+            </mat-dialog-actions>
+        </div>
+    </header>
+
+    <mat-dialog-content class="mat-typography cpe-content">
+        <div class="container template-grid" fxLayout="row" fxLayoutWrap fxLayoutAlign="left"> 
+            <div fxFlex="100%" style="padding-right: 5rem;">
+                <ul>
+                    <li>Enable or Disable CPE for the bundle</li>
+                    <li style="margin-top: .5rem; display: flex; align-items: center;"><mat-slide-toggle></mat-slide-toggle> &nbsp;&nbsp; <strong style="font-weight: 500;">Disabled</strong> </li>
+                </ul>                
+            </div>
+
+            <div fxFlex="100%">
+                <mat-form-field appearance="fill" fxFlex="100%">
+                    <mat-label>Pick a survey URL to go at the end of the exam</mat-label>
+                    <input matInput placeholder="Survey URL">
+                </mat-form-field>
+            </div>              
+        </div> 
+    
+    
+        <div class="container template-grid" fxLayout="row" fxLayoutWrap="" fxLayoutAlign="left" style="padding-top: .5rem;">
+            <div fxFlex="100%" style="padding-right: 5rem;">
+                <mat-form-field appearance="fill" fxFlex="60%">
+                    <mat-label>CPE exam questions</mat-label>                    
+                    <mat-select>
+                        <mat-option>5</mat-option>
+                        <mat-option>6</mat-option>
+                        <mat-option>7</mat-option>
+                        <mat-option>8</mat-option>
+                        <mat-option>9</mat-option>
+                        <mat-option>10</mat-option>
+                        <mat-option>11</mat-option>
+                        <mat-option>12</mat-option>
+                        <mat-option>13</mat-option>
+                        <mat-option>14</mat-option>
+                        <mat-option>15</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+
+            <div fxFlex="100%">
+                <ul>
+                    <li>Lessons excluded from CPE calculation</li>
+                    <li><strong style="font-weight: 500; padding-top: .5rem; display: block;">Your client's QuickBooks Online</strong></li>
+                </ul> 
+            </div>
+        </div> 
+        
+        <br />
+        <mat-divider></mat-divider>
+        <br />
+
+        <p style="font-size: .7rem; padding-bottom: .5rem;">Admin could hover over duration bar to get breakdown.</p>
+        
+        <div class="chart-holder">
+            <img src="http://testing.volume.co.uk/Intuit-CMS/chart.PNG" title="" style="width: 100%;" />  
+            <div class="tooltip">
+                <dl>
+                    <dt>Questions</dt>
+                    <dd>05:03</dd>
+                </dl>
+                <dl>
+                    <dt>Content</dt>
+                    <dd>14:05</dd>
+                </dl>
+                <dl>
+                    <dt>Lesson specific</dt>
+                    <dd>00:32</dd>
+                </dl>
+                <dl>
+                    <dt>Video</dt>
+                    <dd>04:00</dd>
+                </dl>
+                <dl>
+                    <dt>Knowledge checks</dt>
+                    <dd>01:51</dd>
+                </dl>
+                <dl>
+                    <dt>Exam</dt>
+                    <dd>11:01</dd>
+                </dl>
+                <mat-icon>arrow_drop_down</mat-icon>
+            </div>     
+        </div>
+        
+        
+    
+        
+    </mat-dialog-content>
+
+    
+
+
+    

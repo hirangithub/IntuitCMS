@@ -2,22 +2,32 @@
     
     <header class="popup-header">
         <div class="titles">
-            <h2>Introduction Template</h2>
+            <h1>Introduction Template</h1>
             <p>You are adding Introduction template for <strong>Establish a potential client's QuickBooks Online and QuickBooks Self-Employed needs</strong> learning outcome.</p>
         </div>
 
         <div class="buttons">
-                <button mat-stroked-button>Preview</button>
+                <button mat-raised-button>Preview</button> 
+               
+                <button mat-raised-button color="primary">Save & close</button> 
 
-                <button mat-stroked-button>Save & close</button>
+                <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="">
+                    <mat-icon>more_vert</mat-icon>
+                </button>
+                <mat-menu #menu="matMenu">
+                    <!-- <button mat-menu-item>
+                      <mat-icon>visibility</mat-icon>
+                      <span>Preview Content</span>
+                    </button>                    -->
+                    <button mat-menu-item (click)="deleteDialog()">
+                        <mat-icon>delete</mat-icon>
+                        <span>Delete Content</span>
+                    </button>                    
+                </mat-menu>
 
-                <button mat-icon-button aria-label="Example icon button with a vertical three dot icon">
-                        <mat-icon>more_vert</mat-icon>
-                      </button>
-
-                      <mat-dialog-actions class="close-btn" align="end">
-                            <button mat-button mat-dialog-close><mat-icon>close</mat-icon></button>
-                        </mat-dialog-actions>
+                <mat-dialog-actions class="close-btn">
+                    <button mat-button mat-dialog-close><mat-icon>close</mat-icon></button>
+                </mat-dialog-actions>
         </div>
     </header>
 
@@ -27,14 +37,14 @@
             <div fxFlex="100%">
                 <mat-form-field appearance="fill" fxFlex="100%">
                     <mat-label>Title</mat-label>
-                    <input matInput placeholder="Placeholder">
+                    <input matInput placeholder="Welcome to QuickBooks">
                 </mat-form-field>
             </div>
     
             <div fxFlex="100%">
                 <mat-form-field appearance="fill" fxFlex="100%">
                     <mat-label>Learning Outcomes</mat-label>
-                    <input matInput placeholder="Placeholder">
+                    <input matInput placeholder="In this lesson, you'll learn how to:">
                 </mat-form-field>
             </div>
         </div> 
@@ -44,27 +54,27 @@
             <div fxFlex="100%">
                 <mat-form-field appearance="fill" fxFlex="100%">
                     <mat-label>Lesson background</mat-label>
-                    <input matInput placeholder="Placeholder">
+                    <input matInput placeholder="The story so far">
                 </mat-form-field>
             </div>
     
             <div fxFlex="100%">
                 <mat-form-field appearance="fill" fxFlex="100%">
-                    <mat-label>Learning Outcomes</mat-label>
-                    <input matInput placeholder="Placeholder">
+                    <mat-label>Topics</mat-label>
+                    <textarea rows="1" matInput placeholder=""></textarea>
                 </mat-form-field>
             </div>
         </div> 
             
     
-        <div class="container template-grid" fxLayout="row" fxLayoutWrap="" fxLayoutGap="2%" fxLayoutAlign="left">
+        <!-- <div class="container template-grid" fxLayout="row" fxLayoutWrap="" fxLayoutGap="2%" fxLayoutAlign="left">
             <div fxFlex="100%">
                 <mat-form-field appearance="fill" fxFlex="100%">
                     <mat-label>Background content</mat-label>
                     <textarea rows="7" matInput placeholder=""></textarea>
                 </mat-form-field>
             </div>
-        </div> 
+        </div>  -->
     
     
         <div class="container template-grid" fxLayout="row" fxLayoutWrap="" fxLayoutGap="2%" fxLayoutAlign="left">
@@ -81,23 +91,39 @@
                 <button mat-stroked-button>Browse</button>
             </div>
         </div> 
-    
+
         <div class="container template-grid" fxLayout="row" fxLayoutWrap="" fxLayoutGap="2%" fxLayoutAlign="left">
+            <div fxFlex="100%">
+                <mat-form-field appearance="fill" fxFlex="100%">
+                    <mat-label>How can ...... help?</mat-label>
+                    <input matInput placeholder="How can QuickBooks Online help?">
+                </mat-form-field>
+            </div>
+    
             <div fxFlex="100%">
                 <mat-form-field appearance="fill" fxFlex="100%">
                     <mat-label>Vimeo video URL</mat-label>
                     <input matInput placeholder="https://vimeo.com/76978564">
                 </mat-form-field>
             </div>
+        </div> 
+    
+        <div class="container template-grid" fxLayout="row" fxLayoutWrap="" fxLayoutGap="2%" fxLayoutAlign="left">
+            <div fxFlex="100%">
+                <mat-form-field appearance="fill" fxFlex="100%">
+                    <mat-label>Help content</mat-label>
+                    <textarea rows="6" matInput placeholder=""></textarea>
+                </mat-form-field>
+            </div>
     
             <div fxFlex="100%" fxLayoutGap="2%">
                 <mat-form-field appearance="fill" fxFlex="130px">
                     <mat-label>Content duration</mat-label>
-                    <input matInput placeholder="Placeholder">
+                    <input matInput placeholder="MM : SS">
                 </mat-form-field>
      
                 <mat-chip-list aria-label="" class="badge">
-                    <mat-chip><mat-icon>info</mat-icon> <p>Based on the content updated <strong>03:30 min</strong> durations is suggested.</p></mat-chip>
+                    <mat-chip color="primary" style="height: auto;" selected><mat-icon>info</mat-icon> <p style="font-weight: normal;">Based on the content updated <strong>03:30 min</strong> durations is suggested.</p></mat-chip>
                 </mat-chip-list>
             </div>
         </div> 
