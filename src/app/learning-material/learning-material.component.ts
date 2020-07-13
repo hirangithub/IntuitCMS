@@ -1,10 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog'; 
 import { MatFormFieldControl } from '@angular/material/form-field';
 import { LearningService } from "../services/learning.service";
 import {CdkDragDrop, moveItemInArray, transferArrayItem} from '@angular/cdk/drag-drop';
 import { DialogElementsExampleDialog } from "../presentation/presentation.component";
-
+import { LoDataService } from "../services/lo-data.service";
 
 @Component({
   selector: 'app-learning-material',
@@ -15,9 +15,11 @@ export class LearningMaterialComponent implements OnInit {
 
   constructor(
     public dialog: MatDialog,
-    public learning: LearningService
+    public learning: LearningService,
+    private data: LoDataService
   ) { }
 
+  @Output() name: string;
   myCompOneObj: any =  DialogElementsExampleDialog;
  
   selected_LO: any;
@@ -28,7 +30,7 @@ export class LearningMaterialComponent implements OnInit {
   learningOutComes: any[] = this.learning.getLearningOutcomes();
   learningOutComesTitles : any[] = [];
   isDefaultLODialog: boolean = false;
-
+  isShowLO: boolean;
   ngOnInit(): void { 
     this.viewLearningOutcomes(0);  
 
@@ -36,7 +38,14 @@ export class LearningMaterialComponent implements OnInit {
         this.learningOutComesTitles.push(element.lo_title)
       });
 
-      this.showDefaultLODialog();
+      this.data.defaultLODialogCurrentStatus.subscribe(message =>{
+        this.isShowLO = message;
+      })
+      
+      if(!this.isShowLO){
+        this.showDefaultLODialog();
+      }
+    
   }
 
   viewLearningOutcomes(i): void { 
