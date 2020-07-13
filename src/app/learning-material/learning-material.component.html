@@ -74,7 +74,7 @@
                 <span class="material-icons close-icon close-btn" >close </span>
                 <mat-menu #menu="matMenu">
                     <button mat-menu-item (click)="openDialog()">Add learning content</button>
-                    <button mat-menu-item (click)="opeSelectQuestionTemplate()">Add question</button> 
+                    <button mat-menu-item (click)="openSelectQuestionTemplate()">Add question</button> 
                 </mat-menu>
 
                 <!-- openQuestionPopup -->
@@ -172,7 +172,7 @@
                         </mat-selection-list>
 
                         <div class="action-panel-2">
-                            <button mat-raised-button color="primary" (click)="openQuestionPopup()"><mat-icon>add_circle_outline</mat-icon> Add question</button> 
+                            <button mat-raised-button color="primary" (click)="openSelectQuestionTemplate()"><mat-icon>add_circle_outline</mat-icon> Add question</button> 
                         </div>  
                     </mat-selection-list>
                 </mat-card>               
