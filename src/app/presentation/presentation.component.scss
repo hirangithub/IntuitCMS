@@ -1,12 +1,15 @@
 .title {
-    display: flex;
+    //display: flex;
 
     h2 {
         margin-bottom: 0;
+        display: inline-block;
     }
 
     button {
-        margin-left: auto;
+      margin-left: 0;
+      float: right;
+      display: inline-block;
     }
 }
 

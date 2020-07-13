@@ -80,7 +80,7 @@
                     </mat-button-toggle-group>
                 </button>
 
-                <mat-menu #dropdownMenuOne="matMenu" xPosition="after">
+                <mat-menu #dropdownMenuOne="matMenu" xPosition="after" class="custom-drop-menu">
                     <button mat-menu-item (click)="openQuestionPopup()">Add Question</button>
                 </mat-menu>
             
@@ -204,7 +204,11 @@
 
 
 
-
-
-
-
+<style>
+.custom-drop-menu {
+    width: 197px;
+    margin-top: 12px;
+    margin-right: -6px;
+    min-height: auto; 
+}
+</style>
