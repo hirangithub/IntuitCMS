@@ -9,7 +9,7 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
 
 import { LearningMaterialComponent, DialogContent, EditTempContent, EditQuestionTemp, SelectQuestionTemp } from './learning-material/learning-material.component';
 import { PresentationComponent, CPEDialog, CopyurlDialog, viewLODialog, DialogElementsExampleDialog } from './presentation/presentation.component';
-import { CertificationExamComponent } from './certification-exam/certification-exam.component';
+import { CertificationExamComponent, viewLODialog2 } from './certification-exam/certification-exam.component';
 
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatInputModule } from '@angular/material/input';
@@ -49,6 +49,7 @@ import {DragDropModule} from '@angular/cdk/drag-drop';
     CPEDialog,
     CopyurlDialog,
     viewLODialog,
+    viewLODialog2,
     DialogElementsExampleDialog,
     SelectQuestionTemp 
   ],

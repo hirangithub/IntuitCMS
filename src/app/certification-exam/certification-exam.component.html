@@ -25,7 +25,7 @@
             </div>
         </div>
 
-        <label class="lbl-help">Use <mat-icon>add_circle_outline</mat-icon> icon to split learning outcomes to sections below.</label>
+        <label class="lbl-help">Admin could hover over rows and find <mat-icon>add_circle_outline</mat-icon> icon to split learning outcomes to multiple sections.</label>
 
 
         <div fxLayout="row" fxLayoutAlign="fxFlexFill" class="action-panel border-active">
@@ -40,7 +40,7 @@
                             </mat-panel-title>                    
                         </mat-expansion-panel-header>
         
-                        <mat-list dense>
+                        <mat-list class="table-header" dense>
                             <mat-list-item> 
                                 <table>
                                     <thead>
@@ -55,13 +55,13 @@
                         </mat-list>
                         
                         <mat-selection-list [multiple]="false">
-                            <mat-list-option>     
+                            <mat-list-option (click)="ViewLO()">     
                                 <table>    
                                         <tr>
-                                            <td class="col-1">LO 1</td>
+                                            <td class="col-1">Establish a potential client's QuickBooks Online and QuickBooks Self-Employed needs</td>
                                             <td>4</td>
                                             <td>
-                                                <mat-form-field appearance="fill" style="max-width:120px; height:52px;">  
+                                                <mat-form-field appearance="fill" style="max-width:120px; height:52px;" (click)="onEvent($event)">  
                                                     <mat-select [(value)]="selected">
                                                         <mat-option value="yes">1</mat-option>
                                                         <mat-option value="no">2</mat-option>
@@ -76,15 +76,15 @@
                                             </td>
                                         </tr>
                                 </table> 
-                                <div class="indicator-section-break"><div><mat-icon>add_circle_outline</mat-icon> Insert section break here</div></div>
+                                <div class="indicator-section-break"(click)="onEvent($event)"><div><mat-icon>add_circle_outline</mat-icon> Insert section break here</div></div>
                             </mat-list-option> 
-                            <mat-list-option>     
+                            <mat-list-option (click)="ViewLO()">     
                                 <table>    
                                         <tr>
-                                            <td class="col-1">LO 1</td>
+                                            <td class="col-1">Recognize how to create bank feeds to QuickBooks Online</td>
                                             <td>4</td>
                                             <td>
-                                                <mat-form-field appearance="fill" style="max-width:120px; height:52px;">  
+                                                <mat-form-field appearance="fill" style="max-width:120px; height:52px;" (click)="onEvent($event)">  
                                                     <mat-select [(value)]="selected">
                                                         <mat-option value="yes">1</mat-option>
                                                         <mat-option value="no">2</mat-option>
@@ -99,15 +99,15 @@
                                             </td>
                                         </tr>
                                 </table> 
-                                <div class="indicator-section-break"><div><mat-icon>add_circle_outline</mat-icon> Insert section break here</div></div>
+                                <div class="indicator-section-break"(click)="onEvent($event)"><div><mat-icon>add_circle_outline</mat-icon> Insert section break here</div></div>
                             </mat-list-option> 
-                            <mat-list-option>     
+                            <mat-list-option (click)="ViewLO()">     
                                 <table>    
                                         <tr>
-                                            <td class="col-1">LO 1</td>
+                                            <td class="col-1">Establish a potential client's QuickBooks Online and QuickBooks Self-Employed needs</td>
                                             <td>4</td>
                                             <td>
-                                                <mat-form-field appearance="fill" style="max-width:120px; height:52px;">  
+                                                <mat-form-field appearance="fill" style="max-width:120px; height:52px;" (click)="onEvent($event)">  
                                                     <mat-select [(value)]="selected">
                                                         <mat-option value="yes">1</mat-option>
                                                         <mat-option value="no">2</mat-option>
@@ -122,15 +122,15 @@
                                             </td>
                                         </tr>
                                 </table> 
-                                <div class="indicator-section-break"><div><mat-icon>add_circle_outline</mat-icon> Insert section break here</div></div>
+                                <div class="indicator-section-break"(click)="onEvent($event)"><div><mat-icon>add_circle_outline</mat-icon> Insert section break here</div></div>
                             </mat-list-option> 
-                            <mat-list-option>     
+                            <mat-list-option (click)="ViewLO()">     
                                 <table>    
                                         <tr>
                                             <td class="col-1">LO 1</td>
                                             <td>4</td>
                                             <td>
-                                                <mat-form-field appearance="fill" style="max-width:120px; height:52px;">  
+                                                <mat-form-field appearance="fill" style="max-width:120px; height:52px;" (click)="onEvent($event)">  
                                                     <mat-select [(value)]="selected">
                                                         <mat-option value="yes">1</mat-option>
                                                         <mat-option value="no">2</mat-option>
@@ -145,15 +145,15 @@
                                             </td>
                                         </tr>
                                 </table> 
-                                <div class="indicator-section-break"><div><mat-icon>add_circle_outline</mat-icon> Insert section break here</div></div>
+                                <div class="indicator-section-break"(click)="onEvent($event)"><div><mat-icon>add_circle_outline</mat-icon> Insert section break here</div></div>
                             </mat-list-option> 
-                            <mat-list-option>     
+                            <mat-list-option (click)="ViewLO()">     
                                 <table>    
                                         <tr>
                                             <td class="col-1">LO 1</td>
                                             <td>4</td>
                                             <td>
-                                                <mat-form-field appearance="fill" style="max-width:120px; height:52px;">  
+                                                <mat-form-field appearance="fill" style="max-width:120px; height:52px;" (click)="onEvent($event)">  
                                                     <mat-select [(value)]="selected">
                                                         <mat-option value="yes">1</mat-option>
                                                         <mat-option value="no">2</mat-option>
@@ -168,7 +168,7 @@
                                             </td>
                                         </tr>
                                 </table> 
-                                <div class="indicator-section-break"><div><mat-icon>add_circle_outline</mat-icon> Insert section break here</div></div>
+                                <div class="indicator-section-break"(click)="onEvent($event)"><div><mat-icon>add_circle_outline</mat-icon> Insert section break here</div></div>
                             </mat-list-option> 
                         </mat-selection-list>              
         

@@ -1,5 +1,6 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
-
+import { Component, OnInit, ElementRef, ViewChild, ViewEncapsulation } from '@angular/core';
+import { MatDialog, MatDialogRef } from '@angular/material/dialog';
+import { LoDataService } from "../services/lo-data.service";
 
 @Component({
   selector: 'app-certification-exam',
@@ -7,16 +8,41 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
   styleUrls: ['./certification-exam.component.scss'],
   encapsulation: ViewEncapsulation.None,
 })
+
 export class CertificationExamComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    public dialog: MatDialog
+  ) { }
 
   ngOnInit(): void {
   }
 
-  //panelColor = new FormControl('red');
   selected = 'yes';
+  
+  ViewLO(){
+    this.dialog.open(viewLODialog2);
+  }
+
+  onEvent(event) {
+    event.stopPropagation();
+ }
 
 }
 
 
+@Component({
+  selector: 'view-lo',
+  templateUrl: 'view-lo.html',
+  styleUrls: ['./certification-exam.component.scss']
+
+})
+
+
+export class viewLODialog2 {     
+  constructor(
+    private data: LoDataService
+  ) { 
+    this.data.changeMessage(true);
+  }  
+}
