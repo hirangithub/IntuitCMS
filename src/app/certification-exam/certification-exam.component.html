@@ -1,3 +1,183 @@
-<div class="alert">
-    <p><mat-icon>info</mat-icon> No certification exams available</p>
+<div fxLayout="row" fxFlexFill fxLayoutAlign="start stretch">
+    <div fxFlex="100" class="right-container">
+
+        <div fxLayout="row" fxLayoutAlign="fxFlexFill" class="action-panel border-active">
+            <div fxFlex="75">
+                <h1 class="space-0">Certification Exam</h1>
+                <ul>
+                    <li>Learning outcomes (5)</li>
+                    <li>Total questions (9)</li>
+                </ul>
+            </div>
+            <div fxFlex="25" fxLayoutAlign="end center" fxFlexOffset="20px">
+                <ul>
+                    <li style="padding-right: 2rem;">                
+                        <mat-form-field appearance="fill" style="height:52px;">     
+                            <mat-label>Enabled</mat-label>  
+                            <mat-select [(value)]="selected" placeholder="Mode">
+                                <mat-option value="yes">Yes</mat-option>
+                                <mat-option value="no">No</mat-option>
+                              </mat-select>
+                        </mat-form-field>
+                    </li>
+                    <li><button mat-raised-button style="width: 100px;">Save</button></li>
+                </ul>                
+            </div>
+        </div>
+
+        <label class="lbl-help">Use <mat-icon>add_circle_outline</mat-icon> icon to split learning outcomes to sections below.</label>
+
+
+        <div fxLayout="row" fxLayoutAlign="fxFlexFill" class="action-panel border-active">
+            <div fxFlex="80">
+
+                <mat-accordion class="example-headers-align exams-lo-holder" multi>                   
+                    <mat-expansion-panel style="overflow: visible;" expanded>
+                        
+                        <mat-expansion-panel-header class="special-head">
+                            <mat-panel-title class="hover-add">
+                                <h2 class="space-0">Section 1</h2>
+                            </mat-panel-title>                    
+                        </mat-expansion-panel-header>
+        
+                        <mat-list dense>
+                            <mat-list-item> 
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <td class="col-1">Learning Outcomes</td>
+                                            <td>Questions</td>
+                                            <td>No of questions shown</td>
+                                        </tr>
+                                    </thead>
+                                </table>
+                            </mat-list-item>
+                        </mat-list>
+                        
+                        <mat-selection-list [multiple]="false">
+                            <mat-list-option>     
+                                <table>    
+                                        <tr>
+                                            <td class="col-1">LO 1</td>
+                                            <td>4</td>
+                                            <td>
+                                                <mat-form-field appearance="fill" style="max-width:120px; height:52px;">  
+                                                    <mat-select [(value)]="selected">
+                                                        <mat-option value="yes">1</mat-option>
+                                                        <mat-option value="no">2</mat-option>
+                                                        <mat-option value="no">3</mat-option>
+                                                        <mat-option value="no">4</mat-option>
+                                                        <mat-option value="no">5</mat-option>
+                                                        <mat-option value="no">6</mat-option>
+                                                        <mat-option value="no">7</mat-option>
+                                                        <mat-option value="no">8</mat-option>
+                                                      </mat-select>
+                                                </mat-form-field>   
+                                            </td>
+                                        </tr>
+                                </table> 
+                                <div class="indicator-section-break"><div><mat-icon>add_circle_outline</mat-icon> Insert section break here</div></div>
+                            </mat-list-option> 
+                            <mat-list-option>     
+                                <table>    
+                                        <tr>
+                                            <td class="col-1">LO 1</td>
+                                            <td>4</td>
+                                            <td>
+                                                <mat-form-field appearance="fill" style="max-width:120px; height:52px;">  
+                                                    <mat-select [(value)]="selected">
+                                                        <mat-option value="yes">1</mat-option>
+                                                        <mat-option value="no">2</mat-option>
+                                                        <mat-option value="no">3</mat-option>
+                                                        <mat-option value="no">4</mat-option>
+                                                        <mat-option value="no">5</mat-option>
+                                                        <mat-option value="no">6</mat-option>
+                                                        <mat-option value="no">7</mat-option>
+                                                        <mat-option value="no">8</mat-option>
+                                                      </mat-select>
+                                                </mat-form-field>   
+                                            </td>
+                                        </tr>
+                                </table> 
+                                <div class="indicator-section-break"><div><mat-icon>add_circle_outline</mat-icon> Insert section break here</div></div>
+                            </mat-list-option> 
+                            <mat-list-option>     
+                                <table>    
+                                        <tr>
+                                            <td class="col-1">LO 1</td>
+                                            <td>4</td>
+                                            <td>
+                                                <mat-form-field appearance="fill" style="max-width:120px; height:52px;">  
+                                                    <mat-select [(value)]="selected">
+                                                        <mat-option value="yes">1</mat-option>
+                                                        <mat-option value="no">2</mat-option>
+                                                        <mat-option value="no">3</mat-option>
+                                                        <mat-option value="no">4</mat-option>
+                                                        <mat-option value="no">5</mat-option>
+                                                        <mat-option value="no">6</mat-option>
+                                                        <mat-option value="no">7</mat-option>
+                                                        <mat-option value="no">8</mat-option>
+                                                      </mat-select>
+                                                </mat-form-field>   
+                                            </td>
+                                        </tr>
+                                </table> 
+                                <div class="indicator-section-break"><div><mat-icon>add_circle_outline</mat-icon> Insert section break here</div></div>
+                            </mat-list-option> 
+                            <mat-list-option>     
+                                <table>    
+                                        <tr>
+                                            <td class="col-1">LO 1</td>
+                                            <td>4</td>
+                                            <td>
+                                                <mat-form-field appearance="fill" style="max-width:120px; height:52px;">  
+                                                    <mat-select [(value)]="selected">
+                                                        <mat-option value="yes">1</mat-option>
+                                                        <mat-option value="no">2</mat-option>
+                                                        <mat-option value="no">3</mat-option>
+                                                        <mat-option value="no">4</mat-option>
+                                                        <mat-option value="no">5</mat-option>
+                                                        <mat-option value="no">6</mat-option>
+                                                        <mat-option value="no">7</mat-option>
+                                                        <mat-option value="no">8</mat-option>
+                                                      </mat-select>
+                                                </mat-form-field>   
+                                            </td>
+                                        </tr>
+                                </table> 
+                                <div class="indicator-section-break"><div><mat-icon>add_circle_outline</mat-icon> Insert section break here</div></div>
+                            </mat-list-option> 
+                            <mat-list-option>     
+                                <table>    
+                                        <tr>
+                                            <td class="col-1">LO 1</td>
+                                            <td>4</td>
+                                            <td>
+                                                <mat-form-field appearance="fill" style="max-width:120px; height:52px;">  
+                                                    <mat-select [(value)]="selected">
+                                                        <mat-option value="yes">1</mat-option>
+                                                        <mat-option value="no">2</mat-option>
+                                                        <mat-option value="no">3</mat-option>
+                                                        <mat-option value="no">4</mat-option>
+                                                        <mat-option value="no">5</mat-option>
+                                                        <mat-option value="no">6</mat-option>
+                                                        <mat-option value="no">7</mat-option>
+                                                        <mat-option value="no">8</mat-option>
+                                                      </mat-select>
+                                                </mat-form-field>   
+                                            </td>
+                                        </tr>
+                                </table> 
+                                <div class="indicator-section-break"><div><mat-icon>add_circle_outline</mat-icon> Insert section break here</div></div>
+                            </mat-list-option> 
+                        </mat-selection-list>              
+        
+                    </mat-expansion-panel>
+                </mat-accordion> 
+                               
+            </div>
+        </div>
+
+        
+    </div>
 </div>

@@ -21,3 +21,71 @@
         }
     }
 }
+
+.action-panel h1 {
+    padding-bottom: 0.5rem;
+}
+.lbl-help {
+    text-align: right;
+    display: flex;
+    align-items: center;
+    padding: 1rem 0;
+    .mat-icon {
+        font-size: 1.2rem;
+        padding-top: .3rem;
+        padding-right: .3rem;
+    }
+}
+
+
+.exams-lo-holder {
+    table {
+        width: 100%;
+        tr {
+            display: flex;
+            align-items: center;
+            td {
+                flex: 1 1 0;
+                &.col-1 {
+                    flex: 2 1 0;
+                    padding-right: 3rem;
+                }
+            }
+        }        
+    }
+    .mat-form-field-appearance-fill .mat-form-field-infix {
+        border-top: 0;
+    }
+    .mat-form-field-appearance-fill .mat-select-arrow-wrapper {
+        transform: none;
+    }
+
+    .indicator-section-break {
+        position: absolute; 
+        height: 100%;
+        top: 0;
+        right: -15rem;
+        opacity: .5;
+        display: flex;
+        align-items: center;
+        visibility: hidden;
+        transition: all ease .5;
+        div {
+            margin-left: 3rem;
+            display: flex;
+            align-items: center;
+        }
+        .mat-icon {
+            padding-right: .5rem;
+        }
+    }
+
+    .mat-list-item {
+        border-bottom: 1px solid #ccc;
+        &:hover {
+            .indicator-section-break {
+                visibility: visible;
+            }
+        }
+    }
+}
