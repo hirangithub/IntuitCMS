@@ -28,6 +28,16 @@
     </div>
 </div>    
 
+<mat-toolbar class="spacer" #spacer style="height: auto;"></mat-toolbar>
+<mat-toolbar color="primary" class="LO-move-indicator" [ngClass]="{'sticky' : isSticky}" >
+
+    <mat-toolbar-row>
+        <span class="info">Select Learning outcome you want to move to section. Use menu to pick a section once the LO is selected.</span>
+        <span class="example-spacer"></span>
+        <span>0 Selected</span>
+    </mat-toolbar-row>
+</mat-toolbar>
+
 <label class="lbl-help">Admin could hover over rows and find <mat-icon>add_circle_outline</mat-icon> icon to split learning outcomes to multiple sections.</label>
 
 

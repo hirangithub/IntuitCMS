@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, HostListener } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { LoDataService } from "../../services/lo-data.service";
 
@@ -8,6 +8,10 @@ import { LoDataService } from "../../services/lo-data.service";
   styleUrls: ['../certification-exam.component.scss']
 })
 export class SectionBreakPage1Component implements OnInit {
+
+  @ViewChild('spacer') spacer;
+  isSticky: boolean = false;
+  isStickyVal:any = 0;
 
   constructor( public dialog: MatDialog) { }
 
@@ -23,6 +27,18 @@ export class SectionBreakPage1Component implements OnInit {
   onEvent(event) {
     event.stopPropagation();
  }
+
+ @HostListener('window:scroll', ['$event'])
+  checkScroll() { 
+    if((window.pageYOffset - this.spacer._elementRef.nativeElement.offsetTop) >= 0){ 
+      this.isSticky = true;
+    }else{
+      this.isSticky = false;
+    }
+
+     
+    
+  }
 
 }
 

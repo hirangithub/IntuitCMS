@@ -11,10 +11,6 @@ import { LoDataService } from "../services/lo-data.service";
 
 export class CertificationExamComponent implements OnInit {
   
-  @ViewChild('spacer') spacer;
-  isSticky: boolean = false;
-  isStickyVal:any = 0;
-
   constructor(
     public dialog: MatDialog
   ) {   }
@@ -34,17 +30,7 @@ export class CertificationExamComponent implements OnInit {
     event.stopPropagation();
  }
 
- @HostListener('window:scroll', ['$event'])
-  checkScroll() { 
-    if((window.pageYOffset - this.spacer._elementRef.nativeElement.offsetTop) >= 0){ 
-      this.isSticky = true;
-    }else{
-      this.isSticky = false;
-    }
 
-     
-    
-  }
 
 }
 

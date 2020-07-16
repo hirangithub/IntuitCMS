@@ -2,38 +2,7 @@
     <div class="right-container">
 
 
-        <div fxLayout="row" fxLayoutAlign="fxFlexFill" class="action-panel border-active">
-            <div fxFlex="75">
-                <h1 class="space-0">Certification Exam</h1>
-                <ul>
-                    <li>Learning outcomes (5)</li>
-                    <li>Total questions (9)</li>
-                </ul>
-            </div>
-            <div fxFlex="25" fxLayoutAlign="end center" fxFlexOffset="20px">
-                <ul>                    
-                    <li><button mat-raised-button style="width: 100px;" disabled>Save</button></li>
-                    <li>
-                        <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="">
-                            <mat-icon>more_vert</mat-icon>
-                        </button>
-                        <mat-menu #menu="matMenu">
-                            <button mat-menu-item>
-                                <mat-icon>move_to_inbox</mat-icon>
-                                <span>Move Learning outcomes</span>
-                            </button>   
-                            <button mat-menu-item>
-                                <mat-icon>settings</mat-icon>
-                                <span>Exam settings</span>
-                            </button>               
-                        </mat-menu>
-                    </li>
-                </ul>                
-            </div>
-
-
-        </div>
-        <mat-toolbar class="spacer" #spacer></mat-toolbar>
+        <!-- <mat-toolbar class="spacer" #spacer></mat-toolbar>
         <mat-toolbar color="primary" class="LO-move-indicator" [ngClass]="{'sticky' : isSticky}" >
 
             <mat-toolbar-row>
@@ -41,7 +10,7 @@
                 <span class="example-spacer"></span>
                 <span>0 Selected</span>
             </mat-toolbar-row>
-        </mat-toolbar>
+        </mat-toolbar> -->
 
         <!-- <button mat-icon-button [matMenuTriggerFor]="menu3" aria-label="Example icon-button with a menu" (click)="onEvent($event)">
             <mat-icon>more_horiz</mat-icon>
