@@ -34,8 +34,7 @@ import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import { FormsModule } from '@angular/forms';
 import {DragDropModule} from '@angular/cdk/drag-drop';
 
-
-
+import { AngularStickyThingsModule } from '@w11k/angular-sticky-things';
 
 
 @NgModule({
@@ -80,7 +79,8 @@ import {DragDropModule} from '@angular/cdk/drag-drop';
     MatSlideToggleModule, 
     FormsModule,
     DragDropModule, 
-    MatTooltipModule
+    MatTooltipModule,
+    AngularStickyThingsModule
   ],
   exports: [DialogContent],
   providers: [],
