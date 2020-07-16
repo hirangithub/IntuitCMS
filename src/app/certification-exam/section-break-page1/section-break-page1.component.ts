@@ -12,6 +12,7 @@ export class SectionBreakPage1Component implements OnInit {
   @ViewChild('spacer') spacer;
   isSticky: boolean = false;
   isStickyVal:any = 0;
+  isMoveLO: boolean = false; 
 
   constructor( public dialog: MatDialog) { }
 
@@ -34,10 +35,12 @@ export class SectionBreakPage1Component implements OnInit {
       this.isSticky = true;
     }else{
       this.isSticky = false;
-    }
-
-     
+    } 
     
+  }
+
+  moveLO(){
+    this.isMoveLO = true; 
   }
 
 }

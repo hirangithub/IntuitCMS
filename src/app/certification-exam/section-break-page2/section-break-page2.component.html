@@ -14,7 +14,7 @@
                     <mat-icon>more_vert</mat-icon>
                 </button>
                 <mat-menu #menu="matMenu">
-                    <button mat-menu-item>
+                    <button mat-menu-item (click)="moveLO()">
                         <mat-icon>move_to_inbox</mat-icon>
                         <span>Move Learning outcomes</span>
                     </button>   
@@ -29,7 +29,7 @@
 </div>    
 
 <mat-toolbar class="spacer" #spacer style="height: auto;"></mat-toolbar>
-<mat-toolbar color="primary" class="LO-move-indicator" [ngClass]="{'sticky' : isSticky}" >
+<mat-toolbar *ngIf="isMoveLO" color="primary" class="LO-move-indicator" [ngClass]="{'sticky' : isSticky}" >
 
     <mat-toolbar-row>
         <span class="info">Select Learning outcome you want to move to section. Use menu to pick a section once the LO is selected.</span>
