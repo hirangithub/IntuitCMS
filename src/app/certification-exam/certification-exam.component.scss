@@ -86,7 +86,11 @@
             position: absolute;
             bottom: -1px;
             width: 100%;
-        }        
+        }      
+        
+        &:focus {
+            outline: 0;
+        }
     }
 
     .mat-list-item {
