@@ -382,3 +382,13 @@ p strong { font-weight: 500; }
   .example-tooltip-red {
     background: #f44336;
   }
+
+  
+.ctrl-spec {
+    &.mat-form-field-appearance-fill .mat-form-field-infix {
+        border-top: 0;
+    }
+    &.mat-form-field-appearance-fill .mat-select-arrow-wrapper {
+        transform: none;
+    }
+}
