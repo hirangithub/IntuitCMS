@@ -1,1 +1,185 @@
-<p>section-break-page1 works!</p>
+<label class="lbl-help">Admin could hover over rows and find <mat-icon>add_circle_outline</mat-icon> icon to split learning outcomes to multiple sections.</label>
+
+
+<div fxLayout="row" fxLayoutAlign="fxFlexFill" class="action-panel">
+  <div fxFlex="80">
+
+      <mat-accordion class="example-headers-align exams-lo-holder" multi>                   
+          <mat-expansion-panel style="overflow: visible;" expanded>
+              
+              <mat-expansion-panel-header class="special-head">
+                  <mat-panel-title class="hover-add">
+                      <h2 class="space-0">Section 1</h2>
+                  </mat-panel-title>                    
+              </mat-expansion-panel-header>
+
+              <mat-list class="table-header" dense>
+                  <mat-list-item> 
+                      <table>
+                          <thead>
+                              <tr>
+                                  <td class="col-1">Learning Outcomes</td>
+                                  <td>Questions</td>
+                                  <td>No of questions shown</td>
+                              </tr>
+                          </thead>
+                      </table>
+                  </mat-list-item>
+              </mat-list>
+              
+              <mat-selection-list [multiple]="false">
+                  <mat-list-option>    
+                  
+                      <table (click)="ViewLO()">    
+                        <tr>
+                            <td class="col-1">Establish a potential client's QuickBooks Online and QuickBooks Self-Employed needs</td>
+                            <td>4</td>
+                            <td>
+                                <mat-form-field appearance="fill" style="max-width:120px; height:52px;" (click)="onEvent($event)" class="abc">  
+                                    <mat-select [(value)]="selected">
+                                        <mat-option value="yes">1</mat-option>
+                                        <mat-option value="no">2</mat-option>
+                                        <mat-option value="no">3</mat-option>
+                                        <mat-option value="no">4</mat-option>
+                                        <mat-option value="no">5</mat-option>
+                                        <mat-option value="no">6</mat-option>
+                                        <mat-option value="no">7</mat-option>
+                                        <mat-option value="no">8</mat-option>
+                                      </mat-select>
+                                </mat-form-field>  
+                            </td>
+                        </tr>
+                      </table>  
+                      
+                      <div class="indicator-section-break" routerLink="./section-break-page1" ><div><mat-icon>add_circle_outline</mat-icon> Insert section break here</div></div>
+                  </mat-list-option>                   
+              </mat-selection-list>              
+
+          </mat-expansion-panel>
+      </mat-accordion> 
+
+
+
+      <mat-accordion class="example-headers-align exams-lo-holder" multi>                   
+        <mat-expansion-panel style="overflow: visible;" expanded>
+            
+            <mat-expansion-panel-header class="special-head">
+                <mat-panel-title class="hover-add">
+                    <h2 class="space-0">Section 2</h2>
+                </mat-panel-title>                    
+            </mat-expansion-panel-header>
+
+            <mat-list class="table-header" dense>
+                <mat-list-item> 
+                    <table>
+                        <thead>
+                            <tr>
+                                <td class="col-1">Learning Outcomes</td>
+                                <td>Questions</td>
+                                <td>No of questions shown</td>
+                            </tr>
+                        </thead>
+                    </table>
+                </mat-list-item>
+            </mat-list>
+            
+            <mat-selection-list [multiple]="false">                
+                <mat-list-option >     
+                    <table (click)="ViewLO()">    
+                            <tr>
+                                <td class="col-1">Recognize how to create bank feeds to QuickBooks Online</td>
+                                <td>4</td>
+                                <td>
+                                    <mat-form-field appearance="fill" style="max-width:120px; height:52px;" (click)="onEvent($event)">  
+                                        <mat-select [(value)]="selected">
+                                            <mat-option value="yes">1</mat-option>
+                                            <mat-option value="no">2</mat-option>
+                                            <mat-option value="no">3</mat-option>
+                                            <mat-option value="no">4</mat-option>
+                                            <mat-option value="no">5</mat-option>
+                                            <mat-option value="no">6</mat-option>
+                                            <mat-option value="no">7</mat-option>
+                                            <mat-option value="no">8</mat-option>
+                                          </mat-select>
+                                    </mat-form-field>   
+                                </td>
+                            </tr>
+                    </table> 
+                    <div class="indicator-section-break" routerLink="./section-break-page2" ><div><mat-icon>add_circle_outline</mat-icon> Insert section break here</div></div>
+                </mat-list-option> 
+                <mat-list-option (click)="ViewLO()">     
+                    <table>    
+                            <tr>
+                                <td class="col-1">Establish a potential client's QuickBooks Online and QuickBooks Self-Employed needs</td>
+                                <td>4</td>
+                                <td>
+                                    <mat-form-field appearance="fill" style="max-width:120px; height:52px;" (click)="onEvent($event)">  
+                                        <mat-select [(value)]="selected">
+                                            <mat-option value="yes">1</mat-option>
+                                            <mat-option value="no">2</mat-option>
+                                            <mat-option value="no">3</mat-option>
+                                            <mat-option value="no">4</mat-option>
+                                            <mat-option value="no">5</mat-option>
+                                            <mat-option value="no">6</mat-option>
+                                            <mat-option value="no">7</mat-option>
+                                            <mat-option value="no">8</mat-option>
+                                          </mat-select>
+                                    </mat-form-field>   
+                                </td>
+                            </tr>
+                    </table> 
+                    <div class="indicator-section-break" routerLink="./section-break-page2"><div><mat-icon>add_circle_outline</mat-icon> Insert section break here</div></div>
+                </mat-list-option> 
+                <mat-list-option >     
+                    <table (click)="ViewLO()">    
+                            <tr>
+                                <td class="col-1">Recognize the main features of QuickBooks Online Accountant and how to access clients’ QuickBooks Online and the Accountant Tools </td>
+                                <td>4</td>
+                                <td>
+                                    <mat-form-field appearance="fill" style="max-width:120px; height:52px;" (click)="onEvent($event)">  
+                                        <mat-select [(value)]="selected">
+                                            <mat-option value="yes">1</mat-option>
+                                            <mat-option value="no">2</mat-option>
+                                            <mat-option value="no">3</mat-option>
+                                            <mat-option value="no">4</mat-option>
+                                            <mat-option value="no">5</mat-option>
+                                            <mat-option value="no">6</mat-option>
+                                            <mat-option value="no">7</mat-option>
+                                            <mat-option value="no">8</mat-option>
+                                          </mat-select>
+                                    </mat-form-field>   
+                                </td>
+                            </tr>
+                    </table> 
+                    <div class="indicator-section-break"  routerLink="./section-break-page2" ><div><mat-icon>add_circle_outline</mat-icon> Insert section break here</div></div>
+                </mat-list-option> 
+                <mat-list-option (click)="ViewLO()">     
+                    <table>    
+                            <tr>
+                                <td class="col-1">Module One Review - Getting started in QuickBooks Online Accountant</td>
+                                <td>4</td>
+                                <td>
+                                    <mat-form-field appearance="fill" style="max-width:120px; height:52px;" (click)="onEvent($event)">  
+                                        <mat-select [(value)]="selected">
+                                            <mat-option value="yes">1</mat-option>
+                                            <mat-option value="no">2</mat-option>
+                                            <mat-option value="no">3</mat-option>
+                                            <mat-option value="no">4</mat-option>
+                                            <mat-option value="no">5</mat-option>
+                                            <mat-option value="no">6</mat-option>
+                                            <mat-option value="no">7</mat-option>
+                                            <mat-option value="no">8</mat-option>
+                                          </mat-select>
+                                    </mat-form-field>   
+                                </td>
+                            </tr>
+                    </table> 
+                    <div class="indicator-section-break"(click)="onEvent($event)"><div><mat-icon>add_circle_outline</mat-icon> Insert section break here</div></div>
+                </mat-list-option> 
+            </mat-selection-list>              
+
+        </mat-expansion-panel>
+    </mat-accordion> 
+                     
+  </div>
+</div>

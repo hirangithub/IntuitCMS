@@ -1,3 +1,6 @@
+<label class="lbl-help">Admin could hover over rows and find <mat-icon>add_circle_outline</mat-icon> icon to split learning outcomes to multiple sections.</label>
+
+
 <div fxLayout="row" fxLayoutAlign="fxFlexFill" class="action-panel">
   <div fxFlex="80">
 
@@ -32,7 +35,7 @@
                             <td class="col-1">Establish a potential client's QuickBooks Online and QuickBooks Self-Employed needs</td>
                             <td>4</td>
                             <td>
-                                <mat-form-field appearance="fill" style="max-width:120px; height:52px;" (click)="onEvent($event)">  
+                                <mat-form-field appearance="fill" style="max-width:120px; height:52px;" (click)="onEvent($event)" class="abc">  
                                     <mat-select [(value)]="selected">
                                         <mat-option value="yes">1</mat-option>
                                         <mat-option value="no">2</mat-option>
@@ -44,19 +47,6 @@
                                         <mat-option value="no">8</mat-option>
                                       </mat-select>
                                 </mat-form-field>  
-                                
-                                <button mat-icon-button [matMenuTriggerFor]="menu3" aria-label="Example icon-button with a menu" (click)="onEvent($event)">
-                                    <mat-icon>more_horiz</mat-icon>
-                                </button>
-                                <mat-menu #menu3="matMenu">
-                                    <span class="sub-title">Move to:</span>
-                                    <button mat-menu-item>
-                                        <span>Section 1</span>
-                                    </button>
-                                    <button mat-menu-item>
-                                        <span>Section 2</span>
-                                    </button>
-                                </mat-menu>
                             </td>
                         </tr>
                       </table>  
@@ -112,7 +102,7 @@
                   <mat-list-option >     
                       <table (click)="ViewLO()">    
                               <tr>
-                                  <td class="col-1">LO 1</td>
+                                  <td class="col-1">Recognize the main features of QuickBooks Online Accountant and how to access clients’ QuickBooks Online and the Accountant Tools </td>
                                   <td>4</td>
                                   <td>
                                       <mat-form-field appearance="fill" style="max-width:120px; height:52px;" (click)="onEvent($event)">  
@@ -135,7 +125,7 @@
                   <mat-list-option (click)="ViewLO()">     
                       <table>    
                               <tr>
-                                  <td class="col-1">LO 1</td>
+                                  <td class="col-1">Module One Review - Getting started in QuickBooks Online Accountant</td>
                                   <td>4</td>
                                   <td>
                                       <mat-form-field appearance="fill" style="max-width:120px; height:52px;" (click)="onEvent($event)">  
