@@ -86,7 +86,7 @@
             position: absolute;
             bottom: -1px;
             width: 100%;
-        }
+        }        
     }
 
     .mat-list-item {
@@ -105,7 +105,18 @@
                 border-bottom: 1px solid #ccc;
             }
         }
-    }    
+    }   
+    
+    .disabled-break {
+        .indicator-section-break {
+            display: none;
+        }       
+        &.mat-list-item {
+            &:hover {
+                border-bottom: 1px solid #ccc;
+            }
+        }
+    }
 }
 
 .LO-move-indicator {
@@ -130,6 +141,7 @@
     font-weight: 500;
     padding: 1rem 0 .5rem 1rem;
 }
+
 
 .sticky{
     position: sticky;
