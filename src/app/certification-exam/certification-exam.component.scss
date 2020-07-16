@@ -94,7 +94,7 @@
             .indicator-section-break {
                 visibility: visible;
             }
-        }
+        }        
     }
 
     .table-header {
@@ -103,5 +103,25 @@
                 border-bottom: 1px solid #ccc;
             }
         }
+    }    
+}
+
+.LO-move-indicator {
+    &.mat-toolbar-multiple-rows {
+        border-radius: 0 0 4px 4px; 
+        min-height: 50px;
     }
+    .mat-toolbar-row, .mat-toolbar-single-row {
+        height: 50px;
+        padding-left: 16px !important;
+    }
+    span.info {
+        font-size: .8rem;
+        font-weight: normal;
+    }
+}
+
+.sub-title {
+    font-weight: 500;
+    padding: 1rem 0 .5rem 1rem;
 }
