@@ -19,10 +19,6 @@ export class CertificationExamComponent implements OnInit {
   }
 
   selected = 'yes';
-  
-  ViewLO(){
-    this.dialog.open(viewLODialog2);
-  }
 
   onEvent(event) {
     event.stopPropagation();
@@ -31,18 +27,3 @@ export class CertificationExamComponent implements OnInit {
 }
 
 
-@Component({
-  selector: 'view-lo',
-  templateUrl: 'view-lo.html',
-  styleUrls: ['./certification-exam.component.scss']
-
-})
-
-
-export class viewLODialog2 {     
-  constructor(
-    private data: LoDataService
-  ) { 
-    this.data.changeMessage(true);
-  }  
-}
