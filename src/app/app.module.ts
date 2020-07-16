@@ -9,7 +9,7 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
 
 import { LearningMaterialComponent, DialogContent, EditTempContent, EditQuestionTemp, SelectQuestionTemp } from './learning-material/learning-material.component';
 import { PresentationComponent, CPEDialog, CopyurlDialog, viewLODialog, DialogElementsExampleDialog } from './presentation/presentation.component';
-import { CertificationExamComponent, viewLODialog2 } from './certification-exam/certification-exam.component';
+import { CertificationExamComponent } from './certification-exam/certification-exam.component';
 
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatInputModule } from '@angular/material/input';
@@ -33,6 +33,10 @@ import {MatRadioModule} from '@angular/material/radio';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import { FormsModule } from '@angular/forms';
 import {DragDropModule} from '@angular/cdk/drag-drop';
+import { SectionBreakComponent } from './certification-exam/section-break/section-break.component';
+import { SectionListComponent, viewLODialog2 } from './certification-exam/section-list/section-list.component';
+import { SectionBreakPage1Component } from './certification-exam/section-break-page1/section-break-page1.component';
+import { SectionBreakPage2Component } from './certification-exam/section-break-page2/section-break-page2.component';
 
 import { AngularStickyThingsModule } from '@w11k/angular-sticky-things';
 
@@ -53,7 +57,11 @@ import { AngularStickyThingsModule } from '@w11k/angular-sticky-things';
     viewLODialog,
     viewLODialog2,
     DialogElementsExampleDialog,
-    SelectQuestionTemp 
+    SelectQuestionTemp,
+    SectionBreakComponent,
+    SectionListComponent,
+    SectionBreakPage1Component,
+    SectionBreakPage2Component,
   ],
   imports: [
     BrowserModule,
