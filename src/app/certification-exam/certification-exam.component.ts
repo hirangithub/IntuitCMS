@@ -2,11 +2,11 @@ import { Component, OnInit, ElementRef, ViewChild, ViewEncapsulation, HostListen
 import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { LoDataService } from "../services/lo-data.service";
 
+
 @Component({
   selector: 'app-certification-exam',
   templateUrl: './certification-exam.component.html',
-  styleUrls: ['./certification-exam.component.scss'],
-  encapsulation: ViewEncapsulation.None,
+  styleUrls: ['./certification-exam.component.scss']
 })
 
 export class CertificationExamComponent implements OnInit {
@@ -29,8 +29,7 @@ export class CertificationExamComponent implements OnInit {
     console.log()
   }
 
-  selected = 'yes';
-
+  
   onEvent(event) {
     event.stopPropagation();
  }

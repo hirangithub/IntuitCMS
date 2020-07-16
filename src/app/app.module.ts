@@ -33,11 +33,10 @@ import {MatRadioModule} from '@angular/material/radio';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import { FormsModule } from '@angular/forms';
 import {DragDropModule} from '@angular/cdk/drag-drop';
-import { SectionBreakComponent } from './certification-exam/section-break/section-break.component';
 import { SectionListComponent, viewLODialog2 } from './certification-exam/section-list/section-list.component';
-import { SectionBreakPage1Component } from './certification-exam/section-break-page1/section-break-page1.component';
-import { SectionBreakPage2Component } from './certification-exam/section-break-page2/section-break-page2.component';
- 
+
+import { SectionBreakPage1Component, viewLODialog3 } from './certification-exam/section-break-page1/section-break-page1.component';
+import { SectionBreakPage2Component, viewLODialog4 } from './certification-exam/section-break-page2/section-break-page2.component';
 
 @NgModule({
   declarations: [
@@ -54,9 +53,10 @@ import { SectionBreakPage2Component } from './certification-exam/section-break-p
     CopyurlDialog,
     viewLODialog,
     viewLODialog2,
+    viewLODialog3,
+    viewLODialog4,
     DialogElementsExampleDialog,
     SelectQuestionTemp,
-    SectionBreakComponent,
     SectionListComponent,
     SectionBreakPage1Component,
     SectionBreakPage2Component,

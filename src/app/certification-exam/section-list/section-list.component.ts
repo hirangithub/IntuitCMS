@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { MatDialog, MatDialogRef } from '@angular/material/dialog';
+import { MatDialog } from '@angular/material/dialog';
 import { LoDataService } from "../../services/lo-data.service";
 
 @Component({
   selector: 'app-section-list',
   templateUrl: './section-list.component.html',
-  styleUrls: ['./section-list.component.scss']
+  styleUrls: ['../certification-exam.component.scss']
 })
 export class SectionListComponent implements OnInit {
 

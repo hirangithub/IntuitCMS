@@ -1,6 +1,5 @@
-
-<div fxLayout="row" fxFlexFill fxLayoutAlign="start stretch">
-    <div fxFlex="100" class="right-container">
+<div class="exam-tab-container">
+    <div class="right-container">
 
         <div fxLayout="row" fxLayoutAlign="fxFlexFill" class="action-panel border-active">
             <div fxFlex="75">
@@ -11,16 +10,7 @@
                 </ul>
             </div>
             <div fxFlex="25" fxLayoutAlign="end center" fxFlexOffset="20px">
-                <ul>
-                    <!-- <li style="padding-right: 2rem;">                
-                        <mat-form-field appearance="fill" style="height:52px;">     
-                            <mat-label>Enabled</mat-label>  
-                            <mat-select [(value)]="selected" placeholder="Mode">
-                                <mat-option value="yes">Yes</mat-option>
-                                <mat-option value="no">No</mat-option>
-                              </mat-select>
-                        </mat-form-field>
-                    </li> -->
+                <ul>                    
                     <li><button mat-raised-button style="width: 100px;" disabled>Save</button></li>
                     <li>
                         <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="">
@@ -39,9 +29,11 @@
                     </li>
                 </ul>                
             </div>
+
         </div>
         <mat-toolbar class="spacer" #spacer></mat-toolbar>
         <mat-toolbar color="primary" class="LO-move-indicator" [ngClass]="{'sticky' : isSticky}" >
+
             <mat-toolbar-row>
                 <span class="info">Select Learning outcome you want to move to section. Use menu to pick a section once the LO is selected.</span>
                 <span class="example-spacer"></span>
@@ -49,11 +41,20 @@
             </mat-toolbar-row>
         </mat-toolbar>
 
-        <label class="lbl-help">Admin could hover over rows and find <mat-icon>add_circle_outline</mat-icon> icon to split learning outcomes to multiple sections.</label>
+        <!-- <button mat-icon-button [matMenuTriggerFor]="menu3" aria-label="Example icon-button with a menu" (click)="onEvent($event)">
+            <mat-icon>more_horiz</mat-icon>
+        </button>
+        <mat-menu #menu3="matMenu">
+            <span class="sub-title">Move to:</span>
+            <button mat-menu-item>
+                <span>Section 1</span>
+            </button>
+            <button mat-menu-item>
+                <span>Section 2</span>
+            </button>
+        </mat-menu> -->
 
-        <router-outlet></router-outlet>
-        
-
+        <router-outlet></router-outlet>   
         
     </div>
 </div>
