@@ -16,6 +16,23 @@ export class SectionBreakMoveComponent implements OnInit {
   isMoveLO: boolean = true; 
   selectedCount: number = 0;
 
+  section1:any = [
+    { title: "Establish a potential client's QuickBooks Online and QuickBooks Self-Employed needs", isSelected: false, value: "s-1-0", }
+  ]
+
+  section2:any = [
+    { title: "Recognize how to create bank feeds to QuickBooks Online", isSelected: false, value: "s-2-0", },
+    { title: "Establish a potential client's QuickBooks Online and QuickBooks Self-Employed needs", isSelected: false, value: "s-2-1" }
+  ]
+
+
+  section3:any = [
+    { title: "Recognize the main features of QuickBooks Online Accountant and how to access clients’ QuickBooks Online and the Accountant Tools", isSelected: false, value: "s-1-0" },
+    { title: "Module One Review - Getting started in QuickBooks Online Accountant", isSelected: false, value: "s-1-0" }
+  ]
+
+
+
 
   constructor( public dialog: MatDialog) { }
 
@@ -44,15 +61,42 @@ export class SectionBreakMoveComponent implements OnInit {
   }
   
 
-  onSelection(e){
-    
+  onSelection(e){ 
+
     (e.option._selected)? this.selectedCount++ : this.selectedCount-- ;
     console.log(this.selectedCount)
+
+    let index = e.option._value.split("-");
+    let sectionIndex = parseInt(index[2]);
+    let selectedSection = parseInt(index[1]);
+
+    this.displayOptions(sectionIndex, selectedSection )
+    
+  }
+
+  displayOptions(sectionIndex, caseIndex){
+    switch (caseIndex) {
+      case 1:
+        this.section1[sectionIndex].isSelected = true;
+        break;
+        
+        case 2:
+          this.section2[sectionIndex].isSelected = true;
+          break;
+        
+        case 3:
+          this.section3[sectionIndex].isSelected = true;
+          break;
+    
+        default:
+          break;
+    }
   }
 
   goBack(){
     window.history.back();
   }
+ 
 
 }
 

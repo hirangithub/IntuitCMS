@@ -57,78 +57,34 @@
                       <h2 class="space-0">Section 1</h2>
                   </mat-panel-title>                    
               </mat-expansion-panel-header> 
-              
+
               <mat-selection-list [multiple]="true" (selectionChange)="onSelection($event)">
-                  <mat-list-option class="disabled-break">    
-                  
-                      <table >    
-                        <tr>
-                            <td class="col-1">Establish a potential client's QuickBooks Online and QuickBooks Self-Employed needs</td>
-                            <td>
-                              <button mat-icon-button [matMenuTriggerFor]="menu3" aria-label="Example icon-button with a menu" (click)="onEvent($event)">
-                                  <mat-icon>more_horiz</mat-icon>
-                              </button>
-                              <mat-menu #menu3="matMenu">
-                                  <span class="sub-title">Move to:</span>
-                                  <button mat-menu-item>
-                                      <span>Section 1</span>
-                                  </button>
-                                  <button mat-menu-item>
-                                      <span>Section 2</span>
-                                  </button>
-                              </mat-menu>
-                            </td>  
-                          </tr>
-                      </table>  
-                      
-                      <div class="indicator-section-break" routerLink="./section-break-page1" ><div><mat-icon>add_circle_outline</mat-icon> Insert section break here</div></div>
-                  </mat-list-option>       
-                  <mat-list-option >     
+                <mat-list-option *ngFor="let s1 of section1" class="disabled-break"  value="{{s1.value}}">    
+                
                     <table >    
-                        <tr>
-                            <td class="col-1">Recognize how to create bank feeds to QuickBooks Online</td>
-                            <td>
-                              <button mat-icon-button [matMenuTriggerFor]="menu3" aria-label="Example icon-button with a menu" (click)="onEvent($event)">
-                                  <mat-icon>more_horiz</mat-icon>
-                              </button>
-                              <mat-menu #menu3="matMenu">
-                                  <span class="sub-title">Move to:</span>
-                                  <button mat-menu-item>
-                                      <span>Section 1</span>
-                                  </button>
-                                  <button mat-menu-item>
-                                      <span>Section 2</span>
-                                  </button>
-                              </mat-menu>
-                            </td>  
-                          </tr>
-                    </table> 
-                    <div class="indicator-section-break" routerLink="./section-break-page2" ><div><mat-icon>add_circle_outline</mat-icon> Insert section break here</div></div>
-                </mat-list-option>  
-                <mat-list-option >     
-                  <table>    
-                    <tr>
-                        <td class="col-1">Establish a potential client's QuickBooks Online and QuickBooks Self-Employed needs</td> 
-                        <td>
+                      <tr>
+                          <td class="col-1">{{s1.title}}</td>
+                          <td *ngIf="s1.isSelected">
                             <button mat-icon-button [matMenuTriggerFor]="menu3" aria-label="Example icon-button with a menu" (click)="onEvent($event)">
                                 <mat-icon>more_horiz</mat-icon>
                             </button>
-                            <mat-menu #menu3="matMenu">
+                            <mat-menu #menu3="matMenu" >
                                 <span class="sub-title">Move to:</span>
-                                <button mat-menu-item>
+                                <button mat-menu-item routerLink="../section-break-move-page1">
                                     <span>Section 1</span>
                                 </button>
                                 <button mat-menu-item>
                                     <span>Section 2</span>
                                 </button>
                             </mat-menu>
-                        </td>
-                    </tr>
-                  </table> 
-                  <div class="indicator-section-break"(click)="onEvent($event)"><div><mat-icon>add_circle_outline</mat-icon> Insert section break here</div></div>
-              </mat-list-option>            
-              </mat-selection-list>              
-  
+                          </td>  
+                        </tr>
+                    </table>  
+                    
+                    <div class="indicator-section-break" routerLink="./section-break-page1" ><div><mat-icon>add_circle_outline</mat-icon> Insert section break here</div></div>
+                </mat-list-option>                   
+            </mat-selection-list>   
+
           </mat-expansion-panel>
       </mat-accordion> 
   
@@ -144,53 +100,33 @@
                     <h2 class="space-0">Section 2</h2>
                 </mat-panel-title>                    
             </mat-expansion-panel-header>
-            
-            <mat-selection-list [multiple]="true" (selectionChange)="onSelection($event)">      
-                <mat-list-option >     
-                    <table >    
-                      <tr>
-                          <td class="col-1">Recognize the main features of QuickBooks Online Accountant and how to access clients’ QuickBooks Online and the Accountant Tools </td>
-                          <td>
-                              <button mat-icon-button [matMenuTriggerFor]="menu3" aria-label="Example icon-button with a menu" (click)="onEvent($event)">
-                                  <mat-icon>more_horiz</mat-icon>
+
+            <mat-selection-list [multiple]="true" (selectionChange)="onSelection($event)">
+              <mat-list-option *ngFor="let s2 of section2" class="disabled-break"  value="{{s2.value}}">    
+              
+                  <table >    
+                    <tr>
+                        <td class="col-1">{{s2.title}}</td>
+                        <td *ngIf="s2.isSelected">
+                          <button mat-icon-button [matMenuTriggerFor]="menu3" aria-label="Example icon-button with a menu" (click)="onEvent($event)">
+                              <mat-icon>more_horiz</mat-icon>
+                          </button>
+                          <mat-menu #menu3="matMenu" >
+                              <span class="sub-title">Move to:</span>
+                              <button mat-menu-item routerLink="../section-break-move-page1">
+                                  <span>Section 1</span>
                               </button>
-                              <mat-menu #menu3="matMenu">
-                                  <span class="sub-title">Move to:</span>
-                                  <button mat-menu-item>
-                                      <span>Section 1</span>
-                                  </button>
-                                  <button mat-menu-item>
-                                      <span>Section 2</span>
-                                  </button>
-                              </mat-menu>
-                          </td>
-                      </tr>
-                    </table> 
-                    <div class="indicator-section-break"  routerLink="./section-break-page2" ><div><mat-icon>add_circle_outline</mat-icon> Insert section break here</div></div>
-                </mat-list-option> 
-                <mat-list-option>     
-                    <table>    
-                      <tr>
-                        <td class="col-1">Module One Review - Getting started in QuickBooks Online Accountant</td>
-                         <td>
-                              <button mat-icon-button [matMenuTriggerFor]="menu3" aria-label="Example icon-button with a menu" (click)="onEvent($event)">
-                                  <mat-icon>more_horiz</mat-icon>
+                              <button mat-menu-item>
+                                  <span>Section 2</span>
                               </button>
-                              <mat-menu #menu3="matMenu">
-                                  <span class="sub-title">Move to:</span>
-                                  <button mat-menu-item>
-                                      <span>Section 1</span>
-                                  </button>
-                                  <button mat-menu-item>
-                                      <span>Section 2</span>
-                                  </button>
-                              </mat-menu>
-                         </td> 
+                          </mat-menu>
+                        </td>  
                       </tr>
-                    </table> 
-                    <div class="indicator-section-break"(click)="onEvent($event)"><div><mat-icon>add_circle_outline</mat-icon> Insert section break here</div></div>
-                </mat-list-option> 
-            </mat-selection-list>              
+                  </table>  
+                  
+                  <div class="indicator-section-break" routerLink="./section-break-page1" ><div><mat-icon>add_circle_outline</mat-icon> Insert section break here</div></div>
+              </mat-list-option>                   
+          </mat-selection-list>  
   
         </mat-expansion-panel>
     </mat-accordion> 
