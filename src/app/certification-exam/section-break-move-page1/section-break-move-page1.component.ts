@@ -23,8 +23,8 @@ export class SectionBreakMovePage1Component implements OnInit {
   ]
 
   section2:any = [
-    { title: "Recognize the main features of QuickBooks Online Accountant and how to access clients’ QuickBooks Online and the Accountant Tools", isSelected: false, value: "s-1-0" },
-    { title: "Module One Review - Getting started in QuickBooks Online Accountant", isSelected: false, value: "s-1-0" }
+    { title: "Recognize the main features of QuickBooks Online Accountant and how to access clients’ QuickBooks Online and the Accountant Tools", isSelected: false, value: "s-3-0" },
+    { title: "Module One Review - Getting started in QuickBooks Online Accountant", isSelected: false, value: "s-3-1" }
   ]
 
   constructor( public dialog: MatDialog) { }

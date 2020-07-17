@@ -64,20 +64,22 @@
                     <table >    
                       <tr>
                           <td class="col-1">{{s1.title}}</td>
-                          <td *ngIf="s1.isSelected">
-                            <button mat-icon-button [matMenuTriggerFor]="menu3" aria-label="Example icon-button with a menu" (click)="onEvent($event)">
-                                <mat-icon>more_horiz</mat-icon>
-                            </button>
-                            <mat-menu #menu3="matMenu" >
-                                <span class="sub-title">Move to:</span>
-                                <button mat-menu-item routerLink="../section-break-move-page1">
-                                    <span>Section 1</span>
-                                </button>
-                                <button mat-menu-item>
-                                    <span>Section 2</span>
-                                </button>
-                            </mat-menu>
-                          </td>  
+                            <td>
+                                <div class=""  *ngIf="s1.isSelected">
+                                    <button mat-icon-button [matMenuTriggerFor]="menu3" aria-label="Example icon-button with a menu" (click)="onEvent($event)">
+                                        <mat-icon>more_horiz</mat-icon>
+                                    </button>
+                                    <mat-menu #menu3="matMenu" >
+                                        <span class="sub-title">Move to:</span>
+                                        <button mat-menu-item routerLink="../section-break-move-page1">
+                                            <span>Section 1</span>
+                                        </button>
+                                        <button mat-menu-item>
+                                            <span>Section 2</span>
+                                        </button>
+                                    </mat-menu>
+                                </div> 
+                            </td>  
                         </tr>
                     </table>  
                     
@@ -105,19 +107,21 @@
                     <table >    
                       <tr>
                           <td class="col-1">{{s2.title}}</td>
-                          <td *ngIf="s2.isSelected">
-                            <button mat-icon-button [matMenuTriggerFor]="menu3" aria-label="Example icon-button with a menu" (click)="onEvent($event)">
-                                <mat-icon>more_horiz</mat-icon>
-                            </button>
-                            <mat-menu #menu3="matMenu">
-                                <span class="sub-title">Move to:</span>
-                                <button mat-menu-item routerLink="../section-break-move-page1">
-                                    <span>Section 1</span>
-                                </button>
-                                <button mat-menu-item>
-                                    <span>Section 2</span>
-                                </button>
-                            </mat-menu>
+                            <td>
+                                <div *ngIf="s2.isSelected">
+                                    <button mat-icon-button [matMenuTriggerFor]="menu3" aria-label="Example icon-button with a menu" (click)="onEvent($event)">
+                                        <mat-icon>more_horiz</mat-icon>
+                                    </button>
+                                    <mat-menu #menu3="matMenu">
+                                        <span class="sub-title">Move to:</span>
+                                        <button mat-menu-item routerLink="../section-break-move-page1">
+                                            <span>Section 1</span>
+                                        </button>
+                                        <button mat-menu-item>
+                                            <span>Section 2</span>
+                                        </button>
+                                    </mat-menu>
+                                </div>
                           </td>  
                         </tr>
                   </table> 
@@ -143,20 +147,22 @@
               <mat-list-option *ngFor="let s3 of section3" class="disabled-break"  value="{{s3.value}}">     
                 <table >    
                   <tr>
-                      <td class="col-1">{{s3.title}}</td>
-                      <td *ngIf="s3.isSelected">
-                            <button mat-icon-button [matMenuTriggerFor]="menu3" aria-label="Example icon-button with a menu" (click)="onEvent($event)">
-                                <mat-icon>more_horiz</mat-icon>
-                            </button>
-                            <mat-menu #menu3="matMenu">
-                                <span class="sub-title">Move to:</span>
-                                <button mat-menu-item>
-                                    <span>Section 1</span>
+                        <td class="col-1">{{s3.title}}</td>
+                        <td>
+                            <div *ngIf="s3.isSelected">
+                                <button mat-icon-button [matMenuTriggerFor]="menu3" aria-label="Example icon-button with a menu" (click)="onEvent($event)">
+                                    <mat-icon>more_horiz</mat-icon>
                                 </button>
-                                <button mat-menu-item>
-                                    <span>Section 2</span>
-                                </button>
-                            </mat-menu>
+                                <mat-menu #menu3="matMenu">
+                                    <span class="sub-title">Move to:</span>
+                                    <button mat-menu-item>
+                                        <span>Section 1</span>
+                                    </button>
+                                    <button mat-menu-item>
+                                        <span>Section 2</span>
+                                    </button>
+                                </mat-menu>
+                            </div>
                         </td>
                     </tr>
                   </table> 

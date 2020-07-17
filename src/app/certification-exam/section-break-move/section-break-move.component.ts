@@ -27,8 +27,8 @@ export class SectionBreakMoveComponent implements OnInit {
 
 
   section3:any = [
-    { title: "Recognize the main features of QuickBooks Online Accountant and how to access clients’ QuickBooks Online and the Accountant Tools", isSelected: false, value: "s-1-0" },
-    { title: "Module One Review - Getting started in QuickBooks Online Accountant", isSelected: false, value: "s-1-0" }
+    { title: "Recognize the main features of QuickBooks Online Accountant and how to access clients’ QuickBooks Online and the Accountant Tools", isSelected: false, value: "s-3-0" },
+    { title: "Module One Review - Getting started in QuickBooks Online Accountant", isSelected: false, value: "s-3-1" }
   ]
 
 
@@ -63,18 +63,25 @@ export class SectionBreakMoveComponent implements OnInit {
 
   onSelection(e){ 
 
-    (e.option._selected)? this.selectedCount++ : this.selectedCount-- ;
-    console.log(this.selectedCount)
-
     let index = e.option._value.split("-");
     let sectionIndex = parseInt(index[2]);
     let selectedSection = parseInt(index[1]);
 
-    this.displayOptions(sectionIndex, selectedSection )
+    if(e.option._selected){
+      this.selectedCount++;
+      this.selectOptions(sectionIndex, selectedSection )
+    }else{
+      this.selectedCount--;
+      this.unselectOptions(sectionIndex, selectedSection )
+    }
+
+    
+
+  
     
   }
 
-  displayOptions(sectionIndex, caseIndex){
+  selectOptions(sectionIndex, caseIndex){
     switch (caseIndex) {
       case 1:
         this.section1[sectionIndex].isSelected = true;
@@ -86,6 +93,25 @@ export class SectionBreakMoveComponent implements OnInit {
         
         case 3:
           this.section3[sectionIndex].isSelected = true;
+          break;
+    
+        default:
+          break;
+    }
+  }
+
+  unselectOptions(sectionIndex, caseIndex){
+    switch (caseIndex) {
+      case 1:
+        this.section1[sectionIndex].isSelected = false;
+        break;
+        
+        case 2:
+          this.section2[sectionIndex].isSelected = false;
+          break;
+        
+        case 3:
+          this.section3[sectionIndex].isSelected = false;
           break;
     
         default:
