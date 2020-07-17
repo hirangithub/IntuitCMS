@@ -13,7 +13,8 @@ export class SectionBreakPage2Component implements OnInit {
   isSticky: boolean = false;
   isStickyVal:any = 0;
   isMoveLO: boolean = false; 
-
+  x: any = "false1";
+  
   constructor( public dialog: MatDialog) { }
 
   ngOnInit(): void {
@@ -41,6 +42,7 @@ export class SectionBreakPage2Component implements OnInit {
 
   moveLO(){
     this.isMoveLO = true; 
+    this.x = "ee";
   }
 
 }

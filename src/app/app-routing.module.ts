@@ -6,6 +6,7 @@ import { CertificationExamComponent } from './certification-exam/certification-e
 import { SectionListComponent } from './certification-exam/section-list/section-list.component';
 import { SectionBreakPage1Component } from './certification-exam/section-break-page1/section-break-page1.component';
 import { SectionBreakPage2Component } from './certification-exam/section-break-page2/section-break-page2.component';
+import { SectionBreakMoveComponent } from './certification-exam/section-break-move/section-break-move.component';
 
 
 const routes: Routes = [
@@ -16,6 +17,7 @@ const routes: Routes = [
       { path: '', component: SectionListComponent }, 
       { path: 'section-break-page1', component: SectionBreakPage1Component }, 
       { path: 'section-break-page2', component: SectionBreakPage2Component }, 
+      { path: 'section-break-move', component: SectionBreakMoveComponent }, 
     ]
   },
   { path: '',   redirectTo: '/learning-materials', pathMatch: 'full' }

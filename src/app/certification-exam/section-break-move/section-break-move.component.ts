@@ -1,21 +1,21 @@
-import { Component, OnInit, ViewChild, HostListener, Input } from '@angular/core';
+import { Component, OnInit, ViewChild, HostListener } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { LoDataService } from "../../services/lo-data.service";
 
 @Component({
-  selector: 'app-section-break-page1',
-  templateUrl: './section-break-page1.component.html',
+  selector: 'app-section-break-move',
+  templateUrl: './section-break-move.component.html',
   styleUrls: ['../certification-exam.component.scss']
 })
-export class SectionBreakPage1Component implements OnInit {
+export class SectionBreakMoveComponent implements OnInit {
 
-  @ViewChild('spacer') spacer;
-  @Input() multiple: boolean = false;
+  @ViewChild('spacer') spacer; 
 
   isSticky: boolean = false;
   isStickyVal:any = 0;
-  isMoveLO: boolean = false; 
-  x: any = "multiple";
+  isMoveLO: boolean = true; 
+  selectedCount: number = 0;
+
 
   constructor( public dialog: MatDialog) { }
 
@@ -24,10 +24,7 @@ export class SectionBreakPage1Component implements OnInit {
 
   selected = 'yes';
   
-  ViewLO(){
-    this.dialog.open(viewLODialog3);
-  }
-
+  
   onEvent(event) {
     event.stopPropagation();
  }
@@ -45,25 +42,18 @@ export class SectionBreakPage1Component implements OnInit {
   moveLO(){
     this.isMoveLO = true;  
   }
+  
 
   onSelection(e){
-    console.log(e)
+    
+    (e.option._selected)? this.selectedCount++ : this.selectedCount-- ;
+    console.log(this.selectedCount)
+  }
+
+  goBack(){
+    window.history.back();
   }
 
 }
 
-@Component({
-  selector: 'view-lo',
-  templateUrl: '../view-lo.html',
-  styleUrls: ['../certification-exam.component.scss']
-
-})
-
-
-export class viewLODialog3 {     
-  constructor(
-    private data: LoDataService
-  ) { 
-    this.data.changeMessage(true);
-  }  
-}
+ 

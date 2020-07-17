@@ -1,0 +1,141 @@
+<mat-toolbar class="spacer" #spacer style="height: auto;"></mat-toolbar>
+
+<div class="header" [ngClass]="{'sticky' : isSticky}"> 
+    <div fxLayout="row" fxLayoutAlign="fxFlexFill" class="action-panel border-active" >
+        <div fxFlex="75">
+            <h1 class="space-0">Certification Exam</h1>
+            <ul>
+                <li>Learning outcomes (5)</li>
+                <li>Total questions (9)</li>
+            </ul>
+        </div>
+        <div fxFlex="25" fxLayoutAlign="end center" fxFlexOffset="20px">
+            <ul>                    
+                <li><button mat-raised-button style="width: 100px;" (click)="goBack()">Cancel</button></li>
+                <li><button mat-raised-button style="width: 100px;">Save</button></li>
+                <li>
+                    <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="">
+                        <mat-icon>more_vert</mat-icon>
+                    </button>
+                    <mat-menu #menu="matMenu">
+                        <button mat-menu-item  routerLink="../section-break-move">
+                            <mat-icon>move_to_inbox</mat-icon>
+                            <span>Move Learning outcomes</span>
+                        </button>   
+                        <button mat-menu-item>
+                            <mat-icon>settings</mat-icon>
+                            <span>Exam settings</span>
+                        </button>               
+                    </mat-menu>
+                </li>
+            </ul>                
+        </div>
+    </div>   
+
+    <mat-toolbar *ngIf="isMoveLO" color="primary" class="LO-move-indicator"  >
+
+        <mat-toolbar-row>
+            <span class="info">Select Learning outcome you want to move to section. Use menu to pick a section once the LO is selected.</span>
+            <span class="example-spacer"></span>
+            <span>{{selectedCount}} Selected</span>
+        </mat-toolbar-row>
+    </mat-toolbar>
+</div>
+
+<label class="lbl-help">Admin could hover over rows and find <mat-icon>add_circle_outline</mat-icon> icon to split learning outcomes to multiple sections.</label>
+
+
+<div fxLayout="row" fxLayoutAlign="fxFlexFill" class="action-panel">
+<div fxFlex="80">
+
+    <mat-accordion class="example-headers-align exams-lo-holder" multi>                   
+        <mat-expansion-panel style="overflow: visible;" expanded>
+            
+            <mat-expansion-panel-header class="special-head">
+                <mat-panel-title class="hover-add">
+                    <h2 class="space-0">Section 1</h2>
+                </mat-panel-title>                    
+            </mat-expansion-panel-header> 
+            
+            <mat-selection-list [multiple]="true" (selectionChange)="onSelection($event)">
+                <mat-list-option class="disabled-break">    
+                
+                    <table >    
+                      <tr>
+                          <td class="col-1">Establish a potential client's QuickBooks Online and QuickBooks Self-Employed needs</td>
+                      </tr>
+                    </table>  
+                    
+                    <div class="indicator-section-break" routerLink="./section-break-page1" ><div><mat-icon>add_circle_outline</mat-icon> Insert section break here</div></div>
+                </mat-list-option>                   
+            </mat-selection-list>              
+
+        </mat-expansion-panel>
+    </mat-accordion> 
+
+
+
+    <mat-accordion class="example-headers-align exams-lo-holder" multi>                   
+      <mat-expansion-panel style="overflow: visible;" expanded>
+          
+          <mat-expansion-panel-header class="special-head">
+              <mat-panel-title class="hover-add">
+                  <h2 class="space-0">Section 2</h2>
+              </mat-panel-title>                    
+          </mat-expansion-panel-header>
+ 
+          <mat-selection-list [multiple]="true" (selectionChange)="onSelection($event)">                
+              <mat-list-option >     
+                  <table >    
+                      <tr>
+                          <td class="col-1">Recognize how to create bank feeds to QuickBooks Online</td>
+                      </tr>
+                  </table> 
+                  <div class="indicator-section-break" routerLink="./section-break-page2" ><div><mat-icon>add_circle_outline</mat-icon> Insert section break here</div></div>
+              </mat-list-option> 
+              <mat-list-option >     
+                  <table>    
+                    <tr>
+                        <td class="col-1">Establish a potential client's QuickBooks Online and QuickBooks Self-Employed needs</td> 
+                    </tr>
+                  </table> 
+                  <div class="indicator-section-break"(click)="onEvent($event)"><div><mat-icon>add_circle_outline</mat-icon> Insert section break here</div></div>
+              </mat-list-option>                 
+          </mat-selection-list>              
+
+      </mat-expansion-panel>
+  </mat-accordion> 
+
+
+  <mat-accordion class="example-headers-align exams-lo-holder" multi>                   
+      <mat-expansion-panel style="overflow: visible;" expanded>
+          
+          <mat-expansion-panel-header class="special-head">
+              <mat-panel-title class="hover-add">
+                  <h2 class="space-0">Section 3</h2>
+              </mat-panel-title>                    
+          </mat-expansion-panel-header>
+          
+          <mat-selection-list [multiple]="true" (selectionChange)="onSelection($event)">      
+              <mat-list-option >     
+                  <table >    
+                    <tr>
+                        <td class="col-1">Recognize the main features of QuickBooks Online Accountant and how to access clients’ QuickBooks Online and the Accountant Tools </td>
+                    </tr>
+                  </table> 
+                  <div class="indicator-section-break"  routerLink="./section-break-page2" ><div><mat-icon>add_circle_outline</mat-icon> Insert section break here</div></div>
+              </mat-list-option> 
+              <mat-list-option>     
+                  <table>    
+                    <tr>
+                      <td class="col-1">Module One Review - Getting started in QuickBooks Online Accountant</td>
+                    </tr>
+                  </table> 
+                  <div class="indicator-section-break"(click)="onEvent($event)"><div><mat-icon>add_circle_outline</mat-icon> Insert section break here</div></div>
+              </mat-list-option> 
+          </mat-selection-list>              
+
+      </mat-expansion-panel>
+  </mat-accordion> 
+
+</div>

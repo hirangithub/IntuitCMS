@@ -14,7 +14,7 @@
                     <mat-icon>more_vert</mat-icon>
                 </button>
                 <mat-menu #menu="matMenu">
-                    <button mat-menu-item (click)="moveLO()">
+                    <button mat-menu-item  routerLink="../section-break-move">
                         <mat-icon>move_to_inbox</mat-icon>
                         <span>Move Learning outcomes</span>
                     </button>   
@@ -123,7 +123,7 @@
                 </mat-list-item>
             </mat-list>
             
-            <mat-selection-list [multiple]="false">                
+            <mat-selection-list [multiple]="x">                
                 <mat-list-option >     
                     <table (click)="ViewLO()">    
                             <tr>

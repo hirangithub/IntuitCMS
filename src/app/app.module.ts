@@ -37,6 +37,7 @@ import { SectionListComponent, viewLODialog2 } from './certification-exam/sectio
 
 import { SectionBreakPage1Component, viewLODialog3 } from './certification-exam/section-break-page1/section-break-page1.component';
 import { SectionBreakPage2Component, viewLODialog4 } from './certification-exam/section-break-page2/section-break-page2.component';
+import { SectionBreakMoveComponent, } from './certification-exam/section-break-move/section-break-move.component';
 
 @NgModule({
   declarations: [
@@ -60,6 +61,7 @@ import { SectionBreakPage2Component, viewLODialog4 } from './certification-exam/
     SectionListComponent,
     SectionBreakPage1Component,
     SectionBreakPage2Component,
+    SectionBreakMoveComponent,
   ],
   imports: [
     BrowserModule,
