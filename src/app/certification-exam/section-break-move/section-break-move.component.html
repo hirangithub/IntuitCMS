@@ -1,3 +1,4 @@
+<div class="move-section-active">
 <mat-toolbar class="spacer" #spacer style="height: auto;"></mat-toolbar>
 
 <div class="header" [ngClass]="{'sticky' : isSticky}"> 
@@ -11,7 +12,7 @@
         </div>
         <div fxFlex="25" fxLayoutAlign="end center" fxFlexOffset="20px">
             <ul>                    
-                <li><button mat-raised-button style="width: 100px;" (click)="goBack()">Cancel</button></li>
+                <li><button mat-button (click)="goBack()" style="opacity: .6">Cancel</button></li>
                 <li><button mat-raised-button style="width: 100px;">Save</button></li>
                 <li>
                     <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="">
@@ -49,7 +50,7 @@
 <div fxFlex="80">
 
     <mat-accordion class="example-headers-align exams-lo-holder" multi>                   
-        <mat-expansion-panel style="overflow: visible;" expanded>
+        <mat-expansion-panel style="overflow: visible;" disabled expanded>
             
             <mat-expansion-panel-header class="special-head">
                 <mat-panel-title class="hover-add">
@@ -63,7 +64,21 @@
                     <table >    
                       <tr>
                           <td class="col-1">Establish a potential client's QuickBooks Online and QuickBooks Self-Employed needs</td>
-                      </tr>
+                          <td>
+                            <button mat-icon-button [matMenuTriggerFor]="menu3" aria-label="Example icon-button with a menu" (click)="onEvent($event)">
+                                <mat-icon>more_horiz</mat-icon>
+                            </button>
+                            <mat-menu #menu3="matMenu">
+                                <span class="sub-title">Move to:</span>
+                                <button mat-menu-item>
+                                    <span>Section 1</span>
+                                </button>
+                                <button mat-menu-item>
+                                    <span>Section 2</span>
+                                </button>
+                            </mat-menu>
+                          </td>  
+                        </tr>
                     </table>  
                     
                     <div class="indicator-section-break" routerLink="./section-break-page1" ><div><mat-icon>add_circle_outline</mat-icon> Insert section break here</div></div>
@@ -76,7 +91,7 @@
 
 
     <mat-accordion class="example-headers-align exams-lo-holder" multi>                   
-      <mat-expansion-panel style="overflow: visible;" expanded>
+      <mat-expansion-panel style="overflow: visible;" disabled expanded>
           
           <mat-expansion-panel-header class="special-head">
               <mat-panel-title class="hover-add">
@@ -89,7 +104,21 @@
                   <table >    
                       <tr>
                           <td class="col-1">Recognize how to create bank feeds to QuickBooks Online</td>
-                      </tr>
+                          <td>
+                            <button mat-icon-button [matMenuTriggerFor]="menu3" aria-label="Example icon-button with a menu" (click)="onEvent($event)">
+                                <mat-icon>more_horiz</mat-icon>
+                            </button>
+                            <mat-menu #menu3="matMenu">
+                                <span class="sub-title">Move to:</span>
+                                <button mat-menu-item>
+                                    <span>Section 1</span>
+                                </button>
+                                <button mat-menu-item>
+                                    <span>Section 2</span>
+                                </button>
+                            </mat-menu>
+                          </td>  
+                        </tr>
                   </table> 
                   <div class="indicator-section-break" routerLink="./section-break-page2" ><div><mat-icon>add_circle_outline</mat-icon> Insert section break here</div></div>
               </mat-list-option> 
@@ -97,6 +126,20 @@
                   <table>    
                     <tr>
                         <td class="col-1">Establish a potential client's QuickBooks Online and QuickBooks Self-Employed needs</td> 
+                        <td>
+                            <button mat-icon-button [matMenuTriggerFor]="menu3" aria-label="Example icon-button with a menu" (click)="onEvent($event)">
+                                <mat-icon>more_horiz</mat-icon>
+                            </button>
+                            <mat-menu #menu3="matMenu">
+                                <span class="sub-title">Move to:</span>
+                                <button mat-menu-item>
+                                    <span>Section 1</span>
+                                </button>
+                                <button mat-menu-item>
+                                    <span>Section 2</span>
+                                </button>
+                            </mat-menu>
+                        </td>
                     </tr>
                   </table> 
                   <div class="indicator-section-break"(click)="onEvent($event)"><div><mat-icon>add_circle_outline</mat-icon> Insert section break here</div></div>
@@ -108,7 +151,7 @@
 
 
   <mat-accordion class="example-headers-align exams-lo-holder" multi>                   
-      <mat-expansion-panel style="overflow: visible;" expanded>
+      <mat-expansion-panel style="overflow: visible;" disabled expanded>
           
           <mat-expansion-panel-header class="special-head">
               <mat-panel-title class="hover-add">
@@ -121,6 +164,20 @@
                   <table >    
                     <tr>
                         <td class="col-1">Recognize the main features of QuickBooks Online Accountant and how to access clients’ QuickBooks Online and the Accountant Tools </td>
+                        <td>
+                            <button mat-icon-button [matMenuTriggerFor]="menu3" aria-label="Example icon-button with a menu" (click)="onEvent($event)">
+                                <mat-icon>more_horiz</mat-icon>
+                            </button>
+                            <mat-menu #menu3="matMenu">
+                                <span class="sub-title">Move to:</span>
+                                <button mat-menu-item>
+                                    <span>Section 1</span>
+                                </button>
+                                <button mat-menu-item>
+                                    <span>Section 2</span>
+                                </button>
+                            </mat-menu>
+                        </td>
                     </tr>
                   </table> 
                   <div class="indicator-section-break"  routerLink="./section-break-page2" ><div><mat-icon>add_circle_outline</mat-icon> Insert section break here</div></div>
@@ -129,6 +186,20 @@
                   <table>    
                     <tr>
                       <td class="col-1">Module One Review - Getting started in QuickBooks Online Accountant</td>
+                       <td>
+                            <button mat-icon-button [matMenuTriggerFor]="menu3" aria-label="Example icon-button with a menu" (click)="onEvent($event)">
+                                <mat-icon>more_horiz</mat-icon>
+                            </button>
+                            <mat-menu #menu3="matMenu">
+                                <span class="sub-title">Move to:</span>
+                                <button mat-menu-item>
+                                    <span>Section 1</span>
+                                </button>
+                                <button mat-menu-item>
+                                    <span>Section 2</span>
+                                </button>
+                            </mat-menu>
+                       </td> 
                     </tr>
                   </table> 
                   <div class="indicator-section-break"(click)="onEvent($event)"><div><mat-icon>add_circle_outline</mat-icon> Insert section break here</div></div>
@@ -138,4 +209,5 @@
       </mat-expansion-panel>
   </mat-accordion> 
 
+</div>
 </div>

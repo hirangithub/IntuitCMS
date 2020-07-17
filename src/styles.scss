@@ -392,3 +392,16 @@ p strong { font-weight: 500; }
         transform: none;
     }
 }
+
+.mat-expansion-panel-header[aria-disabled=true] {
+    color: rgba(0,0,0,1);
+}
+
+.move-section-active {
+    .indicator-section-break {
+        display: none !important;
+    }
+    .exams-lo-holder .mat-list-item {
+        border-bottom: 0 !important;
+    }
+}
