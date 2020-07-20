@@ -5,7 +5,20 @@
         </div>
 
         <div class="buttons">               
-            <button mat-raised-button color="primary">Save & close</button>                 
+            <!-- <button mat-raised-button color="primary">Save & close</button>        -->
+            
+            <button mat-raised-button color="primary" class="add-content white-version">
+                <mat-button-toggle-group style="display: flex; align-items: center;">
+                    <mat-button-toggle class="split-button-1"  style="padding-right: .2rem; padding-left: 1rem;">Save & close</mat-button-toggle>
+                    <mat-button-toggle class="split-button-1 drop-down-button" [matMenuTriggerFor]="dropdownMenuOne">
+                        <mat-icon>arrow_drop_down</mat-icon>
+                    </mat-button-toggle>
+                </mat-button-toggle-group>
+            </button>
+
+            <mat-menu #dropdownMenuOne="matMenu" class="custom-drop-menu">
+                <button mat-menu-item>Save</button>
+            </mat-menu>
 
             <mat-dialog-actions class="close-btn">
                 <button mat-button mat-dialog-close><mat-icon>close</mat-icon></button>

@@ -408,7 +408,7 @@ p strong { font-weight: 500; }
 
 .add-content{
     display: block;
-    padding: 0 0 0 16px !important;
+    padding: 0 !important;
   
     .drop-down-button {
       border-left: 1px solid #ccc;
@@ -424,5 +424,39 @@ p strong { font-weight: 500; }
         width: 30px;
       }    
     } 
+    &.white-version {
+        .mat-button-toggle-appearance-standard {
+            color: rgba(255,255,255,1) !important;
+        }
+    }
   }
   
+  .mat-button-toggle-standalone.mat-button-toggle-appearance-standard, 
+  .mat-button-toggle-group-appearance-standard {
+        border: 0;
+  }
+  .mat-button-toggle {
+      background-color: transparent;
+      &:hover,
+      &.mat-button-toggle-checked {
+        background-color: transparent;
+      }   
+      .mat-button-toggle-focus-overlay {
+            border: 0;
+            display: none;
+      }   
+  }
+  .mat-button-toggle-appearance-standard .mat-button-toggle-label-content {
+      padding: 0 !important;
+      line-height: 38px;
+  }
+  .mat-button-toggle-appearance-standard .mat-button-toggle-focus-overlay {
+    background-color: transparent;    
+  }
+  .cdk-program-focused .mat-button-toggle-group {
+      background-color: white !important;
+  }
+
+//   .mat-button-focus-overlay { background-color: rgba(255,255,255,0) !important; }
+//   .white-version .mat-button-focus-overlay { background-color: rgba(44,160,28,1) !important; }
+  .cdk-program-focused { display: none !important; }

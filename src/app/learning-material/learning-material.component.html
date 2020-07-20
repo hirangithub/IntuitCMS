@@ -69,12 +69,9 @@
             <div fxFlex="35" fxLayoutAlign="end center" fxFlexOffset="20px">  
                 <!-- <button mat-raised-button color="primary" (click)="openDialog()">Add learning content</button>                -->
                 
-
-
                 <button mat-raised-button class="add-content">
-                    <mat-button-toggle-group style="display: flex; align-items: center;">
-                        <mat-icon style="padding-right: .5rem;">add_circle_outline</mat-icon>
-                        <mat-button-toggle class="split-button-1" (click)="openDialog()" style="padding-right: .2rem;">Add Learning content</mat-button-toggle>
+                    <mat-button-toggle-group style="display: flex; align-items: center;">                        
+                        <mat-button-toggle class="split-button-1" style="padding-right: .2rem;  padding-left: 1rem;" (click)="openDialog()"><mat-icon style="padding-right: .5rem;">add_circle_outline</mat-icon> Add Learning content</mat-button-toggle>
                         <mat-button-toggle class="split-button-1 drop-down-button" [matMenuTriggerFor]="dropdownMenuOne">
                             <mat-icon>arrow_drop_down</mat-icon>
                         </mat-button-toggle>
