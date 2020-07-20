@@ -30,7 +30,8 @@ import { MatChipsModule } from '@angular/material/chips';
 import { MatRippleModule } from '@angular/material/core';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatRadioModule} from '@angular/material/radio';
-import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+import {MatSlideToggleModule} from '@angular/material/slide-toggle'; 
+import {MatButtonToggleModule} from '@angular/material/button-toggle';
 import { FormsModule } from '@angular/forms';
 import {DragDropModule} from '@angular/cdk/drag-drop';
 import { SectionListComponent, viewLODialog2 } from './certification-exam/section-list/section-list.component';
@@ -86,7 +87,8 @@ import { SectionBreakMovePage1Component } from './certification-exam/section-bre
     MatRippleModule,
     MatCheckboxModule,
     MatRadioModule,
-    MatSlideToggleModule, 
+    MatSlideToggleModule,
+    MatButtonToggleModule, 
     FormsModule,
     DragDropModule, 
     MatTooltipModule,
