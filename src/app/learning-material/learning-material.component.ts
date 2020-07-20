@@ -5,6 +5,7 @@ import { LearningService } from "../services/learning.service";
 import {CdkDragDrop, moveItemInArray, transferArrayItem} from '@angular/cdk/drag-drop';
 import { DialogElementsExampleDialog } from "../presentation/presentation.component";
 import { LoDataService } from "../services/lo-data.service";
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 
 @Component({
   selector: 'app-learning-material',

@@ -4,7 +4,7 @@
         <div class="title">
             <h2>Bundles ({{bundleList.length}})</h2>
 
-            <button style="margin-top: -.5rem; margin-right: -1rem;" mat-icon-button class="add-content" [matMenuTriggerFor]="menu34" aria-label="">
+            <button style="margin-top: -.5rem; margin-right: -.5rem;" mat-icon-button class="add-content" [matMenuTriggerFor]="menu34" aria-label="">
                 <mat-icon style="opacity: .5;">more_vert</mat-icon>
             </button>
             <mat-menu #menu34="matMenu">
@@ -275,11 +275,25 @@
 
                     <mat-divider></mat-divider>
 
-                    <br />                   
+                    <br />       
                     
-                    <button mat-raised-button color="accent" (click)=toggleDisplay()><mat-icon>note_add</mat-icon> Include Learning outcome</button>
+                    <button mat-raised-button color="primary" class="add-content">
+                        <mat-button-toggle-group style="display: flex; align-items: center;">
+                            <mat-icon style="padding-right: .5rem;">add_circle_outline</mat-icon>
+                            <mat-button-toggle class="split-button-1" (click)=toggleDisplay() style="padding-right: .2rem;">Include Learning outcome</mat-button-toggle>
+                            <mat-button-toggle class="split-button-1 drop-down-button" [matMenuTriggerFor]="dropdownMenuOne">
+                                <mat-icon>arrow_drop_down</mat-icon>
+                            </mat-button-toggle>
+                        </mat-button-toggle-group>
+                    </button>
+    
+                    <mat-menu #dropdownMenuOne="matMenu" class="custom-drop-menu">
+                        <button mat-menu-item (click)=openContentTemplate()><mat-icon>note_add</mat-icon> Add Lesson specific content</button>
+                    </mat-menu>
+                    
+                    <!-- <button mat-raised-button color="accent" (click)=toggleDisplay()><mat-icon>note_add</mat-icon> Include Learning outcome</button>
                     &nbsp;&nbsp;
-                    <button mat-raised-button (click)=openContentTemplate()><mat-icon>note_add</mat-icon> Add Lesson specific content</button>
+                    <button mat-raised-button (click)=openContentTemplate()><mat-icon>note_add</mat-icon> Add Lesson specific content</button> -->
 
                 </mat-expansion-panel>
             </mat-accordion>               

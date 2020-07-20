@@ -405,3 +405,24 @@ p strong { font-weight: 500; }
         border-bottom: 0 !important;
     }
 }
+
+.add-content{
+    display: block;
+    padding: 0 0 0 16px !important;
+  
+    .drop-down-button {
+      border-left: 1px solid #ccc;
+      margin-left: 10px;
+      padding-left: .3rem;
+      padding-right: .3rem;
+    }
+  
+    .drop-down-button {
+      .mat-icon { 
+        vertical-align: middle;
+        height: 27px;
+        width: 30px;
+      }    
+    } 
+  }
+  

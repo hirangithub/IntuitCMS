@@ -15,6 +15,19 @@
             </li>
             <li>
                 <button mat-raised-button color="primary">Save & close</button> 
+
+                <!-- <button mat-raised-button color="primary" class="add-content">
+                    <mat-button-toggle-group style="display: flex; align-items: center;">
+                        <mat-button-toggle class="split-button-1" style="padding-right: .2rem;">Save & close</mat-button-toggle>
+                        <mat-button-toggle class="split-button-1 drop-down-button" [matMenuTriggerFor]="dropdownMenuOne">
+                            <mat-icon>arrow_drop_down</mat-icon>
+                        </mat-button-toggle>
+                    </mat-button-toggle-group>
+                </button>
+
+                <mat-menu #dropdownMenuOne="matMenu" class="custom-drop-menu">
+                    <button mat-menu-item>Save</button>
+                </mat-menu> -->
             </li>
             <li>
                 <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="">
