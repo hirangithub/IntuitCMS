@@ -87,7 +87,8 @@
                             <ul>
                                 <li>Total lessons ({{selectedBundle.total_lessons}})</li>
                                 <li>{{selectedBundle.duration}}</li>
-                                <li>{{selectedBundle.cpe_credits}} CPE credits</li>
+                                <li><span style="cursor: pointer;" (click)="openCPE()" matTooltipPosition="right" matTooltip="Enable or disable CPE">0 CPE credits</span></li>
+                                <!-- <li>{{selectedBundle.cpe_credits}} CPE credits</li> -->
                             </ul>
                         </li>
                     </ul>
@@ -152,7 +153,8 @@
                         <ul>
                             <li>Total lessons ({{selectedBundle.total_lessons}})</li>
                             <li>{{selectedBundle.duration}}</li>
-                            <li>{{selectedBundle.cpe_credits}} CPE credits</li>
+                            <li><span style="cursor: pointer;" (click)="openCPE()" matTooltipPosition="right" matTooltip="Enable or disable CPE">0 CPE credits</span></li>
+                            <!-- <li>{{selectedBundle.cpe_credits}} CPE credits</li> -->
                         </ul>
                     </li>
                 </ul>
