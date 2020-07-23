@@ -1,4 +1,5 @@
-<div fxLayout="row" fxFlexFill fxLayoutAlign="start stretch">
+<mat-toolbar class="spacer" #spacer style="height: auto;"></mat-toolbar> 
+<div fxLayout="row" fxFlexFill fxLayoutAlign="start stretch" [ngClass]="{'sticky' : isSticky}" >
 
     <div fxLayout="column" fxFlex="25" class="left-container"> 
         <div class="title">

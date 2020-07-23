@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output } from '@angular/core';
+import { Component, OnInit, Input, Output, HostListener, ViewChild } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog'; 
 import { MatFormFieldControl } from '@angular/material/form-field';
 import { LearningService } from "../services/learning.service";
@@ -6,6 +6,7 @@ import {CdkDragDrop, moveItemInArray, transferArrayItem} from '@angular/cdk/drag
 import { DialogElementsExampleDialog } from "../presentation/presentation.component";
 import { LoDataService } from "../services/lo-data.service";
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+//import { OverlayScrollbarsComponent } from 'overlayscrollbars-ngx';
 
 @Component({
   selector: 'app-learning-material',
@@ -19,7 +20,8 @@ export class LearningMaterialComponent implements OnInit {
     public learning: LearningService,
     private data: LoDataService
   ) { }
-
+ 
+  @ViewChild('spacer') spacer;
   @Output() name: string;
   myCompOneObj: any =  DialogElementsExampleDialog;
  
@@ -31,7 +33,9 @@ export class LearningMaterialComponent implements OnInit {
   learningOutComes: any[] = this.learning.getLearningOutcomes();
   learningOutComesTitles : any[] = [];
   isDefaultLODialog: boolean = false;
+  isSticky: boolean = false;
   isShowLO: boolean;
+
   ngOnInit(): void { 
     this.viewLearningOutcomes(0);  
 
@@ -54,6 +58,17 @@ export class LearningMaterialComponent implements OnInit {
     this.learningContent =  this.selected_LO.learning_content.data;
     this.questions =  this.selected_LO.questions.data;
     this.isDefaultLODialog = false;
+  }
+
+
+  @HostListener('window:scroll', ['$event'])
+  checkScroll() {  
+    if((window.pageYOffset - this.spacer._elementRef.nativeElement.offsetTop) >= 0){ 
+      this.isSticky = true;
+    }else{
+      this.isSticky = false;
+    } 
+    
   }
 
 
