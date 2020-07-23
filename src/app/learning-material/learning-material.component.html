@@ -2,7 +2,7 @@
 <div fxLayout="row" fxFlexFill fxLayoutAlign="start stretch" [ngClass]="{'sticky' : isSticky}" >
     
     <div fxLayout="column" fxFlex="25" class="left-container">
-         
+        <overlay-scrollbars class="scroll-panel">
             <div class="title">
                 <h2>Learning outcomes ({{learningOutComes.length}})</h2>
                 <button style="margin-top: -.4rem;" mat-mini-fab color="primary" (click)="openAddLODialog()">
@@ -28,10 +28,8 @@
                     {{lo_title}}
                 </mat-list-option>
             </mat-selection-list>
-            <!-- <p>
-                Option selected: {{shoes.selectedOptions.selected[0]?.value}}
-            </p> -->
-       
+        </overlay-scrollbars>
+            
     </div>
 
     <div fxFlex="75" class="right-container"> 
