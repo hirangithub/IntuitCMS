@@ -1,6 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 
-html, body { height: 100%; }
+html, body { height: 100%; /*overflow: hidden;*/ }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 ul {
     padding: 0;
@@ -102,7 +102,8 @@ p strong { font-weight: 500; }
     @media only screen and (max-width: 1440px) { 
         max-width: 320px !important;
     }
-    min-height: calc(100vh - 6.4rem);
+    height: calc(100vh - 6.4rem);
+    overflow: auto;
     padding: 1rem;
     background-color: #393A3D;
     color: #ffffff;
@@ -136,6 +137,8 @@ p strong { font-weight: 500; }
 .right-container {
     background-color: #f7f7f7;
     padding: 1rem 2rem;
+    //overflow: auto;
+    height: calc(100vh - 6.4rem);
 }
 
 .space-0 {
