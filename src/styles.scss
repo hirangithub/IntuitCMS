@@ -133,6 +133,10 @@ p strong { font-weight: 500; }
     .mat-input-element {
         caret-color: #ffffff;
     }  
+
+    .mat-form-field {
+        display: block;
+    }
     
     // .mat-list-base .mat-list-option {
     //     &:first-child {
