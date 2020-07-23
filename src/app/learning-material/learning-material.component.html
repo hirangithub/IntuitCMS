@@ -174,13 +174,13 @@
                         <mat-selection-list #shoes [multiple]="false" class="lo-spec">
                             <mat-list-option *ngFor="let q of questions">
                                 <div fxLayout="row" fxLayoutAlign="fxFlexFill">
-                                    <div fxLayout="column" fxFlex="80" fxLayoutAlign="start top" (click)="openQuestionPopup()">    
+                                    <div fxLayout="column" fxFlex="100" fxLayoutAlign="start top" (click)="openQuestionPopup()">    
                                         <div class="title">{{q.title}}</div>
                                         <div class="description">{{q.description}}</div> 
                                     </div>
-                                    <div fxLayout="" fxFlex="20" fxLayoutAlign="end top"> 
+                                    <!-- <div fxLayout="" fxFlex="20" fxLayoutAlign="end top"> 
                                         <mat-slide-toggle></mat-slide-toggle>         
-                                    </div>
+                                    </div> -->
                                 </div> 
                             </mat-list-option> 
                         </mat-selection-list>
