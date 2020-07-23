@@ -6,7 +6,7 @@ import {CdkDragDrop, moveItemInArray, transferArrayItem} from '@angular/cdk/drag
 import { DialogElementsExampleDialog } from "../presentation/presentation.component";
 import { LoDataService } from "../services/lo-data.service";
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
-//import { OverlayScrollbarsComponent } from 'overlayscrollbars-ngx';
+import { OverlayScrollbarsComponent } from 'overlayscrollbars-ngx';
 
 @Component({
   selector: 'app-learning-material',

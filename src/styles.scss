@@ -1,5 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
- 
+@import '~overlayscrollbars/css/OverlayScrollbars.css';
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
@@ -103,12 +103,17 @@ p strong { font-weight: 500; }
     @media only screen and (max-width: 1440px) { 
         max-width: 320px !important;
     }
-    min-height: calc(100vh - 6.4rem);
-    padding: 1rem;
+    min-height: calc(100vh - 6.4rem); 
     background-color: #393A3D;
     color: #ffffff;
     position: absolute;
     height: 100%;
+
+    .scroll-panel{
+        display: flex;
+        height: 100%;
+        padding: 1rem;
+    }
     
     a,
     .mat-list-base .mat-list-option {
