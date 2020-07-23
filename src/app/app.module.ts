@@ -40,6 +40,7 @@ import { SectionBreakPage1Component, viewLODialog3 } from './certification-exam/
 import { SectionBreakPage2Component, viewLODialog4 } from './certification-exam/section-break-page2/section-break-page2.component';
 import { SectionBreakMoveComponent, } from './certification-exam/section-break-move/section-break-move.component';
 import { SectionBreakMovePage1Component } from './certification-exam/section-break-move-page1/section-break-move-page1.component';
+//import { OverlayscrollbarsModule } from 'overlayscrollbars-ngx'; 
 
 @NgModule({
   declarations: [
@@ -69,7 +70,7 @@ import { SectionBreakMovePage1Component } from './certification-exam/section-bre
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule,
+    BrowserAnimationsModule, 
     MatTabsModule, 
     MatInputModule,
     MatListModule,
@@ -92,6 +93,7 @@ import { SectionBreakMovePage1Component } from './certification-exam/section-bre
     FormsModule,
     DragDropModule, 
     MatTooltipModule,
+    //OverlayscrollbarsModule
     
   ],
   exports: [DialogContent],

@@ -1,4 +1,4 @@
-import { Component, OnInit, ElementRef, ViewChild, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit, ElementRef, ViewChild, ViewEncapsulation, HostListener } from '@angular/core';
 import { PresentationService } from "../services/presentation.service";
 import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { DialogContent } from "../learning-material/learning-material.component";
@@ -13,6 +13,8 @@ import { LoDataService } from "../services/lo-data.service";
 export class PresentationComponent implements OnInit {
 
   @ViewChild('add') addElement: ElementRef;
+  @ViewChild('spacer') spacer;
+
   bundleList: any = this.presentation.getBundles();
   selectedBundle: any;
   selectedLessonsList: any
@@ -24,6 +26,7 @@ export class PresentationComponent implements OnInit {
   Bundle_title: string = ""; 
   newLessonsBundleTitle: string = ""; 
   isDefaultBundleDialog: boolean = false;
+  isSticky: boolean = false;
 
   constructor( 
     public presentation: PresentationService,
@@ -48,6 +51,18 @@ export class PresentationComponent implements OnInit {
     })
     
   }  
+
+
+  @HostListener('window:scroll', ['$event'])
+  checkScroll() {  
+    if((window.pageYOffset - this.spacer._elementRef.nativeElement.offsetTop) >= 0){ 
+      this.isSticky = true;
+    }else{
+      this.isSticky = false;
+    } 
+    
+  }
+
 
   viewLearningOutcomes(i): void { 
     this.selectedBundle = this.bundleList[i];   

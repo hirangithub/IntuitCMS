@@ -1,35 +1,37 @@
-<div fxLayout="row" fxFlexFill fxLayoutAlign="start stretch">
-
+<mat-toolbar class="spacer" #spacer style="height: auto;"></mat-toolbar> 
+<div fxLayout="row" fxFlexFill fxLayoutAlign="start stretch" [ngClass]="{'sticky' : isSticky}" >
+    
     <div fxLayout="column" fxFlex="25" class="left-container">
-        <div class="title">
-            <h2>Learning outcomes ({{learningOutComes.length}})</h2>
-            <button style="margin-top: -.4rem;" mat-mini-fab color="primary" (click)="openAddLODialog()">
-                <mat-icon>add</mat-icon>
-            </button>               
-        </div>       
-
          
-        <mat-form-field class="example-full-width">
-            <mat-label>Search Learning outcomes</mat-label>
-            <input matInput placeholder=""> 
-        </mat-form-field>
+            <div class="title">
+                <h2>Learning outcomes ({{learningOutComes.length}})</h2>
+                <button style="margin-top: -.4rem;" mat-mini-fab color="primary" (click)="openAddLODialog()">
+                    <mat-icon>add</mat-icon>
+                </button>               
+            </div>       
 
-        <mat-selection-list #shoes [multiple]="false" *ngIf="!isAddLODialog">
-            <mat-list-option *ngFor="let lo of learningOutComes; let i = index"  [ngClass]="{'active': i =='0'}"  (click)="viewLearningOutcomes(i)">
-                {{lo.lo_title}}
-            </mat-list-option>
-        </mat-selection-list>
+            
+            <mat-form-field class="example-full-width">
+                <mat-label>Search Learning outcomes</mat-label>
+                <input matInput placeholder=""> 
+            </mat-form-field>
 
-        <mat-selection-list #shoes [multiple]="false" *ngIf="isAddLODialog"> 
-            <mat-list-option >{{LO_title}}</mat-list-option>
-            <mat-list-option *ngFor="let lo_title of learningOutComesTitles; let i = index">
-                {{lo_title}}
-            </mat-list-option>
-        </mat-selection-list>
-        <!-- <p>
-            Option selected: {{shoes.selectedOptions.selected[0]?.value}}
-        </p> -->
+            <mat-selection-list #shoes [multiple]="false" *ngIf="!isAddLODialog">
+                <mat-list-option *ngFor="let lo of learningOutComes; let i = index"  [ngClass]="{'active': i =='0'}"  (click)="viewLearningOutcomes(i)">
+                    {{lo.lo_title}}
+                </mat-list-option>
+            </mat-selection-list>
 
+            <mat-selection-list #shoes [multiple]="false" *ngIf="isAddLODialog"> 
+                <mat-list-option >{{LO_title}}</mat-list-option>
+                <mat-list-option *ngFor="let lo_title of learningOutComesTitles; let i = index">
+                    {{lo_title}}
+                </mat-list-option>
+            </mat-selection-list>
+            <!-- <p>
+                Option selected: {{shoes.selectedOptions.selected[0]?.value}}
+            </p> -->
+       
     </div>
 
     <div fxFlex="75" class="right-container"> 

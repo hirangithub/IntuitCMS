@@ -22,7 +22,9 @@
     "@angular/platform-browser": "~10.0.2",
     "@angular/platform-browser-dynamic": "~10.0.2",
     "@angular/router": "~10.0.2",
+    "@types/overlayscrollbars": "^1.12.0",
     "@w11k/angular-sticky-things": "^1.2.5",
+    "overlayscrollbars-ngx": "^0.2.2",
     "rxjs": "~6.5.5",
     "tslib": "^2.0.0",
     "zone.js": "~0.10.3"

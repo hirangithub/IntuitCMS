@@ -1,4 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
+ 
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
@@ -106,6 +107,9 @@ p strong { font-weight: 500; }
     padding: 1rem;
     background-color: #393A3D;
     color: #ffffff;
+    position: absolute;
+    height: 100%;
+    
     a,
     .mat-list-base .mat-list-option {
         color: #ffffff;
@@ -136,6 +140,7 @@ p strong { font-weight: 500; }
 .right-container {
     background-color: #f7f7f7;
     padding: 1rem 2rem;
+    margin-left: auto;
 }
 
 .space-0 {
